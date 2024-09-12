@@ -1,7 +1,7 @@
-
 let chatHistory = [];
 let currentChatIndex = -1;
 let websocket;
+let isProcessing = false; // To track if a message is being processed
 
 // WebSocket setup
 function connectWebSocket() {
@@ -10,15 +10,20 @@ function connectWebSocket() {
     // Connection established
     websocket.onopen = () => {
         console.log('Connected to WebSocket');
+        document.getElementById('errorMessage').style.display = 'none'; // Hide error on successful connection
     };
 
     // Receive message from WebSocket server (OpenAI response)
     websocket.onmessage = (event) => {
         const chatArea = document.getElementById("chatArea");
         const botChatBubble = document.createElement("div");
-        botChatBubble.classList.add("chat-bubble", "bot");  
+        botChatBubble.classList.add("chat-bubble", "bot");
         botChatBubble.textContent = `Bot: ${event.data}`;
         chatArea.appendChild(botChatBubble);
+
+        // Hide the spinner when the response is received
+        hideSpinner();
+        isProcessing = false;
 
         // Scroll to the bottom after receiving message
         chatArea.scrollTop = chatArea.scrollHeight;
@@ -27,11 +32,13 @@ function connectWebSocket() {
     // Handle WebSocket errors
     websocket.onerror = (error) => {
         console.error('WebSocket Error:', error);
+        showError("WebSocket error. Please check your connection or try again later.");
     };
 
     // Handle WebSocket closing
     websocket.onclose = () => {
         console.log('WebSocket connection closed');
+        showError("WebSocket connection closed. Please refresh the page or check your network.");
     };
 }
 
@@ -43,16 +50,31 @@ async function sendMessage() {
     if (messageInput.trim()) {
         // Display user's message
         const userChatBubble = document.createElement("div");
-        userChatBubble.classList.add("chat-bubble", "user"); 
+        userChatBubble.classList.add("chat-bubble", "user");
         userChatBubble.textContent = `You: ${messageInput}`;
         chatArea.appendChild(userChatBubble);
         document.getElementById("chatMessage").value = ''; 
 
         // Send the message to the backend via WebSocket
-        websocket.send(messageInput);
+        if (websocket.readyState === WebSocket.OPEN) {
+            showSpinner(); // Show spinner when processing starts
+            isProcessing = true;
+            websocket.send(messageInput);
+        } else {
+            showError("WebSocket is not connected. Please try again later.");
+        }
 
         // Scroll to the bottom after sending message
         chatArea.scrollTop = chatArea.scrollHeight;
+
+        // If the response takes too long, show an error after a timeout (optional)
+        setTimeout(() => {
+            if (isProcessing) {
+                hideSpinner();
+                showError("The response is taking longer than expected. Please check your connection.");
+                isProcessing = false;
+            }
+        }, 10000); // 10 seconds timeout for slow response
     }
 }
 
@@ -78,17 +100,16 @@ function startNewChat() {
 function loadChat(event, index) {
     const target = event.target;
     if (target.classList.contains('dots-menu')) {
-        return; 
+        return;
     }
     document.getElementById("chatArea").innerHTML = chatHistory[index];
     currentChatIndex = index;
 }
 
 // Show options when clicking on dots menu
-
 function showOptions(dotsElement) {
     const existingMenu = document.querySelector('.chat-options-menu');
-    if (existingMenu) existingMenu.remove(); 
+    if (existingMenu) existingMenu.remove();
 
     const menu = document.createElement('div');
     menu.className = 'chat-options-menu';
@@ -96,7 +117,7 @@ function showOptions(dotsElement) {
     const chatItem = dotsElement.closest('.chat-item');
     const chatIndex = Array.from(chatItem.parentElement.children).indexOf(chatItem);
 
-    dotsElement.style.visibility = 'hidden'; 
+    dotsElement.style.visibility = 'hidden';
     menu.innerHTML = `
         <ul>
             <li onclick="renameChat(${chatIndex})">Rename</li>
@@ -106,37 +127,26 @@ function showOptions(dotsElement) {
         </ul>
     `;
 
-        // Add the menu to the body (not inside the chat item to avoid layout changes)
-        document.body.appendChild(menu);
+    // Add the menu to the body
+    document.body.appendChild(menu);
 
-        // Position the menu at the dots' position
-        const dotsRect = dotsElement.getBoundingClientRect();
-        menu.style.position = 'absolute';
-        menu.style.top = `${dotsRect.bottom + window.scrollY}px`;
-        menu.style.left = `${dotsRect.left + window.scrollX}px`;
-    
-        // Close the menu and show the dots again when clicking outside
-        const closeMenu = function(event) {
-            if (!menu.contains(event.target) && !event.target.classList.contains('dots-menu')) {
-                menu.remove(); // Remove menu
-                dotsElement.style.visibility = 'visible'; // Show the dots again
-                document.removeEventListener('click', closeMenu); // Remove listener
-            }
-        };
-    
-        document.addEventListener('click', closeMenu);
+    // Position the menu at the dots' position
+    const dotsRect = dotsElement.getBoundingClientRect();
+    menu.style.position = 'absolute';
+    menu.style.top = `${dotsRect.bottom + window.scrollY}px`;
+    menu.style.left = `${dotsRect.left + window.scrollX}px`;
+
+    // Close the menu and show the dots again when clicking outside
+    const closeMenu = function(event) {
+        if (!menu.contains(event.target) && !event.target.classList.contains('dots-menu')) {
+            menu.remove(); // Remove menu
+            dotsElement.style.visibility = 'visible'; // Show the dots again
+            document.removeEventListener('click', closeMenu); // Remove listener
+        }
+    };
+
+    document.addEventListener('click', closeMenu);
 }
-
-document.addEventListener('click', function(event) {
-    const menu = document.querySelector('.chat-options-menu');
-    if (menu && !menu.contains(event.target) && !event.target.classList.contains('dots-menu')) {
-        menu.remove(); 
-    }
-});
-
-
-
-
 
 // Rename chat
 function renameChat(index) {
@@ -167,7 +177,7 @@ function exportChat(index) {
 // Delete chat
 function deleteChat(index) {
     if (confirm("Are you sure you want to delete this chat?")) {
-        chatHistory.splice(index, 1); 
+        chatHistory.splice(index, 1);
         document.getElementById("chatList").children[index].remove();
         if (index === currentChatIndex) {
             document.getElementById("chatArea").innerHTML = '';
@@ -184,9 +194,8 @@ function archiveChat(index) {
 // Upload document
 function uploadDocument(event) {
     const file = event.target.files[0];
-    
+
     if (file) {
-        // Create FormData object to hold the file
         const formData = new FormData();
         formData.append('file', file);
 
@@ -210,6 +219,22 @@ function uploadDocument(event) {
     }
 }
 
+// Show the spinner
+function showSpinner() {
+    document.getElementById("spinner").style.display = "block";
+}
+
+// Hide the spinner
+function hideSpinner() {
+    document.getElementById("spinner").style.display = "none";
+}
+
+// Display error message on the UI
+function showError(message) {
+    const errorMessageElement = document.getElementById("errorMessage");
+    errorMessageElement.textContent = message;
+    errorMessageElement.style.display = "block";
+}
 
 // Sending message on pressing Enter
 document.getElementById("chatMessage").addEventListener("keydown", function(event) {

@@ -259,3 +259,25 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
+#spinner {
+  display: none;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#spinner img {
+  width: 50px;
+  height: 50px;
+  animation: rotate 1s linear infinite;  /* Apply the rotate animation */
+}
+
+/* Keyframes to rotate the spinner */
+@keyframes rotate {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
