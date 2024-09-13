@@ -1,0 +1,25 @@
+2024-09-13 12:02:49,306 - INFO - Served index.html
+2024-09-13 12:02:52,262 - INFO - WebSocket connection accepted
+2024-09-13 12:03:06,041 - INFO - Received message from client: hello 
+2024-09-13 12:03:06,951 - INFO - Sent message to client: Hello! How can I assist you today?
+2024-09-13 12:03:14,903 - INFO - Received message from client: what is water
+2024-09-13 12:03:17,336 - INFO - Sent message to client: Water is a transparent, tasteless, odorless, and colorless chemical substance that is essential for all forms of life. It is made up of two hydrogen atoms bonded to one oxygen atom, giving it the chemical formula H2O. Water exists in liquid, solid, and gas states, and covers about 71% of the Earth's surface in the form of oceans, lakes, rivers, and groundwater. It is vital for the survival of all living organisms, as it is used for various physiological processes such as hydration, digestion, and temperature regulation.
+2024-09-13 12:03:22,769 - INFO - Received message from client: ok
+2024-09-13 12:03:23,480 - INFO - Sent message to client: Hello! How can I assist you today?
+2024-09-13 12:18:03,058 - INFO - Received message from client: hi
+2024-09-13 12:18:03,830 - INFO - Sent message to client: Hello! How can I assist you today?
+2024-09-13 12:18:16,595 - INFO - Received message from client: y did the chicken cross the road ??
+2024-09-13 12:18:17,436 - INFO - Sent message to client: To get to the other side!
+2024-09-13 12:28:44,098 - INFO - Received message from client: why does water even exist
+2024-09-13 12:28:45,869 - INFO - Sent message to client: Water is essential for life on Earth and plays a crucial role in many biological processes. It is necessary for hydration, digestion, temperature regulation, and nutrient transport in living organisms. Water also helps to shape the Earth's surface through erosion and weathering processes. Additionally, water serves as a solvent for many substances and facilitates chemical reactions essential for life. Overall, the existence of water is vital for the survival and functioning of life on our planet.
+2024-09-13 12:47:03,055 - WARNING - WebSocket client disconnected
+2024-09-13 13:00:08,938 - INFO - Served index.html
+2024-09-13 13:00:09,535 - INFO - WebSocket connection accepted
+2024-09-13 13:00:14,585 - INFO - Received message from client: hi there
+2024-09-13 13:00:15,432 - INFO - Sent message to client: Hello! How can I assist you today?
+2024-09-13 13:00:38,103 - INFO - Received message from client: what did the book say to the teacher
+2024-09-13 13:00:38,895 - INFO - Sent message to client: I’m not sure, what did the book say to the teacher?
+2024-09-13 13:00:48,462 - INFO - Received message from client: i am asking you !!
+2024-09-13 13:00:49,253 - INFO - Sent message to client: I am here to help! What can I assist you with today?
+2024-09-13 13:07:10,783 - INFO - Received message from client: what did thor say to loki
+2024-09-13 13:07:12,530 - INFO - Sent message to client: In the Marvel movies, Thor has said many things to Loki, but one of the most memorable lines is from "The Avengers" when Thor tells Loki, "You listen well, brother. I do not seek to gain from your injustice, only to stop it."

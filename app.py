@@ -6,14 +6,38 @@ from pathlib import Path
 import openai
 import os
 import logging
+from logging.handlers import RotatingFileHandler
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Initialize logging
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+# logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+
+log_filename = "./logs/document_service.log"
+
+# Ensure the log file exists, create it if it doesn't
+if not os.path.exists(log_filename):
+    # Create the file
+    with open(log_filename, 'w') as f:
+        pass  # Just create an empty file
+    
+log_handler = RotatingFileHandler(log_filename, maxBytes=5 * 1024 * 1024, backupCount=3)  # 5MB log size with 3 backups
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[log_handler]
+)
 
 class OpenAIChatManager:
     """Handles communication with the OpenAI API."""
-    def __init__(self, api_key: str):
-        openai.api_key = api_key
+    def __init__(self):
+        # Load API key from environment variables
+        self.api_key = os.getenv("OPENAI_API_KEY")
+        if not self.api_key:
+            raise ValueError("OpenAI API key is not set")
+        openai.api_key = self.api_key
 
     def get_response(self, user_input: str) -> str:
         """Fetches the response from OpenAI for a given input."""
@@ -84,7 +108,7 @@ class Application:
 
         # Initialize components
         self.file_manager = FileManager(upload_folder="./uploads")
-        self.chat_manager = OpenAIChatManager(api_key=os.getenv("OPENAI_API_KEY"))
+        self.chat_manager = OpenAIChatManager()
         self.websocket_manager = WebSocketManager(chat_manager=self.chat_manager)
 
         # Set up middleware and routes
