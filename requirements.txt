@@ -2,3 +2,7 @@ fastapi
 uvicorn
 openai==0.28.0
 python-multipart
+psycopg2
+asyncpg 
+sqlalchemy 
+databases
