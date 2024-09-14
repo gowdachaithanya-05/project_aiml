@@ -138,7 +138,6 @@ body {
   flex-grow: 1;
 }
 
-
 .chat-bubble {
   background-color: #e0f4ff;
   padding: 15px;
@@ -280,4 +279,99 @@ body {
   to {
       transform: rotate(360deg);
   }
+}
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Darker semi-transparent background */
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  margin: auto;
+  padding: 40px;
+  border-radius: 15px;
+  width: 35%;
+  max-width: 450px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2); /* Stronger shadow for more depth */
+  position: relative;
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+  color: #333;
+}
+
+/* Drag-and-drop area styling */
+.drop-area {
+  border: 2px dashed #4a90e2;
+  border-radius: 12px;
+  padding: 40px;
+  background-color: #f9fafc;
+  text-align: center;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.drop-area:hover {
+  background-color: #f0f6ff;
+  border-color: #3b82f6;
+}
+
+.drop-area p {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.drop-area button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.drop-area button:hover {
+  background-color: #357abd;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Animate modal appearance */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-content {
+  animation: modalFadeIn 0.5s ease-out;
 }

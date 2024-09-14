@@ -191,15 +191,56 @@ function archiveChat(index) {
     alert(`Chat ${index + 1} archived.`);
 }
 
-// Upload document
+
+function showUploadModal() {
+    document.getElementById("uploadModal").style.display = "block";
+}
+
+// Hide the upload modal
+function hideUploadModal() {
+    document.getElementById("uploadModal").style.display = "none";
+}
+
+// Allow drop event
+function allowDrop(event) {
+    event.preventDefault();
+}
+
+// Handle drop event
+function handleDrop(event) {
+    event.preventDefault();
+    const files = event.dataTransfer.files;
+    uploadFiles(files);
+}
+
+// Handle drag over
+function handleDragOver(event) {
+    event.preventDefault();
+    document.getElementById('dropZone').classList.add('dragover');
+}
+
+// Handle file drop
+function handleDrop(event) {
+    event.preventDefault();
+    document.getElementById('dropZone').classList.remove('dragover');
+
+    const files = event.dataTransfer.files;
+    processFiles(files);
+}
+
+// Process file input and handle validation
 function uploadDocument(event) {
-    const file = event.target.files[0];
+    const files = event.target.files;
 
-    if (file) {
+    if (files && files.length > 0) {
         const formData = new FormData();
-        formData.append('file', file);
 
-        // Send the file to the backend using Fetch API
+        // Add multiple files to the FormData
+        for (const file of files) {
+            formData.append('files', file);
+        }
+
+        // Send the files to the backend using Fetch API
         fetch('/upload', {
             method: 'POST',
             body: formData
@@ -207,16 +248,62 @@ function uploadDocument(event) {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                alert(`Document "${file.name}" uploaded successfully.`);
+                alert(`Files uploaded successfully.`);
             } else {
-                alert('Failed to upload the document.');
+                alert('Failed to upload the files.');
             }
         })
         .catch(error => {
-            console.error('Error uploading document:', error);
-            alert('An error occurred while uploading the document.');
+            console.error('Error uploading files:', error);
+            alert('An error occurred while uploading the files.');
         });
     }
+}
+
+
+// Handle file validation and upload
+function processFiles(files) {
+    if (files.length > 10) {
+        alert('You can upload a maximum of 10 files at a time.');
+        return;
+    }
+
+    let totalSize = 0;
+    for (let i = 0; i < files.length; i++) {
+        totalSize += files[i].size;
+        if (files[i].size > 500 * 1024 * 1024) {
+            alert(`File "${files[i].name}" exceeds the 500MB size limit.`);
+            return;
+        }
+    }
+
+    if (totalSize > 500 * 1024 * 1024) {
+        alert('Total file size exceeds the 500MB limit.');
+        return;
+    }
+
+    const formData = new FormData();
+    for (let i = 0; i < files.length; i++) {
+        formData.append('file', files[i]);
+    }
+
+    // Send the file to the backend using Fetch API
+    fetch('/upload', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Files uploaded successfully.');
+        } else {
+            alert('Failed to upload the files.');
+        }
+    })
+    .catch(error => {
+        console.error('Error uploading files:', error);
+        alert('An error occurred while uploading the files.');
+    });
 }
 
 // Show the spinner
