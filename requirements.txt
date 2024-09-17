@@ -1,4 +1,19 @@
-fastapi
-uvicorn
-openai==0.28.0
+fastapi                    # Core web framework
+uvicorn                    # ASGI server to run FastAPI
+openai==0.28.0             # Integration with OpenAI API
+python-multipart           # For handling file uploads
+pydantic                   # Data validation and settings management
+elasticsearch               # Elasticsearch client to interact with the Elasticsearch service
+websockets                 # WebSocket support in FastAPI
+websocket-client           # WebSocket client, only necessary if you're using a Python WebSocket client
+python-dotenv
+sqlalchemy # Database
+databases
+psycopg2-binary
 python-multipart
+asyncpg 
+# Uncomment these if you plan to use OpenTelemetry for tracing
+# opentelemetry-api
+# opentelemetry-sdk
+# opentelemetry-exporter-otlp
+

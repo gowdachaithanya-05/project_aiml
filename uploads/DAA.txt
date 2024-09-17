@@ -1,0 +1,611 @@
+#include <iostream>
+#include <ctime>
+#include <iomanip>
+using namespace std;
+
+int euclid(int m, int n);
+int recursive(int m, int n);
+int middle_school(int m, int n);
+int consecutive_integer(int m, int n);
+int rem = 0, res = 0;
+
+int main()
+{
+    int m, n;
+    clock_t start, end;
+    double cpu_time_used;
+    cout << "Enter the first number: ";
+    cin >> m;
+    cout << "Enter the second number: ";
+
+    cin >> n;
+        cout << fixed << setprecision(6);
+
+    if(n != 0 && m != 0)
+    {
+        start = clock();
+        res = euclid(m, n);
+        end = clock();
+        cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
+        cout << "1. Euclidean Method \n GCD = " << res << ", Runtime: " << cpu_time_used << " seconds\n";
+
+        start = clock();
+        res = recursive(m, n);
+        end = clock();
+        cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
+        cout << "2. Recursive Method \n GCD = " << res << ", Runtime: " << cpu_time_used << " seconds\n";
+
+        start = clock();
+        res = middle_school(m, n);
+        end = clock();
+        cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
+        cout << "3. Middle School Method \n GCD = " << res << ", Runtime: " << cpu_time_used << " seconds\n";
+
+        start = clock();
+        res = consecutive_integer(m, n);
+        end = clock();
+        cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
+        cout << "4. Consecutive Integer Method \n GCD = " << res << ", Runtime: " << cpu_time_used << " seconds\n";
+    }
+    else
+        cout << "Invalid inputs!\n";
+    return 0;
+}
+
+int euclid(int m, int n)
+{
+    while(n != 0)
+    {
+        rem = m % n;
+        m = n;
+        n = rem;
+    }
+    return m;
+}
+
+int recursive(int m, int n)
+{
+    rem = m % n;
+    if(rem == 0)
+        return n;
+    else
+        return recursive(n, rem);
+}
+
+int middle_school(int m, int n)
+{
+    int gcd = 1;
+
+    int min = (m < n) ? m : n;
+
+    for (int i = 2; i <= min; ++i)
+    {
+        while (m % i == 0 && n % i == 0)
+        {
+            gcd *= i;
+            m /= i;
+            n /= i;
+        }
+    }
+
+    return gcd;
+}
+
+int consecutive_integer(int m, int n)
+{
+    int min = (m < n) ? m : n;
+    while(min != 0)
+    {
+        if(m % min == 0)
+        {
+            if(n % min == 0)
+                return min;
+            else
+                min--;
+        }
+        else
+            min--;
+    }
+    return 1;
+}
+-------------------------------
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+#include <algorithm>
+using namespace std;
+
+int linearSearchIterative(int arr[], int n, int key) {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == key) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+int linearSearchRecursive(int arr[], int key, int index, int n) {
+    if (index == n) {
+        return -1;
+    }
+    if (arr[index] == key) {
+        return index;
+    }
+    return linearSearchRecursive(arr, key, index + 1, n);
+}
+
+int binarySearchIterative(int arr[], int n, int key) {
+    int low = 0, high = n - 1;
+    while (low <= high) {
+        int mid = low + (high - low) / 2;
+        if (arr[mid] == key) {
+            return mid;
+        } else if (arr[mid] < key) {
+            low = mid + 1;
+        } else {
+            high = mid - 1;
+        }
+    }
+    return -1;
+}
+
+int binarySearchRecursive(int arr[], int low, int high, int key) {
+    if (low <= high) {
+        int mid = low + (high - low) / 2;
+        if (arr[mid] == key) {
+            return mid;
+        } else if (arr[mid] < key) {
+            return binarySearchRecursive(arr, mid + 1, high, key);
+        } else {
+            return binarySearchRecursive(arr, low, mid - 1, key);
+        }
+    }
+    return -1;
+}
+
+int main() {
+    srand(time(0)); // Seed for random number generation
+    int n, key;
+    clock_t start, end;
+    double cpu_time_used;
+
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;
+    int arr[n];
+
+    // Generate a random array
+    for (int i = 0; i < n; i++) {
+        arr[i] = rand() % 100; // Assuming elements are in the range 0-99
+    }
+    sort(arr, arr + n); // Sort the array for binary search
+
+    cout << "Enter the element to search: ";
+    cin >> key;
+
+    // Linear Search Iterative
+    start = clock();
+    int resultLinearIterative = linearSearchIterative(arr, n, key);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    cout << "Linear Search (Iterative): ";
+    if (resultLinearIterative != -1) {
+        cout << "Element found at index: " << resultLinearIterative << endl;
+    } else {
+        cout << "Element not found in the array." << endl;
+    }
+    cout << "Time taken for Linear Search (Iterative): " << cpu_time_used << " seconds\n";
+
+    // Linear Search Recursive
+    start = clock();
+    int resultLinearRecursive = linearSearchRecursive(arr, key, 0, n);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    cout << "Linear Search (Recursive): ";
+    if (resultLinearRecursive != -1) {
+        cout << "Element found at index: " << resultLinearRecursive << endl;
+    } else {
+        cout << "Element not found in the array." << endl;
+    }
+    cout << "Time taken for Linear Search (Recursive): " << cpu_time_used << " seconds\n";
+
+    // Binary Search Iterative
+    start = clock();
+    int resultBinaryIterative = binarySearchIterative(arr, n, key);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    cout << "Binary Search (Iterative): ";
+    if (resultBinaryIterative != -1) {
+        cout << "Element found at index: " << resultBinaryIterative << endl;
+    } else {
+        cout << "Element not found in the array." << endl;
+    }
+    cout << "Time taken for Binary Search (Iterative): " << cpu_time_used << " seconds\n";
+
+    // Binary Search Recursive
+    start = clock();
+    int resultBinaryRecursive = binarySearchRecursive(arr, 0, n - 1, key);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    cout << "Binary Search (Recursive): ";
+    if (resultBinaryRecursive != -1) {
+        cout << "Element found at index: " << resultBinaryRecursive << endl;
+    } else {
+        cout << "Element not found in the array." << endl;
+    }
+    cout << "Time taken for Binary Search (Recursive): " << cpu_time_used << " seconds\n";
+
+    return 0;
+}
+-------------------------------------------------------------------------------------------
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <iomanip>
+using namespace std;
+
+void swap(int* a, int* b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int partition(int arr[], int low, int high) {
+    int pivot = arr[low];
+    int i = low;
+    int j = high;
+    while (i < j) {
+        while (arr[i] <= pivot && i <= high) {
+            i++;
+        }
+        while (arr[j] > pivot && j >= low) {
+            j--;
+        }
+        if (i < j) {
+            swap(&arr[i], &arr[j]);
+        }
+    }
+    swap(&arr[low], &arr[j]);
+    return j;
+}
+
+void quickSort(int arr[], int low, int high) {
+    if (low < high) {
+        int partitionIndex = partition(arr, low, high);
+        quickSort(arr, low, partitionIndex - 1);
+        quickSort(arr, partitionIndex + 1, high);
+    }
+}
+
+int main() {
+    int n, l = 1;
+    clock_t s,e;
+    double t;
+    cout << fixed << setprecision(6);
+    cout << "\nEnter number of elements in the array : ";
+    cin >> n;
+    srand(time(NULL));
+    int arr1[1000], arr2[1000];
+
+    for (int i = 0; i < n; i++) {
+        arr1[i] = rand() % 100;
+    }
+    cout << "\nOriginal array : ";
+    for (int i = 0; i < n; i++) {
+        cout << arr1[i] << "\t";
+    }
+    s = clock();
+    quickSort(arr1, 0, n - 1);
+    e= clock();
+    cout << "\n\n Sorted array : ";
+    for (int i = 0; i < n; i++) {
+        cout << arr1[i] << "\t";
+    }
+    t = (double)(e - s) / CLOCKS_PER_SEC;
+    cout << "\n\nTime taken for Quick Sort with pivot at 1st position is " << t<< "seconds\n\n";
+    for (int i = 0; i < n; i++) {
+        arr2[i] = rand() % 2;
+    }
+    cout << "\nOriginal array : ";
+    for (int i = 0; i < n; i++) {
+        cout << arr2[i] << "\t";
+    }
+    s = clock();
+    quickSort(arr2, 0, n - 1);
+    e = clock();
+    cout << "\n\n Sorted array : ";
+    for (int i = 0; i < n; i++) {
+        cout << arr2[i] << "\t";
+    }
+    t = (double)(e - s) / CLOCKS_PER_SEC;
+    cout << "\n\nTime taken for Quick Sort of binary numbers with pivot at 1st position is " << t << "seconds\n\n";
+    return 0;
+}
+---------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+void merge(int arr[], int l, int m, int r) {
+int i, j, k;
+int n1 = m - l + 1;
+int n2 = r - m;
+int L[n1], R[n2];
+for (i = 0; i < n1; i++)
+L[i] = arr[l + i];
+for (j = 0; j < n2; j++)
+R[j] = arr[m + 1 + j];
+i = 0;
+j = 0;
+k = l;
+while (i < n1 && j < n2) {
+if (L[i] <= R[j]) {
+arr[k] = L[i];
+i++;
+} else {
+arr[k] = R[j];
+j++;
+}
+k++;
+}
+while (i < n1) {
+arr[k] = L[i];
+i++;
+k++;
+}
+while (j < n2) {
+
+arr[k] = R[j];
+j++;
+k++;
+}
+}
+void mergeSort(int arr[], int l, int r) {
+if (l < r) {
+int m = l + (r - l) / 2;
+mergeSort(arr, l, m);
+mergeSort(arr, m + 1, r);
+merge(arr, l, m, r);
+}
+}
+void printArray(int arr[], int size) {
+for (int i = 0; i < size; i++)
+printf("%d ", arr[i]);
+printf("\n");
+}
+int main() {
+int arr[100];
+int n;
+printf("Enter the number of elements: ");
+scanf("%d", &n);
+printf("Enter elements (numbers or alphabets): ");
+for (int i = 0; i < n; i++) {
+scanf("%d", &arr[i]); // Read integers properly
+}
+mergeSort(arr, 0, n - 1);
+printf("Sorted array: ");
+printArray(arr, n);
+return 0;
+}
+-------------------------------------------------------------------------------
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <ctime>
+
+using namespace std;
+
+class Graph {
+public:
+    vector<vector<int>> adjList;
+    int numVertices;
+
+    Graph(int vertices) : numVertices(vertices), adjList(vertices) {}
+
+    void addEdge(int src, int dest) {
+        adjList[src].push_back(dest);
+        if (src != dest) {
+            adjList[dest].push_back(src);
+        }
+    }
+};
+
+void bfs(Graph& graph, int startVertex) {
+    vector<bool> visited(graph.numVertices, false);
+    queue<int> q;
+    visited[startVertex] = true;
+    q.push(startVertex);
+
+    while (!q.empty()) {
+        int currentVertex = q.front();
+        q.pop();
+        cout << currentVertex << " ";
+
+        for (int adjVertex : graph.adjList[currentVertex]) {
+            if (!visited[adjVertex]) {
+                visited[adjVertex] = true;
+                q.push(adjVertex);
+            }
+        }
+    }
+    cout << endl;
+}
+
+int main() {
+    int numVertices, numEdges;
+    cout << "Enter the number of vertices: ";
+    cin >> numVertices;
+
+    Graph graph(numVertices);
+
+    cout << "Enter the number of edges: ";
+    cin >> numEdges;
+
+    cout << "Enter the edges (src dest):\n";
+    for (int i = 0; i < numEdges; ++i) {
+        int src, dest;
+        cin >> src >> dest;
+        graph.addEdge(src, dest);
+    }
+
+    int startVertex;
+    cout << "Enter the starting vertex for BFS: ";
+    cin >> startVertex;
+
+    cout << "BFS traversal starting from vertex " << startVertex << ":\n";
+
+    clock_t startTime = clock();
+    bfs(graph, startVertex);
+    clock_t endTime = clock();
+
+    double timeTaken = double(endTime - startTime) / CLOCKS_PER_SEC;
+    cout << "Time taken for BFS: " << timeTaken << " seconds" << endl;
+
+    return 0;
+}
+---------------------------------------------------------------------------------
+#include <iostream>
+#include <vector>
+#include <stack>
+#include<ctime>
+#include<iomanip>
+
+using namespace std;
+
+class Graph {
+public:
+    vector<vector<int>> adjList;
+    int numVertices;
+
+    Graph(int vertices) : numVertices(vertices), adjList(vertices) {}
+
+    void addEdge(int src, int dest) {
+        adjList[src].push_back(dest);
+       
+        adjList[dest].push_back(src);
+    }
+};
+
+void dfs(Graph& graph, int startVertex) {
+    vector<bool> visited(graph.numVertices, false);
+    stack<int> stk;
+    stk.push(startVertex);
+
+    while (!stk.empty()) {
+        int currentVertex = stk.top();
+        stk.pop();
+
+        if (!visited[currentVertex]) {
+            cout << currentVertex << " ";
+            visited[currentVertex] = true;
+        }
+
+        for (int adjVertex : graph.adjList[currentVertex]) {
+            if (!visited[adjVertex]) {
+                stk.push(adjVertex);
+            }
+        }
+    }
+    cout << endl;
+}
+
+int main() {
+    int numVertices, numEdges;
+    clock_t s,e;
+    double t;
+    cout << "Enter the number of vertices: ";
+    cin >> numVertices;
+
+    Graph graph(numVertices);
+
+    cout << "Enter the number of edges: ";
+    cin >> numEdges;
+
+    cout << "Enter the edges (src dest):\n";
+    for (int i = 0; i < numEdges; ++i) {
+        int src, dest;
+        cin >> src >> dest;
+        graph.addEdge(src, dest);
+    }
+
+    int startVertex;
+    cout << "Enter the starting vertex for DFS: ";
+    cin >> startVertex;
+
+    cout << "DFS traversal starting from vertex " << startVertex << ":\n";
+     s = clock();
+    dfs(graph, startVertex);
+     e = clock();
+
+     t = double(e - s) / CLOCKS_PER_SEC;
+    cout << "Time taken for DFS: " << t << " seconds" << endl;
+    return 0;
+}
+---------------------------------------------------------------------------------------
+#include <iostream>
+#include <vector>
+#include <stack>
+
+using namespace std;
+
+class Graph {
+public:
+    vector<vector<int>> adjList;
+    int numVertices;
+
+    Graph(int vertices) : numVertices(vertices), adjList(vertices) {}
+
+    void addEdge(int src, int dest) {
+        adjList[src].push_back(dest);
+    }
+};
+
+void dfsUtil(int v, vector<bool>& visited, stack<int>& Stack, const vector<vector<int>>& adjList) {
+    visited[v] = true;
+
+    for (int i : adjList[v]) {
+        if (!visited[i]) {
+            dfsUtil(i, visited, Stack, adjList);
+        }
+    }
+
+    Stack.push(v);
+}
+
+void topologicalSort(Graph& graph) {
+    stack<int> Stack;
+    vector<bool> visited(graph.numVertices, false);
+
+    for (int i = 0; i < graph.numVertices; i++) {
+        if (!visited[i]) {
+            dfsUtil(i, visited, Stack, graph.adjList);
+        }
+    }
+
+    while (!Stack.empty()) {
+        cout << Stack.top() << " ";
+        Stack.pop();
+    }
+    cout << endl;
+}
+
+int main() {
+    int numVertices, numEdges;
+    cout << "Enter the number of vertices: ";
+    cin >> numVertices;
+
+    Graph graph(numVertices);
+
+    cout << "Enter the number of edges: ";
+    cin >> numEdges;
+
+    cout << "Enter the edges (src dest):\n";
+    for (int i = 0; i < numEdges; ++i) {
+        int src, dest;
+        cin >> src >> dest;
+        graph.addEdge(src, dest);
+    }
+
+    cout << "Topological Sort of the graph:\n";
+    topologicalSort(graph);
+
+    return 0;
+}
+----------------------------------------------------------------
