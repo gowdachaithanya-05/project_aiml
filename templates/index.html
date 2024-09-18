@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot Dashboard</title>
+  <link rel="stylesheet" href="../static/styles.css">
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="user-info">
+        <!-- User Icon -->
+        <img src="https://t4.ftcdn.net/jpg/05/09/59/75/360_F_509597532_RKUuYsERhODmkxkZd82pSHnFtDAtgbzJ.jpg" alt="User Icon" class="user-icon">
+      </div>
+
+      <!-- Document upload section -->
+      <button onclick="document.getElementById('fileUpload').click();">Add Document</button>
+      <input type="file" id="fileUpload" style="display: none;" onchange="uploadDocument(event)" />
+      
+      <!-- Language Selection -->
+      <button>Select Language</button>
+
+      <!-- Previous Chats Section -->
+      <div class="previous-chats">
+        <h4>Previous Chats</h4>
+        <ul id="chatList"></ul>
+      </div>
+
+      <!-- Settings & Help Section -->
+      <div class="bottom-options">
+        <button class="settings-btn">
+          <img src="https://static-00.iconduck.com/assets.00/settings-icon-1964x2048-8nigtrtt.png" alt="Settings Icon" width="20px" height="20px"> Settings
+        </button>
+        <button class="help-btn">
+          <img src="https://cdn-icons-png.flaticon.com/512/1828/1828940.png" alt="Help Icon" width="20px" height="20px"> Help
+        </button>
+      </div>
+    </div>
+
+    <!-- Chat Section -->
+    <div class="chat-section">
+      <div class="chat-header">
+        <h2>Chat</h2>
+        <button onclick="startNewChat()">New Chat</button>
+      </div>
+      <div class="chat-area" id="chatArea">
+        <!-- Chat bubbles will be added here dynamically -->
+      </div>
+
+      <!-- Spinner for processing (rotating animation) -->
+      <div id="spinner" style="display: none; text-align: center; margin-top: 10px;">
+        <img src="      https://openclipart.org/image/2000px/311779
+        " alt="Loading..." style="width: 50px; height: 50px; animation: rotate 1s linear infinite;">
+      </div>
+      <!-- Error message display -->
+      <div id="errorMessage" style="color: red; display: none; text-align: center;"></div>
+
+      <!-- Chat Input -->
+      <div class="chat-input">
+        <input type="text" id="chatMessage" placeholder="Type a message here...">
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+  
+ <script src="../static/script.js"></script>
+ </body>
+</html>
