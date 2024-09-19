@@ -248,9 +248,9 @@ function uploadDocument(event) {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                alert(`Files uploaded successfully.`);
+                alert(`Files uploaded successfully.Details: ${data.details.join(', ')}`);
             } else {
-                alert('Failed to upload the files.');
+                alert('Failed to upload the files. Error: ${data.error || data.message}');
             }
         })
         .catch(error => {
