@@ -176,6 +176,10 @@ from datetime import datetime
 from typing import List
 from logging.handlers import RotatingFileHandler
 from dotenv import load_dotenv
+import asyncio
+from rag import process_hardcoded_folder, query_cases  # Import functions from rag.py
+from rag import process_file  # Import file processing function
+import re
 
 # Load environment variables from .env file
 load_dotenv()
@@ -230,7 +234,7 @@ class FileManager:
             logging.info("Created uploads folder: %s", self.upload_folder)
 
     async def save_files(self, files: List[UploadFile]) -> dict:
-        """Saves uploaded files to the server and stores metadata in the database."""
+        """Saves uploaded files to the server, stores metadata in the database, and processes for ChromaDB."""
         try:
             for file in files:
                 file_location = os.path.join(self.upload_folder, file.filename)
@@ -254,13 +258,20 @@ class FileManager:
                 await database.execute(query)
                 logging.info("File metadata stored in the database for: %s", file.filename)
 
+                # Process the file for ChromaDB
+                try:
+                    process_file(file_location)
+                    logging.info(f"File {file.filename} processed and added to ChromaDB")
+                except Exception as e:
+                    logging.error(f"Error processing file {file.filename} for ChromaDB: {str(e)}")
+
             return {"success": True, "details": [file.filename for file in files]}
 
         except Exception as e:
-            logging.error("Error uploading files or saving metadata: %s", str(e))
+            logging.error("Error uploading files, saving metadata, or processing for ChromaDB: %s", str(e))
             return {"success": False, "error": f"Failed to upload: {str(e)}"}
-
-
+        
+        
 class WebSocketManager:
     """Handles WebSocket connections for chat interactions."""
     def __init__(self, chat_manager: OpenAIChatManager):
@@ -273,14 +284,37 @@ class WebSocketManager:
         try:
             while True:
                 data = await websocket.receive_text()
-                logging.info("Received message from client: %s", data)
-                answer = self.chat_manager.get_response(data)
+                logging.debug(f"Received message: {data}")
+
+                # Query ChromaDB for relevant cases
+                ids, texts = query_cases(data)
+
+                if texts and len(texts) > 0:  # Relevant cases are found
+                    logging.info(f"ChromaDB found results: {texts}")
+                    
+                    # Check if the results seem relevant enough (e.g., by thresholding length)
+                    if len(texts[0]) > 50:  # Assuming a case result should have more than 50 characters
+                        combined_query = f"User query: {data}\nRelevant cases: {texts[0]}"
+                        openai_response = self.chat_manager.get_response(combined_query)
+                        answer = f"Relevant Case IDs: {ids}\nText: {texts[0]}\n\nOpenAI Response: {openai_response}"
+                    else:
+                        logging.info("ChromaDB returned results but not relevant, querying OpenAI directly.")
+                        openai_response = self.chat_manager.get_response(f"{data}\nNo relevant cases found.")
+                        answer = f"AI Response: {openai_response}"
+
+                else:  # No relevant cases found
+                    logging.info("No relevant cases found in ChromaDB, querying OpenAI.")
+                    # Send the original query and mention that no relevant cases were found
+                    openai_response = self.chat_manager.get_response(f"{data}\nNo relevant cases found.")
+                    answer = f"AI Response: {openai_response}"
+
+                logging.info(f"Sending answer: {answer}")
                 await websocket.send_text(answer)
-                logging.info("Sent message to client: %s", answer)
         except WebSocketDisconnect:
             logging.warning("WebSocket client disconnected")
         except Exception as e:
-            logging.error("Error in WebSocket communication: %s", str(e))
+            logging.error(f"WebSocket error: {str(e)}")
+
 
 
 class Application:
@@ -294,9 +328,16 @@ class Application:
         self.chat_manager = OpenAIChatManager(api_key=os.getenv("OPENAI_API_KEY"))
         self.websocket_manager = WebSocketManager(chat_manager=self.chat_manager)
 
+        self.folder_path = r"./uploads"
+
         # Set up middleware and routes
         self._setup_middleware()
         self._setup_routes()
+        
+        @self.app.on_event("startup")
+        async def startup_event():
+            logging.info("Server startup: processing folder.")
+            asyncio.create_task(self.process_folder_async())
 
     def _setup_middleware(self):
         """Sets up CORS middleware."""
@@ -316,8 +357,12 @@ class Application:
         # File upload route for handling multiple files
         @self.app.post("/upload")
         async def upload_files(files: List[UploadFile] = File(...)):
-            return await self.file_manager.save_files(files)
-
+            result = await self.file_manager.save_files(files)
+            if result["success"]:
+                return {"success": True, "message": "Files uploaded and processed successfully", "details": result["details"]}
+            else:
+                return {"success": False, "message": "Error occurred during upload or processing", "error": result["error"]}
+        
         # Serve the main HTML page
         @self.app.get("/", response_class=HTMLResponse)
         async def get_index():
@@ -330,11 +375,29 @@ class Application:
                 logging.error("Error serving index.html: %s", str(e))
                 return HTMLResponse(content="Error loading index.html", status_code=500)
 
+        # Add an endpoint to process the folder on demand
+        @self.app.post("/process-folder/")
+        async def process_folder():
+            await self.process_folder_async()
+            return {"message": "Files processed successfully."}
+        
         # WebSocket route for chat
         @self.app.websocket("/ws/chat")
         async def websocket_endpoint(websocket: WebSocket):
             await self.websocket_manager.handle_websocket(websocket)
 
+    async def process_folder_async(self):
+        """Process folder asynchronously without blocking the server."""
+        try:
+            logging.info(f"Starting to process folder: {self.folder_path}")
+            for filename in os.listdir(self.folder_path):
+                file_path = os.path.join(self.folder_path, filename)
+                if os.path.isfile(file_path):
+                    process_file(file_path)  # Process each file
+            logging.info("Finished processing all files in folder.")
+        except Exception as e:
+            logging.error(f"Error processing folder: {str(e)}")
+    
     async def startup(self):
         """Connect to the database on app startup."""
         await database.connect()
