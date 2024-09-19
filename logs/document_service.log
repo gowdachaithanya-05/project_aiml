@@ -413,3 +413,84 @@ It is important for both parties to carefully consider all aspects of a divorce 
 2024-09-17 19:30:22,237 - WARNING - WebSocket client disconnected
 2024-09-17 19:30:22,339 - INFO - Disconnected from database postgresql://postgres:********@db:5432/doc_db
 2024-09-17 19:30:22,341 - INFO - Database disconnected
+2024-09-18 09:25:27,546 - INFO - Connected to database postgresql://postgres:********@db:5432/doc_db
+2024-09-18 09:25:27,550 - INFO - Database connected
+2024-09-18 09:43:19,917 - INFO - Disconnected from database postgresql://postgres:********@db:5432/doc_db
+2024-09-18 09:43:19,917 - INFO - Database disconnected
+2024-09-18 09:43:58,741 - INFO - Connected to database postgresql://postgres:********@db:5432/doc_db
+2024-09-18 09:43:58,743 - INFO - Database connected
+2024-09-18 09:44:05,070 - INFO - Served index.html
+2024-09-18 09:44:05,309 - INFO - WebSocket connection accepted
+2024-09-18 09:44:21,716 - INFO - File uploaded successfully: TOH.png
+2024-09-18 09:44:21,726 - INFO - File metadata stored in the database for: TOH.png
+2024-09-18 09:51:12,487 - INFO - File uploaded successfully: NAME.docx
+2024-09-18 09:51:12,523 - INFO - File metadata stored in the database for: NAME.docx
+2024-09-18 10:02:06,802 - INFO - File uploaded successfully: web.pdf
+2024-09-18 10:02:06,833 - INFO - File metadata stored in the database for: web.pdf
+2024-09-18 10:05:45,367 - WARNING - WebSocket client disconnected
+2024-09-18 10:05:45,468 - INFO - Disconnected from database postgresql://postgres:********@db:5432/doc_db
+2024-09-18 10:05:45,469 - INFO - Database disconnected
+2024-09-18 10:09:40,233 - INFO - Connected to database postgresql://postgres:********@db:5432/doc_db
+2024-09-18 10:09:40,235 - INFO - Database connected
+2024-09-18 10:09:52,492 - INFO - Served index.html
+2024-09-18 10:09:52,727 - INFO - WebSocket connection accepted
+2024-09-18 10:10:07,164 - INFO - File uploaded successfully: unit-5(dv).docx
+2024-09-18 10:10:07,177 - INFO - File metadata stored in the database for: unit-5(dv).docx
+2024-09-18 10:10:07,186 - INFO - File uploaded successfully: unit-5.docx.docx
+2024-09-18 10:10:07,192 - INFO - File metadata stored in the database for: unit-5.docx.docx
+2024-09-18 10:38:36,615 - INFO - File uploaded successfully: TRY HACK ME.docx
+2024-09-18 10:38:36,652 - INFO - File metadata stored in the database for: TRY HACK ME.docx
+2024-09-18 10:48:53,082 - INFO - Served index.html
+2024-09-18 10:48:53,125 - INFO - WebSocket connection accepted
+2024-09-18 10:49:18,362 - INFO - File uploaded successfully: 1a.txt
+2024-09-18 10:49:18,402 - INFO - File metadata stored in the database for: 1a.txt
+2024-09-18 10:49:18,410 - INFO - File uploaded successfully: 1MS22CY018_BFS&DFS.pdf
+2024-09-18 10:49:18,415 - INFO - File metadata stored in the database for: 1MS22CY018_BFS&DFS.pdf
+2024-09-18 10:53:08,850 - WARNING - WebSocket client disconnected
+2024-09-18 10:53:08,851 - WARNING - WebSocket client disconnected
+2024-09-18 10:53:08,953 - INFO - Disconnected from database postgresql://postgres:********@db:5432/doc_db
+2024-09-18 10:53:08,954 - INFO - Database disconnected
+2024-09-18 10:53:52,037 - INFO - Connected to database postgresql://postgres:********@db:5432/doc_db
+2024-09-18 10:53:52,039 - INFO - Database connected
+2024-09-18 10:54:17,619 - INFO - Served index.html
+2024-09-18 10:54:17,741 - INFO - WebSocket connection accepted
+2024-09-18 10:54:38,077 - INFO - File uploaded successfully: leetcode.txt
+2024-09-18 10:54:38,087 - INFO - File metadata stored in the database for: leetcode.txt
+2024-09-18 10:54:38,093 - INFO - File uploaded successfully: Rescued document.doc
+2024-09-18 10:54:38,098 - INFO - File metadata stored in the database for: Rescued document.doc
+2024-09-18 11:45:47,947 - WARNING - WebSocket client disconnected
+2024-09-18 11:45:48,048 - INFO - Disconnected from database postgresql://postgres:********@db:5432/doc_db
+2024-09-18 11:45:48,049 - INFO - Database disconnected
+2024-09-18 11:46:36,008 - INFO - Connected to database postgresql://postgres:********@db:5432/doc_db
+2024-09-18 11:46:36,010 - INFO - Database connected
+2024-09-18 11:48:21,577 - INFO - Disconnected from database postgresql://postgres:********@db:5432/doc_db
+2024-09-18 11:48:21,578 - INFO - Database disconnected
+2024-09-18 11:48:57,229 - INFO - Connected to database postgresql://postgres:********@db:5432/doc_db
+2024-09-18 11:48:57,230 - INFO - Database connected
+2024-09-18 11:49:13,339 - INFO - Served index.html
+2024-09-18 11:49:13,614 - INFO - WebSocket connection accepted
+2024-09-18 11:49:26,325 - INFO - File uploaded successfully: TRY HACK ME.docx
+2024-09-18 11:49:26,336 - INFO - File metadata stored in the database for: TRY HACK ME.docx
+2024-09-18 11:50:14,717 - WARNING - WebSocket client disconnected
+2024-09-18 13:21:06,391 - INFO - Connected to database postgresql://postgres:********@db:5432/doc_db
+2024-09-18 13:21:06,393 - INFO - Database connected
+2024-09-18 13:22:40,400 - INFO - Served index.html
+2024-09-18 13:22:40,528 - INFO - WebSocket connection accepted
+2024-09-18 13:22:52,705 - INFO - File uploaded successfully: lab-4.txt
+2024-09-18 13:22:52,718 - INFO - File metadata stored in the database for: lab-4.txt
+2024-09-18 13:39:57,710 - INFO - Served index.html
+2024-09-18 13:39:57,906 - INFO - WebSocket connection accepted
+2024-09-18 13:40:07,510 - INFO - File uploaded successfully: Basic HTML Questions.pdf
+2024-09-18 13:40:07,549 - INFO - File metadata stored in the database for: Basic HTML Questions.pdf
+2024-09-18 16:07:55,363 - WARNING - WebSocket client disconnected
+2024-09-18 16:07:55,375 - WARNING - WebSocket client disconnected
+2024-09-18 16:07:55,461 - INFO - Disconnected from database postgresql://postgres:********@db:5432/doc_db
+2024-09-18 16:07:55,462 - INFO - Database disconnected
+2024-09-18 16:08:40,481 - INFO - Connected to database postgresql://postgres:********@db:5432/doc_db
+2024-09-18 16:08:40,483 - INFO - Database connected
+2024-09-18 17:13:17,844 - INFO - Disconnected from database postgresql://postgres:********@db:5432/doc_db
+2024-09-18 17:13:17,846 - INFO - Database disconnected
+2024-09-18 17:14:08,218 - INFO - Connected to database postgresql://postgres:********@db:5432/doc_db
+2024-09-18 17:14:08,221 - INFO - Database connected
+2024-09-19 08:19:06,710 - INFO - Disconnected from database postgresql://postgres:********@db:5432/doc_db
+2024-09-19 08:19:06,713 - INFO - Database disconnected

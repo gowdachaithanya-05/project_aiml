@@ -1,5 +1,6 @@
-from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String
+from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String, Text, DateTime, ForeignKey
 from database import DATABASE_URL
+from sqlalchemy.sql import func
 
 # Define metadata and table
 metadata = MetaData()
@@ -12,6 +13,24 @@ meta_table = Table(
     Column('file_size', Integer, nullable=False),
     Column('upload_timestamp', String(255), nullable=False),
     Column('user', String(255), nullable=True)
+)
+
+sessions = Table(
+    'sessions',
+    metadata,
+    Column('id', Integer, primary_key=True),
+    Column('session_id', String(255), unique=True, nullable=False),
+    Column('created_at', DateTime, server_default=func.now())
+)
+
+questions = Table(
+    'questions',
+    metadata,
+    Column('id', Integer, primary_key=True),
+    Column('session_id', String(255), ForeignKey('sessions.session_id'), nullable=False),
+    Column('question_id', String(255), unique=True, nullable=False),
+    Column('question_text', Text, nullable=False),
+    Column('created_at', DateTime, server_default=func.now())
 )
 
 # Create engine and execute the table creation
