@@ -413,3 +413,32 @@ It is important for both parties to carefully consider all aspects of a divorce 
 2024-09-17 19:30:22,237 - WARNING - WebSocket client disconnected
 2024-09-17 19:30:22,339 - INFO - Disconnected from database postgresql://postgres:********@db:5432/doc_db
 2024-09-17 19:30:22,341 - INFO - Database disconnected
+2024-09-18 17:52:22,610 - INFO - Connected to database postgresql://postgres:********@db:5432/doc_db
+2024-09-18 17:52:22,634 - INFO - Database connected
+2024-09-18 18:00:07,473 - INFO - Served index.html
+2024-09-18 18:00:09,566 - INFO - WebSocket connection accepted
+2024-09-18 18:00:12,604 - INFO - Received message from client: hey
+2024-09-18 18:00:17,334 - INFO - Sent message to client: Hello! How can I assist you today?
+2024-09-18 18:01:44,417 - INFO - File uploaded successfully: Website and Mobile Development Estimates.xlsx
+2024-09-18 18:01:46,074 - INFO - File metadata stored in the database for: Website and Mobile Development Estimates.xlsx
+2024-09-18 18:18:06,749 - WARNING - WebSocket client disconnected
+2024-09-18 18:18:06,887 - INFO - Disconnected from database postgresql://postgres:********@db:5432/doc_db
+2024-09-18 18:18:06,900 - INFO - Database disconnected
+2024-09-18 18:21:46,059 - INFO - Connected to database postgresql://postgres:********@db:5432/doc_db
+2024-09-18 18:21:46,132 - INFO - Database connected
+2024-09-18 18:21:46,604 - INFO - Served index.html
+2024-09-18 18:21:47,735 - INFO - WebSocket connection accepted
+2024-09-18 18:21:57,119 - INFO - File uploaded successfully: Details required.docx
+2024-09-18 18:21:57,344 - INFO - File metadata stored in the database for: Details required.docx
+2024-09-18 18:26:28,493 - WARNING - WebSocket client disconnected
+2024-09-18 18:26:28,824 - INFO - Disconnected from database postgresql://postgres:********@db:5432/doc_db
+2024-09-18 18:26:28,837 - INFO - Database disconnected
+2024-09-18 18:33:11,368 - INFO - Connected to database postgresql://postgres:********@db:5432/doc_db
+2024-09-18 18:33:11,450 - INFO - Database connected
+2024-09-18 18:33:21,479 - INFO - Served index.html
+2024-09-18 18:33:22,499 - INFO - WebSocket connection accepted
+2024-09-18 18:34:44,046 - INFO - File uploaded successfully: Details required.docx
+2024-09-18 18:34:44,343 - INFO - File metadata stored in the database for: Details required.docx
+2024-09-18 18:59:08,813 - WARNING - WebSocket client disconnected
+2024-09-19 05:38:39,858 - INFO - Disconnected from database postgresql://postgres:********@db:5432/doc_db
+2024-09-19 05:38:39,903 - INFO - Database disconnected

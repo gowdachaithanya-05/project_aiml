@@ -56,7 +56,6 @@
 #     driver: local                    # Persistent volume for Elasticsearch data
 
 
-version: '3'
 
 services:
   app:
