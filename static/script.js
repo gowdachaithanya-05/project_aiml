@@ -87,6 +87,8 @@ function startNewChat() {
     const chatList = document.getElementById("chatList");
     const newChatItem = document.createElement("li");
     newChatItem.classList.add('chat-item');
+    const sessionId = uuidv4(); // Generate a new session ID or retrieve from your logic
+    newChatItem.setAttribute("data-session-id", sessionId); // Set data attribute for session ID
     newChatItem.innerHTML = `Chat ${chatList.children.length + 1} <span class="dots-menu" onclick="showOptions(this)">...</span>`;
     newChatItem.onclick = (event) => loadChat(event, chatList.children.length);
     chatList.appendChild(newChatItem);
@@ -97,13 +99,35 @@ function startNewChat() {
 }
 
 // Load a previous chat
-function loadChat(event, index) {
+async function loadChat(event, index) {
     const target = event.target;
     if (target.classList.contains('dots-menu')) {
         return;
     }
-    document.getElementById("chatArea").innerHTML = chatHistory[index];
-    currentChatIndex = index;
+    const chatArea = document.getElementById("chatArea");
+  chatArea.innerHTML = ''; // Clear current chat area
+
+  // Fetch chat history for the selected session
+  const response = await fetch(`/get-chat-history?session_id=${target.getAttribute("data-session-id")}`);
+  const chatHistoryData = await response.json();
+
+  // Display questions and answers in the chat area
+  chatHistoryData.forEach(chat => {
+    const chatBubble = document.createElement("div");
+    chatBubble.classList.add("chat-bubble");
+
+    if (chat.is_user_message) {
+      chatBubble.classList.add("user");
+      chatBubble.textContent = `You: ${chat.message_text}`;
+    } else {
+      chatBubble.classList.add("bot");
+      chatBubble.textContent = `Bot: ${chat.message_text}`;
+    }
+
+    chatArea.appendChild(chatBubble);
+  });
+
+  currentChatIndex = index; // Set current index to the loaded chat
 }
 
 // Show options when clicking on dots menu
