@@ -2,6 +2,7 @@ let chatHistory = [];
 let currentChatIndex = -1;
 let websocket;
 let isProcessing = false; // To track if a message is being processed
+let existingFiles = [];
 
 // WebSocket setup
 function connectWebSocket() {
@@ -40,6 +41,13 @@ function connectWebSocket() {
         console.log('WebSocket connection closed');
         showError("WebSocket connection closed. Please refresh the page or check your network.");
     };
+}
+
+function checkScriptLoaded() {
+    if (typeof sendMessage === 'undefined') {
+        console.error('script.js failed to load properly');
+        showError("Failed to load necessary scripts. Please refresh the page or check your network.");
+    }
 }
 
 // Send message through WebSocket
@@ -252,36 +260,126 @@ function handleDrop(event) {
     processFiles(files);
 }
 
-// Process file input and handle validation
-function uploadDocument(event) {
-    const files = event.target.files;
+function showFileGroupModal() {
+    document.getElementById("fileGroupModal").style.display = "block";
+    loadExistingFiles();
+  }
+  
+  function hideFileGroupModal() {
+    document.getElementById("fileGroupModal").style.display = "none";
+  }
+  
+  function loadExistingFiles() {
+    fetch('/get-existing-files')
+      .then(response => response.json())
+      .then(files => {
+        existingFiles = files;
+        displayExistingFiles();
+      })
+      .catch(error => console.error('Error loading existing files:', error));
+  }
+  
+  function displayExistingFiles() {
+    const container = document.getElementById('existingFiles');
+    container.innerHTML = '';
+    existingFiles.forEach(file => {
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.id = file;
+      checkbox.name = 'existingFile';
+      checkbox.value = file;
+  
+      const label = document.createElement('label');
+      label.htmlFor = file;
+      label.appendChild(document.createTextNode(file));
+  
+      container.appendChild(checkbox);
+      container.appendChild(label);
+      container.appendChild(document.createElement('br'));
+    });
+  }
+  
+  document.getElementById('fileGroupForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const groupName = document.getElementById('groupName').value;
+    const selectedFiles = [...document.querySelectorAll('input[name="existingFile"]:checked')].map(el => el.value);
 
-    if (files && files.length > 0) {
-        const formData = new FormData();
+    const formData = new FormData();
+    formData.append('group_name', groupName);
+    selectedFiles.forEach(file => formData.append('files', file));
 
-        // Add multiple files to the FormData
-        for (const file of files) {
-            formData.append('files', file);
+    fetch('/create-file-group', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        // Check if the response is OK (HTTP status 200-299)
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
+        return response.json(); // Attempt to parse JSON response
+    })
+    .then(data => {
+        // Check if data is valid (not null or undefined) before accessing properties
+        if (data && typeof data === 'object') {
+            if (data.success) {
+                alert('File group created successfully!');
+                hideFileGroupModal();
+                loadFileGroups();
+            } else {
+                alert('Error creating file group: ' + (data.error || 'Unknown error'));
+            }
+        } else {
+            throw new Error('Invalid response format received from the server.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred: ' + error.message);
+    });
+});
 
-        // Send the files to the backend using Fetch API
-        fetch('/upload', {
+
+  function updateFileList(newFiles) {
+    existingFiles = [...new Set([...existingFiles, ...newFiles])];
+    if (document.getElementById("fileGroupModal").style.display === "block") {
+      displayExistingFiles();
+    }
+  }
+
+// Process file input and handle validation
+async function uploadDocument(event) {
+    const files = event.target.files;
+  
+    if (files && files.length > 0) {
+      const formData = new FormData();
+  
+      for (const file of files) {
+        formData.append('files', file);
+      }
+  
+      try {
+        const response = await fetch('/upload', {
             method: 'POST',
             body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert(`Files uploaded successfully.Details: ${data.details.join(', ')}`);
-            } else {
-                alert('Failed to upload the files. Error: ${data.error || data.message}');
-            }
-        })
-        .catch(error => {
-            console.error('Error uploading files:', error);
-            alert('An error occurred while uploading the files.');
         });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        if (data && data.success) {
+            alert(`Files uploaded successfully. Details: ${data.details.join(', ')}`);
+            updateFileList(data.details); // Update the file list with new files
+        } else {
+            alert('Failed to upload the files. Error: ' + (data.error || data.message || 'Unknown error'));
+        }
+    } catch (error) {
+        console.error('Error uploading files:', error);
+        alert('An error occurred while uploading the files: ' + error.message);
     }
+}
 }
 
 
@@ -362,6 +460,84 @@ document.addEventListener('click', function(event) {
         menu.remove();
     }
 });
+
+function toggleFilterDialog() {
+    const dialog = document.getElementById('filterDialog');
+    dialog.style.display = dialog.style.display === 'none' ? 'block' : 'none';
+    
+    if (dialog.style.display === 'block') {
+      // Reset to default state when opening
+      document.querySelector('input[name="filter"][value="all"]').checked = true;
+      document.getElementById('groupListContainer').style.display = 'none';
+      document.getElementById('applyFilter').style.display = 'none';
+    }
+  }
+  
+  function showGroupList() {
+    const groupListContainer = document.getElementById('groupListContainer');
+    const applyButton = document.getElementById('applyFilter');
+    
+    if (document.querySelector('input[name="filter"][value="group"]').checked) {
+      groupListContainer.style.display = 'flex';
+      applyButton.style.display = 'block';
+      loadFileGroups();
+    } else {
+      groupListContainer.style.display = 'none';
+      applyButton.style.display = 'none';
+    }
+  }
+  
+  function loadFileGroups() {
+    fetch('/get-file-groups')
+      .then(response => response.json())
+      .then(groups => {
+        displayFileGroups(groups);
+      })
+      .catch(error => console.error('Error loading file groups:', error));
+  }
+  
+  function displayFileGroups(groups) {
+    const container = document.getElementById('groupListContainer');
+    if (!container) return;
+  
+    container.innerHTML = '';
+    groups.forEach(group => {
+      const groupItem = document.createElement('div');
+      
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.id = `group-${group.id}`;
+      checkbox.name = 'fileGroup';
+      checkbox.value = group.id;
+  
+      const label = document.createElement('label');
+      label.htmlFor = `group-${group.id}`;
+      label.appendChild(document.createTextNode(group.group_name));
+  
+      groupItem.appendChild(checkbox);
+      groupItem.appendChild(label);
+  
+      container.appendChild(groupItem);
+    });
+  }
+  
+  // Add event listeners
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterForm = document.getElementById('filterForm');
+    filterForm.addEventListener('change', function(event) {
+      if (event.target.name === 'filter') {
+        showGroupList();
+      }
+    });
+  
+    const applyButton = document.getElementById('applyFilter');
+    applyButton.addEventListener('click', function() {
+      // Here you can add the logic to apply the selected filters
+      console.log('Applying filters...');
+      // TODO: Implement filter application logic
+      toggleFilterDialog(); // Close the dialog after applying
+    });
+  });
 
 // Initialize WebSocket connection when the page loads
 window.onload = function() {
