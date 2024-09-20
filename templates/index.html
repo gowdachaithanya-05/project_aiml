@@ -22,6 +22,9 @@
       <!-- Language Selection -->
       <button>Select Language</button>
 
+      <!-- Group Creation -->
+      <button onclick="showFileGroupModal()">Create Group</button>
+
       <!-- Previous Chats Section -->
       <div class="previous-chats">
         <h4>Previous Chats</h4>
@@ -59,11 +62,35 @@
 
       <!-- Chat Input -->
       <div class="chat-input">
+        <div class="filter-icon" onclick="toggleFilterDialog()">
+          <img src="https://cdn-icons-png.flaticon.com/512/107/107799.png" alt="Filter" style="width: 15px; height: 15px; border-radius: 20%;">
+        </div>
         <input type="text" id="chatMessage" placeholder="Type a message here...">
         <button onclick="sendMessage()">Send</button>
       </div>
-    </div>
-  </div>
+
+      
+      <!-- Filter Options Dialog -->
+      <div id="filterDialog" class="modal" style="display: none;">
+        <div class="modal-content">
+          <span class="close" onclick="toggleFilterDialog()">&times;</span>
+          <h2>Filter Options</h2>
+          <br>
+          <form id="filterForm">
+            <label>
+              <input type="radio" name="filter" value="all" checked> All
+            </label><br>
+            <label>
+              <input type="radio" name="filter" value="group"> Query by Groups
+            </label>
+            <div id="groupListContainer" class="group-list-container" style="display: none;">
+              <!-- File groups will be populated here -->
+            </div>
+            <button type="button" id="applyFilter" style="display: none;">Apply</button>
+          </form>
+        </div>
+      </div>
+
 
   <!-- Drag-and-drop modal -->
   <div id="uploadModal" class="modal">
@@ -77,6 +104,24 @@
       </div>
     </div>
   </div>
+
+  <div id="fileGroupModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="hideFileGroupModal()">&times;</span>
+    <h2>Create File Group</h2><br><br>
+    <form id="fileGroupForm">
+      <label for="groupName">Group Name:</label>
+      <input type="text" id="groupName" name="groupName" required>
+      <br><br>
+      <p align="left">Select files you want to include:</p>
+      <div id="existingFiles" style="max-height: 200px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+        <!-- Existing files will be populated here -->
+      </div>
+      <br>
+      <button type="submit" id="groupsubmit">Create</button>
+    </form>
+  </div>
+</div>
 
  <script src="../static/script.js"></script>
 </body>
