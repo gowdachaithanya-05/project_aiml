@@ -33,6 +33,23 @@ questions = Table(
     Column('created_at', DateTime, server_default=func.now())
 )
 
+file_groups = Table(
+    'file_groups',
+    metadata,
+    Column('id', Integer, primary_key=True),
+    Column('group_name', String(255), nullable=False),
+    Column('created_at', DateTime, server_default=func.now())
+)
+
+group_files = Table(
+    'group_files',
+    metadata,
+    Column('id', Integer, primary_key=True),
+    Column('group_id', Integer, ForeignKey('file_groups.id'), nullable=False),
+    Column('file_name', String(255), nullable=False),
+    Column('added_at', DateTime, server_default=func.now())
+)
+
 # Create engine and execute the table creation
 engine = create_engine(DATABASE_URL)
 metadata.create_all(engine)
