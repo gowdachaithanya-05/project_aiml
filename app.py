@@ -1,10 +1,10 @@
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect, File, UploadFile, Query
+from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect, File, UploadFile, Query, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, JSONResponse
 from pathlib import Path
 from database import Database, database  # Make sure this exists
-from models import meta_table  # Make sure this exists
+from models import meta_table, sessions, questions, file_groups, group_files # Make sure this exists
 import openai
 import os
 import logging
@@ -17,6 +17,10 @@ from rag import process_hardcoded_folder, query_cases  # Import functions from r
 from rag import process_file  # Import file processing function
 import re
 import uuid
+
+# Utility function for consistent JSON responses
+def create_json_response(success: bool, message: str, details: dict = None):
+    return JSONResponse(content={"success": success, "message": message, "details": details})
 
 # Load environment variables from .env file
 load_dotenv()
@@ -70,6 +74,10 @@ class FileManager:
             os.makedirs(self.upload_folder)
             logging.info("Created uploads folder: %s", self.upload_folder)
 
+    async def get_existing_files(self) -> List[str]:
+        """Returns a list of existing files in the upload folder."""
+        return [f for f in os.listdir(self.upload_folder) if os.path.isfile(os.path.join(self.upload_folder, f))]
+    
     async def save_files(self, files: List[UploadFile]) -> dict:
         """Saves uploaded files to the server, stores metadata in the database, and processes for ChromaDB."""
         try:
@@ -206,14 +214,56 @@ class Application:
         # Serve static files
         self.app.mount("/static", StaticFiles(directory="static"), name="static")
 
+        @self.app.get("/get-existing-files")
+        async def get_existing_files():
+            return await self.file_manager.get_existing_files()
+
+        @self.app.get("/get-file-groups")
+        async def get_file_groups():
+            query = file_groups.select()
+            results = await database.fetch_all(query)
+            return [{"id": row['id'], "group_name": row['group_name']} for row in results]
+
+        
+        @self.app.post("/create-file-group")
+        async def create_file_group(
+            group_name: str = Form(...), 
+            files: List[str] = Form(...)
+        ):
+            if not group_name or len(files) == 0:
+                raise HTTPException(status_code=400, detail="Group name and at least one file must be provided.")
+
+            try:
+                # Insert the new group into the database
+                query = file_groups.insert().values(group_name=group_name)
+                result = await database.execute(query)
+                group_id = result
+
+                # Check if group_id was created successfully
+                if not group_id:
+                    raise HTTPException(status_code=500, detail="Failed to create file group.")
+
+                # Associate files with the group
+                for file in files:
+                    query = group_files.insert().values(group_id=group_id, file_name=file)
+                    await database.execute(query)
+
+                return {"success": True, "message": "File group created successfully."}
+            
+            except Exception as e:
+                logging.error(f"Error creating file group: {str(e)}")
+                # Returning a more generic error message to the client
+                raise HTTPException(status_code=500, detail="An error occurred while creating the file group.")
+
+
         # File upload route for handling multiple files
         @self.app.post("/upload")
         async def upload_files(files: List[UploadFile] = File(...)):
             result = await self.file_manager.save_files(files)
             if result["success"]:
-                return {"success": True, "message": "Files uploaded and processed successfully", "details": result["details"]}
+                return create_json_response(True, "Files uploaded and processed successfully", {"files": result["details"]})
             else:
-                return {"success": False, "message": "Error occurred during upload or processing", "error": result["error"]}
+                return create_json_response(False, "Error occurred during upload or processing", {"error": result["error"]})
         
         # Serve the main HTML page
         @self.app.get("/", response_class=HTMLResponse)
