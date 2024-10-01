@@ -1,0 +1,1435 @@
+2024-09-24 18:15:45,226 - rag - INFO - OpenAI API key loaded.
+2024-09-24 18:15:45,373 - rag - INFO - ChromaDB collection 'court_cases' created successfully.
+2024-09-24 18:15:45,409 - rag - INFO - Processing file: ./uploads/case1.docx
+2024-09-24 18:15:45,428 - rag - INFO - Reading Word file: ./uploads/case1.docx
+2024-09-24 18:15:45,583 - rag - INFO - Successfully read Word file: ./uploads/case1.docx
+2024-09-24 18:15:45,608 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-24 18:15:46,215 - rag - INFO - Embeddings successfully generated.
+2024-09-24 18:15:46,219 - rag - INFO - Document 'case1.docx' presence in ChromaDB: False
+2024-09-24 18:15:46,224 - rag - INFO - Data from ./uploads/case1.docx inserted into ChromaDB successfully.
+2024-09-24 18:15:46,227 - rag - INFO - Processing file: ./uploads/case2.pdf
+2024-09-24 18:15:46,227 - rag - INFO - Reading PDF file: ./uploads/case2.pdf
+2024-09-24 18:15:46,264 - rag - INFO - Successfully read PDF file: ./uploads/case2.pdf
+2024-09-24 18:15:46,265 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-24 18:15:46,654 - rag - INFO - Embeddings successfully generated.
+2024-09-24 18:15:46,657 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: False
+2024-09-24 18:15:46,661 - rag - INFO - Data from ./uploads/case2.pdf inserted into ChromaDB successfully.
+2024-09-24 18:15:46,663 - rag - INFO - Processing file: ./uploads/case3.docx
+2024-09-24 18:15:46,663 - rag - INFO - Reading Word file: ./uploads/case3.docx
+2024-09-24 18:15:46,678 - rag - INFO - Successfully read Word file: ./uploads/case3.docx
+2024-09-24 18:15:46,679 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-24 18:15:47,157 - rag - INFO - Embeddings successfully generated.
+2024-09-24 18:15:47,160 - rag - INFO - Document 'case3.docx' presence in ChromaDB: False
+2024-09-24 18:15:47,163 - rag - INFO - Data from ./uploads/case3.docx inserted into ChromaDB successfully.
+2024-09-24 18:15:47,167 - rag - INFO - Processing file: ./uploads/case4.docx
+2024-09-24 18:15:47,169 - rag - INFO - Reading Word file: ./uploads/case4.docx
+2024-09-24 18:15:47,200 - rag - INFO - Successfully read Word file: ./uploads/case4.docx
+2024-09-24 18:15:47,201 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-24 18:15:47,734 - rag - INFO - Embeddings successfully generated.
+2024-09-24 18:15:47,737 - rag - INFO - Document 'case4.docx' presence in ChromaDB: False
+2024-09-24 18:15:47,740 - rag - INFO - Data from ./uploads/case4.docx inserted into ChromaDB successfully.
+2024-09-24 18:15:47,743 - rag - INFO - Processing file: ./uploads/case5.pdf
+2024-09-24 18:15:47,743 - rag - INFO - Reading PDF file: ./uploads/case5.pdf
+2024-09-24 18:15:47,777 - rag - INFO - Successfully read PDF file: ./uploads/case5.pdf
+2024-09-24 18:15:47,777 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-24 18:15:48,233 - rag - INFO - Embeddings successfully generated.
+2024-09-24 18:15:48,237 - rag - INFO - Document 'case5.pdf' presence in ChromaDB: False
+2024-09-24 18:15:48,241 - rag - INFO - Data from ./uploads/case5.pdf inserted into ChromaDB successfully.
+2024-09-24 18:15:48,248 - rag - INFO - Processing file: ./uploads/case6.pdf
+2024-09-24 18:15:48,249 - rag - INFO - Reading PDF file: ./uploads/case6.pdf
+2024-09-24 18:15:48,289 - rag - INFO - Successfully read PDF file: ./uploads/case6.pdf
+2024-09-24 18:15:48,290 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-24 18:15:48,878 - rag - INFO - Embeddings successfully generated.
+2024-09-24 18:15:48,880 - rag - INFO - Document 'case6.pdf' presence in ChromaDB: False
+2024-09-24 18:15:48,882 - rag - INFO - Data from ./uploads/case6.pdf inserted into ChromaDB successfully.
+2024-09-24 18:15:48,884 - rag - INFO - Processing file: ./uploads/court_case_summary.docx
+2024-09-24 18:15:48,884 - rag - INFO - Reading Word file: ./uploads/court_case_summary.docx
+2024-09-24 18:15:48,896 - rag - INFO - Successfully read Word file: ./uploads/court_case_summary.docx
+2024-09-24 18:15:48,896 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-24 18:15:49,270 - rag - INFO - Embeddings successfully generated.
+2024-09-24 18:15:49,274 - rag - INFO - Document 'court_case_summary.docx' presence in ChromaDB: False
+2024-09-24 18:15:49,279 - rag - INFO - Data from ./uploads/court_case_summary.docx inserted into ChromaDB successfully.
+2024-09-24 18:15:49,282 - rag - INFO - Processing file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-24 18:15:49,283 - rag - INFO - Reading PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-24 18:15:49,480 - rag - INFO - Successfully read PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-24 18:15:49,481 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-24 18:15:49,883 - rag - INFO - Embeddings successfully generated.
+2024-09-24 18:15:49,885 - rag - INFO - Document 'Cy44-02 -Question-Bank.pdf' presence in ChromaDB: False
+2024-09-24 18:15:49,888 - rag - INFO - Data from ./uploads/Cy44-02 -Question-Bank.pdf inserted into ChromaDB successfully.
+2024-09-24 18:15:49,891 - rag - INFO - Processing file: ./uploads/DAA.txt
+2024-09-24 18:15:49,893 - rag - INFO - Reading text file: ./uploads/DAA.txt
+2024-09-24 18:15:49,896 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-24 18:15:50,409 - rag - INFO - Embeddings successfully generated.
+2024-09-24 18:15:50,414 - rag - INFO - Document 'DAA.txt' presence in ChromaDB: False
+2024-09-24 18:15:50,418 - rag - INFO - Data from ./uploads/DAA.txt inserted into ChromaDB successfully.
+2024-09-24 18:15:50,430 - rag - INFO - Processing file: ./uploads/Details required.docx
+2024-09-24 18:15:50,431 - rag - INFO - Reading Word file: ./uploads/Details required.docx
+2024-09-24 18:15:50,469 - rag - INFO - Successfully read Word file: ./uploads/Details required.docx
+2024-09-24 18:15:50,470 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-24 18:15:50,857 - rag - INFO - Embeddings successfully generated.
+2024-09-24 18:15:50,860 - rag - INFO - Document 'Details required.docx' presence in ChromaDB: False
+2024-09-24 18:15:50,866 - rag - INFO - Data from ./uploads/Details required.docx inserted into ChromaDB successfully.
+2024-09-24 18:15:50,871 - rag - INFO - Processing file: ./uploads/HOD letter - SAP.docx
+2024-09-24 18:15:50,873 - rag - INFO - Reading Word file: ./uploads/HOD letter - SAP.docx
+2024-09-24 18:15:50,901 - rag - INFO - Successfully read Word file: ./uploads/HOD letter - SAP.docx
+2024-09-24 18:15:50,902 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-24 18:15:51,553 - rag - INFO - Embeddings successfully generated.
+2024-09-24 18:15:51,555 - rag - INFO - Document 'HOD letter - SAP.docx' presence in ChromaDB: False
+2024-09-24 18:15:51,560 - rag - INFO - Data from ./uploads/HOD letter - SAP.docx inserted into ChromaDB successfully.
+2024-09-24 18:15:51,562 - rag - INFO - Processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-24 18:15:51,562 - rag - INFO - Reading PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-24 18:15:52,232 - rag - INFO - Successfully read PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-24 18:15:52,233 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-24 18:15:53,940 - rag - ERROR - Error generating embeddings: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-24 18:15:53,941 - rag - ERROR - Error processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf, Error: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-24 18:17:40,930 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-24 18:17:40,931 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-24 18:17:40,933 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-24 18:17:40,934 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-24 18:17:40,934 - rag - INFO - Querying cases for files ['case1.docx', 'case2.pdf'] with text: 'divorce '
+2024-09-24 18:17:40,935 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-24 18:17:41,872 - rag - INFO - Embeddings successfully generated.
+2024-09-24 18:17:41,878 - rag - INFO - No documents with similarity above the threshold.
+2024-09-24 18:17:52,369 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-24 18:17:52,373 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-24 18:17:52,378 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-24 18:17:52,382 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-24 18:17:52,385 - rag - INFO - Querying cases for files ['case1.docx', 'case2.pdf'] with text: 'construction company '
+2024-09-24 18:17:52,388 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-24 18:17:55,082 - rag - INFO - Embeddings successfully generated.
+2024-09-24 18:17:55,087 - rag - INFO - Top 1 similar documents: ['case1.docx'] with similarities: [0.8329681488767442]
+2024-09-24 18:23:35,472 - rag - INFO - Querying cases with text: 'hey'
+2024-09-24 18:23:35,475 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-24 18:23:36,294 - rag - INFO - Embeddings successfully generated.
+2024-09-24 18:23:36,301 - rag - INFO - Results from ChromaDB: {'ids': [['case5.pdf', 'case3.docx', 'court_case_summary.docx']], 'distances': [[0.5246464014053345, 0.5276991724967957, 0.5295349955558777]], 'metadatas': [[{'text': "Emma and Lucas Brown were involved in a divorce proceeding where the \nprimary contention was the custody of their two children. Emma sought full \ncustody, arguing that Lucas had been an uninvolved parent and had a history of \nsubstance abuse, while Lucas sought joint custody, asserting that Emma’s \nclaims were exaggerated and that he had a right to be actively involved in his \nchildren's lives. The court had to evaluate the best interests of the children, the \nparents' respective parenting abilities, and any evidence related to substance \nabuse or involvement in the children's lives. \n"}, {'text': "Sarah Johnson, a former employee of Alpha Corp, filed a lawsuit alleging gender discrimination after being passed over for promotion in favor of a less qualified male colleague. Johnson claimed that her supervisor made discriminatory remarks about her gender and that her qualifications were superior to those of the promoted employee. The case involved evaluating Alpha Corp's promotion practices, any evidence of discriminatory intent, and whether Johnson’s claims were substantiated by the company's promotion records and policies."}, {'text': 'Summary of the Case:\nThis case revolves around a property dispute where the landlords, who purchased a property in Mussoorie, claimed that the tenant, Rashid Ahmed, had illegally sub-let the premises to people who were not his family members. The landlords sought to declare the property vacant under the U.P. Urban Buildings (Regulation of Letting, Rent, and Eviction) Act, 1972. After Rashid Ahmed passed away, his son, Mohd. Inam, took over the case. The Rent Control Officer initially declared the premises vacant, but this decision was challenged in multiple courts, leading to different rulings. The key issue was whether the premises were sub-let or if the occupants were legitimate family members of the original tenant.'}]], 'embeddings': None, 'documents': None, 'uris': None, 'data': None, 'included': ['distances', 'metadatas']}
+2024-09-24 18:23:36,303 - rag - INFO - Query successful, found 3 matching case(s).
+2024-09-25 13:47:40,590 - rag - INFO - OpenAI API key loaded.
+2024-09-25 13:47:41,528 - rag - INFO - ChromaDB collection 'court_cases' created successfully.
+2024-09-25 13:47:41,684 - rag - INFO - Processing file: ./uploads/case1.docx
+2024-09-25 13:47:41,700 - rag - INFO - Reading Word file: ./uploads/case1.docx
+2024-09-25 13:47:42,093 - rag - INFO - Successfully read Word file: ./uploads/case1.docx
+2024-09-25 13:47:42,121 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 13:47:42,973 - rag - INFO - Embeddings successfully generated.
+2024-09-25 13:47:43,011 - rag - INFO - Document 'case1.docx' presence in ChromaDB: False
+2024-09-25 13:47:43,095 - rag - INFO - Data from ./uploads/case1.docx inserted into ChromaDB successfully.
+2024-09-25 13:47:43,783 - rag - INFO - Processing file: ./uploads/case2.pdf
+2024-09-25 13:47:43,826 - rag - INFO - Reading PDF file: ./uploads/case2.pdf
+2024-09-25 13:47:44,115 - rag - INFO - Successfully read PDF file: ./uploads/case2.pdf
+2024-09-25 13:47:44,124 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 13:48:01,707 - rag - INFO - Querying cases with text: 'hey'
+2024-09-25 13:48:01,723 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 13:48:02,446 - rag - INFO - Embeddings successfully generated.
+2024-09-25 13:48:02,499 - rag - INFO - Results from ChromaDB: {'ids': [['case1.docx']], 'distances': [[0.5540756583213806]], 'metadatas': [[{'text': "A construction company, BuildRight Ltd., was contracted to renovate a commercial property owned by Prestige Enterprises. The contract specified that the work should be completed within six months, but BuildRight failed to meet the deadline, resulting in a delay of over three months. Prestige Enterprises sued BuildRight for breach of contract, claiming that the delay caused financial losses and operational disruptions. The court had to determine whether BuildRight's delays constituted a material breach and, if so, the extent of the damages owed to Prestige Enterprises."}]], 'embeddings': None, 'documents': None, 'uris': None, 'data': None, 'included': ['distances', 'metadatas']}
+2024-09-25 13:48:02,506 - rag - INFO - Query successful, found 1 matching case(s).
+2024-09-25 13:48:07,315 - rag - INFO - Embeddings successfully generated.
+2024-09-25 13:48:07,323 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: False
+2024-09-25 13:48:07,350 - rag - INFO - Data from ./uploads/case2.pdf inserted into ChromaDB successfully.
+2024-09-25 13:48:07,366 - rag - INFO - Processing file: ./uploads/case3.docx
+2024-09-25 13:48:07,370 - rag - INFO - Reading Word file: ./uploads/case3.docx
+2024-09-25 13:48:07,490 - rag - INFO - Successfully read Word file: ./uploads/case3.docx
+2024-09-25 13:48:07,505 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 13:48:08,190 - rag - INFO - Embeddings successfully generated.
+2024-09-25 13:48:08,201 - rag - INFO - Document 'case3.docx' presence in ChromaDB: False
+2024-09-25 13:48:08,228 - rag - INFO - Data from ./uploads/case3.docx inserted into ChromaDB successfully.
+2024-09-25 13:48:08,245 - rag - INFO - Processing file: ./uploads/case4.docx
+2024-09-25 13:48:08,247 - rag - INFO - Reading Word file: ./uploads/case4.docx
+2024-09-25 13:48:08,320 - rag - INFO - Successfully read Word file: ./uploads/case4.docx
+2024-09-25 13:48:08,323 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 13:48:08,978 - rag - INFO - Embeddings successfully generated.
+2024-09-25 13:48:09,096 - rag - INFO - Document 'case4.docx' presence in ChromaDB: False
+2024-09-25 13:48:09,116 - rag - INFO - Data from ./uploads/case4.docx inserted into ChromaDB successfully.
+2024-09-25 13:48:09,134 - rag - INFO - Processing file: ./uploads/case5.pdf
+2024-09-25 13:48:09,143 - rag - INFO - Reading PDF file: ./uploads/case5.pdf
+2024-09-25 13:48:09,354 - rag - INFO - Successfully read PDF file: ./uploads/case5.pdf
+2024-09-25 13:48:09,357 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 13:48:09,895 - rag - INFO - Embeddings successfully generated.
+2024-09-25 13:48:09,901 - rag - INFO - Document 'case5.pdf' presence in ChromaDB: False
+2024-09-25 13:48:09,929 - rag - INFO - Data from ./uploads/case5.pdf inserted into ChromaDB successfully.
+2024-09-25 13:48:09,935 - rag - INFO - Processing file: ./uploads/case6.pdf
+2024-09-25 13:48:09,937 - rag - INFO - Reading PDF file: ./uploads/case6.pdf
+2024-09-25 13:48:10,048 - rag - INFO - Successfully read PDF file: ./uploads/case6.pdf
+2024-09-25 13:48:10,056 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 13:48:10,578 - rag - INFO - Embeddings successfully generated.
+2024-09-25 13:48:10,588 - rag - INFO - Document 'case6.pdf' presence in ChromaDB: False
+2024-09-25 13:48:10,609 - rag - INFO - Data from ./uploads/case6.pdf inserted into ChromaDB successfully.
+2024-09-25 13:48:10,633 - rag - INFO - Processing file: ./uploads/court_case_summary.docx
+2024-09-25 13:48:10,643 - rag - INFO - Reading Word file: ./uploads/court_case_summary.docx
+2024-09-25 13:48:10,719 - rag - INFO - Successfully read Word file: ./uploads/court_case_summary.docx
+2024-09-25 13:48:10,730 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 13:48:11,243 - rag - INFO - Embeddings successfully generated.
+2024-09-25 13:48:11,278 - rag - INFO - Document 'court_case_summary.docx' presence in ChromaDB: False
+2024-09-25 13:48:11,327 - rag - INFO - Data from ./uploads/court_case_summary.docx inserted into ChromaDB successfully.
+2024-09-25 13:48:11,349 - rag - INFO - Processing file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 13:48:11,359 - rag - INFO - Reading PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 13:48:12,261 - rag - INFO - Successfully read PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 13:48:12,263 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 13:48:12,803 - rag - INFO - Embeddings successfully generated.
+2024-09-25 13:48:12,810 - rag - INFO - Document 'Cy44-02 -Question-Bank.pdf' presence in ChromaDB: False
+2024-09-25 13:48:12,854 - rag - INFO - Data from ./uploads/Cy44-02 -Question-Bank.pdf inserted into ChromaDB successfully.
+2024-09-25 13:48:12,909 - rag - INFO - Processing file: ./uploads/DAA.txt
+2024-09-25 13:48:12,912 - rag - INFO - Reading text file: ./uploads/DAA.txt
+2024-09-25 13:48:12,922 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 13:48:27,511 - rag - INFO - Processing file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 13:48:27,513 - rag - INFO - Reading Word file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 13:48:27,767 - rag - INFO - Successfully read Word file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 13:48:27,769 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 13:48:28,164 - rag - INFO - Embeddings successfully generated.
+2024-09-25 13:48:28,185 - rag - INFO - Document '1MS22CY067 DCN record.docx' presence in ChromaDB: False
+2024-09-25 13:48:28,199 - rag - INFO - Data from ./uploads/1MS22CY067 DCN record.docx inserted into ChromaDB successfully.
+2024-09-25 13:48:26,999 - rag - INFO - Processing file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 13:48:27,005 - rag - INFO - Reading PDF file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 13:48:27,275 - rag - INFO - Successfully read PDF file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 13:48:27,277 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 13:48:27,656 - rag - INFO - Embeddings successfully generated.
+2024-09-25 13:48:27,683 - rag - INFO - Document '1MS22CY067 final DCN.pdf' presence in ChromaDB: False
+2024-09-25 13:48:27,705 - rag - INFO - Data from ./uploads/1MS22CY067 final DCN.pdf inserted into ChromaDB successfully.
+2024-09-25 13:48:33,187 - rag - INFO - Embeddings successfully generated.
+2024-09-25 13:48:33,211 - rag - INFO - Document 'DAA.txt' presence in ChromaDB: False
+2024-09-25 13:48:33,234 - rag - INFO - Data from ./uploads/DAA.txt inserted into ChromaDB successfully.
+2024-09-25 13:48:33,253 - rag - INFO - Processing file: ./uploads/Details required.docx
+2024-09-25 13:48:33,254 - rag - INFO - Reading Word file: ./uploads/Details required.docx
+2024-09-25 13:48:33,400 - rag - INFO - Successfully read Word file: ./uploads/Details required.docx
+2024-09-25 13:48:33,402 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 13:48:33,749 - rag - INFO - Embeddings successfully generated.
+2024-09-25 13:48:33,759 - rag - INFO - Document 'Details required.docx' presence in ChromaDB: False
+2024-09-25 13:48:33,785 - rag - INFO - Data from ./uploads/Details required.docx inserted into ChromaDB successfully.
+2024-09-25 13:48:33,792 - rag - INFO - Processing file: ./uploads/HOD letter - SAP.docx
+2024-09-25 13:48:33,794 - rag - INFO - Reading Word file: ./uploads/HOD letter - SAP.docx
+2024-09-25 13:48:33,913 - rag - INFO - Successfully read Word file: ./uploads/HOD letter - SAP.docx
+2024-09-25 13:48:33,942 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 13:48:34,311 - rag - INFO - Embeddings successfully generated.
+2024-09-25 13:48:34,317 - rag - INFO - Document 'HOD letter - SAP.docx' presence in ChromaDB: False
+2024-09-25 13:48:34,351 - rag - INFO - Data from ./uploads/HOD letter - SAP.docx inserted into ChromaDB successfully.
+2024-09-25 13:48:34,355 - rag - INFO - Processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 13:48:34,357 - rag - INFO - Reading PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 13:48:38,681 - rag - INFO - Successfully read PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 13:48:38,685 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 13:48:39,854 - rag - ERROR - Error generating embeddings: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 13:48:39,857 - rag - ERROR - Error processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf, Error: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 14:06:18,928 - rag - INFO - OpenAI API key loaded.
+2024-09-25 14:06:19,775 - rag - INFO - ChromaDB collection 'court_cases' created successfully.
+2024-09-25 14:06:19,978 - rag - INFO - Processing file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 14:06:19,982 - rag - INFO - Reading Word file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 14:06:20,747 - rag - INFO - Successfully read Word file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 14:06:20,769 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:06:21,540 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:06:21,770 - rag - INFO - Document '1MS22CY067 DCN record.docx' presence in ChromaDB: False
+2024-09-25 14:06:22,053 - rag - INFO - Data from ./uploads/1MS22CY067 DCN record.docx inserted into ChromaDB successfully.
+2024-09-25 14:06:22,391 - rag - INFO - Processing file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 14:06:22,395 - rag - INFO - Reading PDF file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 14:06:22,652 - rag - INFO - Successfully read PDF file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 14:06:22,654 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:06:23,216 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:06:23,225 - rag - INFO - Document '1MS22CY067 final DCN.pdf' presence in ChromaDB: False
+2024-09-25 14:06:23,264 - rag - INFO - Data from ./uploads/1MS22CY067 final DCN.pdf inserted into ChromaDB successfully.
+2024-09-25 14:06:23,270 - rag - INFO - Processing file: ./uploads/case1.docx
+2024-09-25 14:06:23,276 - rag - INFO - Reading Word file: ./uploads/case1.docx
+2024-09-25 14:06:23,323 - rag - INFO - Successfully read Word file: ./uploads/case1.docx
+2024-09-25 14:06:23,325 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:06:23,729 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:06:23,747 - rag - INFO - Document 'case1.docx' presence in ChromaDB: False
+2024-09-25 14:06:23,780 - rag - INFO - Data from ./uploads/case1.docx inserted into ChromaDB successfully.
+2024-09-25 14:06:23,790 - rag - INFO - Processing file: ./uploads/case2.pdf
+2024-09-25 14:06:23,794 - rag - INFO - Reading PDF file: ./uploads/case2.pdf
+2024-09-25 14:06:24,081 - rag - INFO - Successfully read PDF file: ./uploads/case2.pdf
+2024-09-25 14:06:24,083 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:06:24,849 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:06:24,857 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: False
+2024-09-25 14:06:24,870 - rag - INFO - Data from ./uploads/case2.pdf inserted into ChromaDB successfully.
+2024-09-25 14:06:24,876 - rag - INFO - Processing file: ./uploads/case3.docx
+2024-09-25 14:06:24,878 - rag - INFO - Reading Word file: ./uploads/case3.docx
+2024-09-25 14:06:24,926 - rag - INFO - Successfully read Word file: ./uploads/case3.docx
+2024-09-25 14:06:24,928 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:06:25,356 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:06:25,362 - rag - INFO - Document 'case3.docx' presence in ChromaDB: False
+2024-09-25 14:06:25,373 - rag - INFO - Data from ./uploads/case3.docx inserted into ChromaDB successfully.
+2024-09-25 14:06:25,378 - rag - INFO - Processing file: ./uploads/case4.docx
+2024-09-25 14:06:25,381 - rag - INFO - Reading Word file: ./uploads/case4.docx
+2024-09-25 14:06:25,439 - rag - INFO - Successfully read Word file: ./uploads/case4.docx
+2024-09-25 14:06:25,444 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:06:26,095 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:06:26,108 - rag - INFO - Document 'case4.docx' presence in ChromaDB: False
+2024-09-25 14:06:26,119 - rag - INFO - Data from ./uploads/case4.docx inserted into ChromaDB successfully.
+2024-09-25 14:06:26,126 - rag - INFO - Processing file: ./uploads/case5.pdf
+2024-09-25 14:06:26,128 - rag - INFO - Reading PDF file: ./uploads/case5.pdf
+2024-09-25 14:06:26,378 - rag - INFO - Successfully read PDF file: ./uploads/case5.pdf
+2024-09-25 14:06:26,380 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:06:26,806 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:06:26,814 - rag - INFO - Document 'case5.pdf' presence in ChromaDB: False
+2024-09-25 14:06:26,828 - rag - INFO - Data from ./uploads/case5.pdf inserted into ChromaDB successfully.
+2024-09-25 14:06:26,834 - rag - INFO - Processing file: ./uploads/case6.pdf
+2024-09-25 14:06:26,835 - rag - INFO - Reading PDF file: ./uploads/case6.pdf
+2024-09-25 14:06:26,929 - rag - INFO - Successfully read PDF file: ./uploads/case6.pdf
+2024-09-25 14:06:26,931 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:06:27,269 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:06:27,286 - rag - INFO - Document 'case6.pdf' presence in ChromaDB: False
+2024-09-25 14:06:27,311 - rag - INFO - Data from ./uploads/case6.pdf inserted into ChromaDB successfully.
+2024-09-25 14:06:27,341 - rag - INFO - Processing file: ./uploads/court_case_summary.docx
+2024-09-25 14:06:27,364 - rag - INFO - Reading Word file: ./uploads/court_case_summary.docx
+2024-09-25 14:06:27,583 - rag - INFO - Successfully read Word file: ./uploads/court_case_summary.docx
+2024-09-25 14:06:27,585 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:06:28,023 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:06:28,028 - rag - INFO - Document 'court_case_summary.docx' presence in ChromaDB: False
+2024-09-25 14:06:28,037 - rag - INFO - Data from ./uploads/court_case_summary.docx inserted into ChromaDB successfully.
+2024-09-25 14:06:28,042 - rag - INFO - Processing file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 14:06:28,044 - rag - INFO - Reading PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 14:06:28,951 - rag - INFO - Successfully read PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 14:06:28,953 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:06:29,364 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:06:29,370 - rag - INFO - Document 'Cy44-02 -Question-Bank.pdf' presence in ChromaDB: False
+2024-09-25 14:06:29,384 - rag - INFO - Data from ./uploads/Cy44-02 -Question-Bank.pdf inserted into ChromaDB successfully.
+2024-09-25 14:06:29,390 - rag - INFO - Processing file: ./uploads/DAA.txt
+2024-09-25 14:06:29,393 - rag - INFO - Reading text file: ./uploads/DAA.txt
+2024-09-25 14:06:29,403 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:06:29,965 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:06:29,972 - rag - INFO - Document 'DAA.txt' presence in ChromaDB: False
+2024-09-25 14:06:29,990 - rag - INFO - Data from ./uploads/DAA.txt inserted into ChromaDB successfully.
+2024-09-25 14:06:30,182 - rag - INFO - Processing file: ./uploads/Details required.docx
+2024-09-25 14:06:30,184 - rag - INFO - Reading Word file: ./uploads/Details required.docx
+2024-09-25 14:06:30,454 - rag - INFO - Successfully read Word file: ./uploads/Details required.docx
+2024-09-25 14:06:30,457 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:06:31,006 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:06:31,012 - rag - INFO - Document 'Details required.docx' presence in ChromaDB: False
+2024-09-25 14:06:31,025 - rag - INFO - Data from ./uploads/Details required.docx inserted into ChromaDB successfully.
+2024-09-25 14:06:31,032 - rag - INFO - Processing file: ./uploads/HOD letter - SAP.docx
+2024-09-25 14:06:31,034 - rag - INFO - Reading Word file: ./uploads/HOD letter - SAP.docx
+2024-09-25 14:06:31,129 - rag - INFO - Successfully read Word file: ./uploads/HOD letter - SAP.docx
+2024-09-25 14:06:31,133 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:06:31,623 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:06:31,632 - rag - INFO - Document 'HOD letter - SAP.docx' presence in ChromaDB: False
+2024-09-25 14:06:31,663 - rag - INFO - Data from ./uploads/HOD letter - SAP.docx inserted into ChromaDB successfully.
+2024-09-25 14:06:31,703 - rag - INFO - Processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 14:06:31,778 - rag - INFO - Reading PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 14:06:35,452 - rag - INFO - Successfully read PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 14:06:35,454 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:06:36,234 - rag - ERROR - Error generating embeddings: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 14:06:36,237 - rag - ERROR - Error processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf, Error: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 14:39:03,340 - rag - INFO - OpenAI API key loaded.
+2024-09-25 14:39:04,042 - rag - INFO - ChromaDB collection 'court_cases' created successfully.
+2024-09-25 14:39:04,164 - rag - INFO - Processing file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 14:39:04,174 - rag - INFO - Reading Word file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 14:39:05,018 - rag - INFO - Successfully read Word file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 14:39:05,037 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:39:05,776 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:39:05,999 - rag - INFO - Document '1MS22CY067 DCN record.docx' presence in ChromaDB: False
+2024-09-25 14:39:06,345 - rag - INFO - Data from ./uploads/1MS22CY067 DCN record.docx inserted into ChromaDB successfully.
+2024-09-25 14:39:06,374 - rag - INFO - Processing file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 14:39:06,377 - rag - INFO - Reading PDF file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 14:39:06,641 - rag - INFO - Successfully read PDF file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 14:39:06,643 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:39:07,350 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:39:07,358 - rag - INFO - Document '1MS22CY067 final DCN.pdf' presence in ChromaDB: False
+2024-09-25 14:39:07,389 - rag - INFO - Data from ./uploads/1MS22CY067 final DCN.pdf inserted into ChromaDB successfully.
+2024-09-25 14:39:07,423 - rag - INFO - Processing file: ./uploads/case1.docx
+2024-09-25 14:39:07,427 - rag - INFO - Reading Word file: ./uploads/case1.docx
+2024-09-25 14:39:07,560 - rag - INFO - Successfully read Word file: ./uploads/case1.docx
+2024-09-25 14:39:07,563 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:39:08,080 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:39:08,086 - rag - INFO - Document 'case1.docx' presence in ChromaDB: False
+2024-09-25 14:39:08,099 - rag - INFO - Data from ./uploads/case1.docx inserted into ChromaDB successfully.
+2024-09-25 14:39:08,107 - rag - INFO - Processing file: ./uploads/case2.pdf
+2024-09-25 14:39:08,109 - rag - INFO - Reading PDF file: ./uploads/case2.pdf
+2024-09-25 14:39:08,257 - rag - INFO - Successfully read PDF file: ./uploads/case2.pdf
+2024-09-25 14:39:08,259 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:39:08,686 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:39:08,692 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: False
+2024-09-25 14:39:08,704 - rag - INFO - Data from ./uploads/case2.pdf inserted into ChromaDB successfully.
+2024-09-25 14:39:08,711 - rag - INFO - Processing file: ./uploads/case3.docx
+2024-09-25 14:39:08,714 - rag - INFO - Reading Word file: ./uploads/case3.docx
+2024-09-25 14:39:08,763 - rag - INFO - Successfully read Word file: ./uploads/case3.docx
+2024-09-25 14:39:08,766 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:39:09,197 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:39:09,205 - rag - INFO - Document 'case3.docx' presence in ChromaDB: False
+2024-09-25 14:39:09,216 - rag - INFO - Data from ./uploads/case3.docx inserted into ChromaDB successfully.
+2024-09-25 14:39:09,223 - rag - INFO - Processing file: ./uploads/case4.docx
+2024-09-25 14:39:09,225 - rag - INFO - Reading Word file: ./uploads/case4.docx
+2024-09-25 14:39:09,268 - rag - INFO - Successfully read Word file: ./uploads/case4.docx
+2024-09-25 14:39:09,271 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:39:09,728 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:39:09,743 - rag - INFO - Document 'case4.docx' presence in ChromaDB: False
+2024-09-25 14:39:09,760 - rag - INFO - Data from ./uploads/case4.docx inserted into ChromaDB successfully.
+2024-09-25 14:39:09,773 - rag - INFO - Processing file: ./uploads/case5.pdf
+2024-09-25 14:39:09,776 - rag - INFO - Reading PDF file: ./uploads/case5.pdf
+2024-09-25 14:39:10,111 - rag - INFO - Successfully read PDF file: ./uploads/case5.pdf
+2024-09-25 14:39:10,123 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:39:10,631 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:39:10,636 - rag - INFO - Document 'case5.pdf' presence in ChromaDB: False
+2024-09-25 14:39:10,646 - rag - INFO - Data from ./uploads/case5.pdf inserted into ChromaDB successfully.
+2024-09-25 14:39:10,652 - rag - INFO - Processing file: ./uploads/case6.pdf
+2024-09-25 14:39:10,654 - rag - INFO - Reading PDF file: ./uploads/case6.pdf
+2024-09-25 14:39:10,754 - rag - INFO - Successfully read PDF file: ./uploads/case6.pdf
+2024-09-25 14:39:10,757 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:39:11,142 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:39:11,151 - rag - INFO - Document 'case6.pdf' presence in ChromaDB: False
+2024-09-25 14:39:11,160 - rag - INFO - Data from ./uploads/case6.pdf inserted into ChromaDB successfully.
+2024-09-25 14:39:11,169 - rag - INFO - Processing file: ./uploads/court_case_summary.docx
+2024-09-25 14:39:11,172 - rag - INFO - Reading Word file: ./uploads/court_case_summary.docx
+2024-09-25 14:39:11,210 - rag - INFO - Successfully read Word file: ./uploads/court_case_summary.docx
+2024-09-25 14:39:11,212 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:39:11,673 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:39:11,688 - rag - INFO - Document 'court_case_summary.docx' presence in ChromaDB: False
+2024-09-25 14:39:11,711 - rag - INFO - Data from ./uploads/court_case_summary.docx inserted into ChromaDB successfully.
+2024-09-25 14:39:11,724 - rag - INFO - Processing file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 14:39:11,730 - rag - INFO - Reading PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 14:39:12,271 - rag - INFO - Successfully read PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 14:39:12,273 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:39:12,695 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:39:12,721 - rag - INFO - Document 'Cy44-02 -Question-Bank.pdf' presence in ChromaDB: False
+2024-09-25 14:39:12,758 - rag - INFO - Data from ./uploads/Cy44-02 -Question-Bank.pdf inserted into ChromaDB successfully.
+2024-09-25 14:39:12,771 - rag - INFO - Processing file: ./uploads/DAA.txt
+2024-09-25 14:39:12,775 - rag - INFO - Reading text file: ./uploads/DAA.txt
+2024-09-25 14:39:12,790 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:39:13,300 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:39:13,308 - rag - INFO - Document 'DAA.txt' presence in ChromaDB: False
+2024-09-25 14:39:13,362 - rag - INFO - Data from ./uploads/DAA.txt inserted into ChromaDB successfully.
+2024-09-25 14:39:13,370 - rag - INFO - Processing file: ./uploads/Details required.docx
+2024-09-25 14:39:13,372 - rag - INFO - Reading Word file: ./uploads/Details required.docx
+2024-09-25 14:39:13,466 - rag - INFO - Successfully read Word file: ./uploads/Details required.docx
+2024-09-25 14:39:13,469 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:39:14,217 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:39:14,238 - rag - INFO - Document 'Details required.docx' presence in ChromaDB: False
+2024-09-25 14:39:14,268 - rag - INFO - Data from ./uploads/Details required.docx inserted into ChromaDB successfully.
+2024-09-25 14:39:14,281 - rag - INFO - Processing file: ./uploads/HOD letter - SAP.docx
+2024-09-25 14:39:14,284 - rag - INFO - Reading Word file: ./uploads/HOD letter - SAP.docx
+2024-09-25 14:39:14,461 - rag - INFO - Successfully read Word file: ./uploads/HOD letter - SAP.docx
+2024-09-25 14:39:14,465 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:39:15,019 - rag - INFO - Embeddings successfully generated.
+2024-09-25 14:39:15,044 - rag - INFO - Document 'HOD letter - SAP.docx' presence in ChromaDB: False
+2024-09-25 14:39:15,064 - rag - INFO - Data from ./uploads/HOD letter - SAP.docx inserted into ChromaDB successfully.
+2024-09-25 14:39:15,084 - rag - INFO - Processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 14:39:15,090 - rag - INFO - Reading PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 14:39:17,443 - rag - INFO - Successfully read PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 14:39:17,444 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 14:39:18,041 - rag - ERROR - Error generating embeddings: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 14:39:18,044 - rag - ERROR - Error processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf, Error: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 16:05:19,165 - rag - INFO - OpenAI API key loaded.
+2024-09-25 16:05:20,183 - rag - INFO - ChromaDB collection 'court_cases' created successfully.
+2024-09-25 16:05:20,421 - rag - INFO - Processing file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 16:05:20,434 - rag - INFO - Reading Word file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 16:05:20,938 - rag - INFO - Successfully read Word file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 16:05:20,956 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:05:21,573 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:05:21,630 - rag - INFO - Document '1MS22CY067 DCN record.docx' presence in ChromaDB: False
+2024-09-25 16:05:21,750 - rag - INFO - Data from ./uploads/1MS22CY067 DCN record.docx inserted into ChromaDB successfully.
+2024-09-25 16:05:22,875 - rag - INFO - Processing file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 16:05:22,877 - rag - INFO - Reading PDF file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 16:05:23,290 - rag - INFO - Successfully read PDF file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 16:05:23,292 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:05:23,753 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:05:23,808 - rag - INFO - Document '1MS22CY067 final DCN.pdf' presence in ChromaDB: False
+2024-09-25 16:05:23,820 - rag - INFO - Data from ./uploads/1MS22CY067 final DCN.pdf inserted into ChromaDB successfully.
+2024-09-25 16:05:23,844 - rag - INFO - Processing file: ./uploads/case1.docx
+2024-09-25 16:05:23,845 - rag - INFO - Reading Word file: ./uploads/case1.docx
+2024-09-25 16:05:23,900 - rag - INFO - Successfully read Word file: ./uploads/case1.docx
+2024-09-25 16:05:23,902 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:05:24,365 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:05:24,376 - rag - INFO - Document 'case1.docx' presence in ChromaDB: False
+2024-09-25 16:05:24,396 - rag - INFO - Data from ./uploads/case1.docx inserted into ChromaDB successfully.
+2024-09-25 16:05:24,413 - rag - INFO - Processing file: ./uploads/case2.pdf
+2024-09-25 16:05:24,425 - rag - INFO - Reading PDF file: ./uploads/case2.pdf
+2024-09-25 16:05:24,573 - rag - INFO - Successfully read PDF file: ./uploads/case2.pdf
+2024-09-25 16:05:24,575 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:05:25,095 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:05:25,102 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: False
+2024-09-25 16:05:25,112 - rag - INFO - Data from ./uploads/case2.pdf inserted into ChromaDB successfully.
+2024-09-25 16:05:25,122 - rag - INFO - Processing file: ./uploads/case3.docx
+2024-09-25 16:05:25,126 - rag - INFO - Reading Word file: ./uploads/case3.docx
+2024-09-25 16:05:25,185 - rag - INFO - Successfully read Word file: ./uploads/case3.docx
+2024-09-25 16:05:25,188 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:05:25,602 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:05:25,609 - rag - INFO - Document 'case3.docx' presence in ChromaDB: False
+2024-09-25 16:05:25,689 - rag - INFO - Data from ./uploads/case3.docx inserted into ChromaDB successfully.
+2024-09-25 16:05:25,742 - rag - INFO - Processing file: ./uploads/case4.docx
+2024-09-25 16:05:25,756 - rag - INFO - Reading Word file: ./uploads/case4.docx
+2024-09-25 16:05:25,894 - rag - INFO - Successfully read Word file: ./uploads/case4.docx
+2024-09-25 16:05:25,927 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:05:26,457 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:05:26,472 - rag - INFO - Document 'case4.docx' presence in ChromaDB: False
+2024-09-25 16:05:26,485 - rag - INFO - Data from ./uploads/case4.docx inserted into ChromaDB successfully.
+2024-09-25 16:05:26,516 - rag - INFO - Processing file: ./uploads/case5.pdf
+2024-09-25 16:05:26,523 - rag - INFO - Reading PDF file: ./uploads/case5.pdf
+2024-09-25 16:05:26,737 - rag - INFO - Successfully read PDF file: ./uploads/case5.pdf
+2024-09-25 16:05:26,746 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:05:27,131 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:05:27,168 - rag - INFO - Document 'case5.pdf' presence in ChromaDB: False
+2024-09-25 16:05:27,193 - rag - INFO - Data from ./uploads/case5.pdf inserted into ChromaDB successfully.
+2024-09-25 16:05:27,223 - rag - INFO - Processing file: ./uploads/case6.pdf
+2024-09-25 16:05:27,231 - rag - INFO - Reading PDF file: ./uploads/case6.pdf
+2024-09-25 16:05:27,374 - rag - INFO - Successfully read PDF file: ./uploads/case6.pdf
+2024-09-25 16:05:27,378 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:05:27,844 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:05:27,851 - rag - INFO - Document 'case6.pdf' presence in ChromaDB: False
+2024-09-25 16:05:27,864 - rag - INFO - Data from ./uploads/case6.pdf inserted into ChromaDB successfully.
+2024-09-25 16:05:27,881 - rag - INFO - Processing file: ./uploads/court_case_summary.docx
+2024-09-25 16:05:27,883 - rag - INFO - Reading Word file: ./uploads/court_case_summary.docx
+2024-09-25 16:05:28,005 - rag - INFO - Successfully read Word file: ./uploads/court_case_summary.docx
+2024-09-25 16:05:28,009 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:05:28,626 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:05:28,645 - rag - INFO - Document 'court_case_summary.docx' presence in ChromaDB: False
+2024-09-25 16:05:28,688 - rag - INFO - Data from ./uploads/court_case_summary.docx inserted into ChromaDB successfully.
+2024-09-25 16:05:28,699 - rag - INFO - Processing file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 16:05:28,703 - rag - INFO - Reading PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 16:05:29,489 - rag - INFO - Successfully read PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 16:05:29,492 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:05:29,913 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:05:29,926 - rag - INFO - Document 'Cy44-02 -Question-Bank.pdf' presence in ChromaDB: False
+2024-09-25 16:05:29,943 - rag - INFO - Data from ./uploads/Cy44-02 -Question-Bank.pdf inserted into ChromaDB successfully.
+2024-09-25 16:05:29,963 - rag - INFO - Processing file: ./uploads/DAA.txt
+2024-09-25 16:05:29,967 - rag - INFO - Reading text file: ./uploads/DAA.txt
+2024-09-25 16:05:29,989 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:05:30,523 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:05:30,529 - rag - INFO - Document 'DAA.txt' presence in ChromaDB: False
+2024-09-25 16:05:30,556 - rag - INFO - Data from ./uploads/DAA.txt inserted into ChromaDB successfully.
+2024-09-25 16:05:30,561 - rag - INFO - Processing file: ./uploads/Details required.docx
+2024-09-25 16:05:30,563 - rag - INFO - Reading Word file: ./uploads/Details required.docx
+2024-09-25 16:05:30,666 - rag - INFO - Successfully read Word file: ./uploads/Details required.docx
+2024-09-25 16:05:30,669 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:05:31,534 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:05:31,542 - rag - INFO - Document 'Details required.docx' presence in ChromaDB: False
+2024-09-25 16:05:31,553 - rag - INFO - Data from ./uploads/Details required.docx inserted into ChromaDB successfully.
+2024-09-25 16:05:31,567 - rag - INFO - Processing file: ./uploads/HOD letter - SAP.docx
+2024-09-25 16:05:31,569 - rag - INFO - Reading Word file: ./uploads/HOD letter - SAP.docx
+2024-09-25 16:05:31,634 - rag - INFO - Successfully read Word file: ./uploads/HOD letter - SAP.docx
+2024-09-25 16:05:31,644 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:05:31,973 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:05:31,984 - rag - INFO - Document 'HOD letter - SAP.docx' presence in ChromaDB: False
+2024-09-25 16:05:32,008 - rag - INFO - Data from ./uploads/HOD letter - SAP.docx inserted into ChromaDB successfully.
+2024-09-25 16:05:32,022 - rag - INFO - Processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 16:05:32,023 - rag - INFO - Reading PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 16:05:35,037 - rag - INFO - Successfully read PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 16:05:35,039 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:05:36,136 - rag - ERROR - Error generating embeddings: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 16:05:36,138 - rag - ERROR - Error processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf, Error: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 16:23:39,888 - rag - INFO - OpenAI API key loaded.
+2024-09-25 16:23:40,441 - rag - INFO - ChromaDB collection 'court_cases' created successfully.
+2024-09-25 16:23:40,506 - rag - INFO - Processing file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 16:23:40,509 - rag - INFO - Reading Word file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 16:23:41,220 - rag - INFO - Successfully read Word file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 16:23:41,251 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:23:42,066 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:23:42,086 - rag - INFO - Document '1MS22CY067 DCN record.docx' presence in ChromaDB: False
+2024-09-25 16:23:42,179 - rag - INFO - Data from ./uploads/1MS22CY067 DCN record.docx inserted into ChromaDB successfully.
+2024-09-25 16:23:42,184 - rag - INFO - Processing file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 16:23:42,186 - rag - INFO - Reading PDF file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 16:23:42,581 - rag - INFO - Successfully read PDF file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 16:23:42,585 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:23:43,047 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:23:43,059 - rag - INFO - Document '1MS22CY067 final DCN.pdf' presence in ChromaDB: False
+2024-09-25 16:23:43,077 - rag - INFO - Data from ./uploads/1MS22CY067 final DCN.pdf inserted into ChromaDB successfully.
+2024-09-25 16:23:43,100 - rag - INFO - Processing file: ./uploads/case1.docx
+2024-09-25 16:23:43,109 - rag - INFO - Reading Word file: ./uploads/case1.docx
+2024-09-25 16:23:43,164 - rag - INFO - Successfully read Word file: ./uploads/case1.docx
+2024-09-25 16:23:43,166 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:23:43,524 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:23:43,528 - rag - INFO - Document 'case1.docx' presence in ChromaDB: False
+2024-09-25 16:23:43,545 - rag - INFO - Data from ./uploads/case1.docx inserted into ChromaDB successfully.
+2024-09-25 16:23:43,556 - rag - INFO - Processing file: ./uploads/case2.pdf
+2024-09-25 16:23:43,558 - rag - INFO - Reading PDF file: ./uploads/case2.pdf
+2024-09-25 16:23:43,774 - rag - INFO - Successfully read PDF file: ./uploads/case2.pdf
+2024-09-25 16:23:43,777 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:23:44,192 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:23:44,195 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: False
+2024-09-25 16:23:44,203 - rag - INFO - Data from ./uploads/case2.pdf inserted into ChromaDB successfully.
+2024-09-25 16:23:44,238 - rag - INFO - Processing file: ./uploads/case3.docx
+2024-09-25 16:23:44,240 - rag - INFO - Reading Word file: ./uploads/case3.docx
+2024-09-25 16:23:44,294 - rag - INFO - Successfully read Word file: ./uploads/case3.docx
+2024-09-25 16:23:44,297 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:23:44,904 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:23:45,170 - rag - INFO - Document 'case3.docx' presence in ChromaDB: False
+2024-09-25 16:23:45,382 - rag - INFO - Data from ./uploads/case3.docx inserted into ChromaDB successfully.
+2024-09-25 16:23:45,728 - rag - INFO - Processing file: ./uploads/case4.docx
+2024-09-25 16:23:45,913 - rag - INFO - Reading Word file: ./uploads/case4.docx
+2024-09-25 16:23:46,335 - rag - INFO - Successfully read Word file: ./uploads/case4.docx
+2024-09-25 16:23:46,345 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:23:46,696 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:23:46,716 - rag - INFO - Document 'case4.docx' presence in ChromaDB: False
+2024-09-25 16:23:46,746 - rag - INFO - Data from ./uploads/case4.docx inserted into ChromaDB successfully.
+2024-09-25 16:23:46,761 - rag - INFO - Processing file: ./uploads/case5.pdf
+2024-09-25 16:23:46,764 - rag - INFO - Reading PDF file: ./uploads/case5.pdf
+2024-09-25 16:23:46,902 - rag - INFO - Successfully read PDF file: ./uploads/case5.pdf
+2024-09-25 16:23:46,903 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:23:47,230 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:23:47,418 - rag - INFO - Document 'case5.pdf' presence in ChromaDB: False
+2024-09-25 16:23:47,436 - rag - INFO - Data from ./uploads/case5.pdf inserted into ChromaDB successfully.
+2024-09-25 16:23:47,511 - rag - INFO - Processing file: ./uploads/case6.pdf
+2024-09-25 16:23:47,526 - rag - INFO - Reading PDF file: ./uploads/case6.pdf
+2024-09-25 16:23:48,253 - rag - INFO - Successfully read PDF file: ./uploads/case6.pdf
+2024-09-25 16:23:48,277 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:23:48,727 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:23:48,749 - rag - INFO - Document 'case6.pdf' presence in ChromaDB: False
+2024-09-25 16:23:48,768 - rag - INFO - Data from ./uploads/case6.pdf inserted into ChromaDB successfully.
+2024-09-25 16:23:48,780 - rag - INFO - Processing file: ./uploads/court_case_summary.docx
+2024-09-25 16:23:48,783 - rag - INFO - Reading Word file: ./uploads/court_case_summary.docx
+2024-09-25 16:23:48,860 - rag - INFO - Successfully read Word file: ./uploads/court_case_summary.docx
+2024-09-25 16:23:48,863 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:23:49,215 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:23:49,219 - rag - INFO - Document 'court_case_summary.docx' presence in ChromaDB: False
+2024-09-25 16:23:49,232 - rag - INFO - Data from ./uploads/court_case_summary.docx inserted into ChromaDB successfully.
+2024-09-25 16:23:49,239 - rag - INFO - Processing file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 16:23:49,243 - rag - INFO - Reading PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 16:23:49,683 - rag - INFO - Successfully read PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 16:23:49,685 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:23:50,214 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:23:50,219 - rag - INFO - Document 'Cy44-02 -Question-Bank.pdf' presence in ChromaDB: False
+2024-09-25 16:23:50,240 - rag - INFO - Data from ./uploads/Cy44-02 -Question-Bank.pdf inserted into ChromaDB successfully.
+2024-09-25 16:23:50,250 - rag - INFO - Processing file: ./uploads/DAA.txt
+2024-09-25 16:23:50,252 - rag - INFO - Reading text file: ./uploads/DAA.txt
+2024-09-25 16:23:50,270 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:23:50,745 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:23:50,749 - rag - INFO - Document 'DAA.txt' presence in ChromaDB: False
+2024-09-25 16:23:50,769 - rag - INFO - Data from ./uploads/DAA.txt inserted into ChromaDB successfully.
+2024-09-25 16:23:50,786 - rag - INFO - Processing file: ./uploads/Details required.docx
+2024-09-25 16:23:50,799 - rag - INFO - Reading Word file: ./uploads/Details required.docx
+2024-09-25 16:23:50,963 - rag - INFO - Successfully read Word file: ./uploads/Details required.docx
+2024-09-25 16:23:50,971 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:23:51,500 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:23:51,520 - rag - INFO - Document 'Details required.docx' presence in ChromaDB: False
+2024-09-25 16:23:51,558 - rag - INFO - Data from ./uploads/Details required.docx inserted into ChromaDB successfully.
+2024-09-25 16:23:51,586 - rag - INFO - Processing file: ./uploads/HOD letter - SAP.docx
+2024-09-25 16:23:51,616 - rag - INFO - Reading Word file: ./uploads/HOD letter - SAP.docx
+2024-09-25 16:23:51,762 - rag - INFO - Successfully read Word file: ./uploads/HOD letter - SAP.docx
+2024-09-25 16:23:51,768 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:23:52,395 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:23:52,401 - rag - INFO - Document 'HOD letter - SAP.docx' presence in ChromaDB: False
+2024-09-25 16:23:52,416 - rag - INFO - Data from ./uploads/HOD letter - SAP.docx inserted into ChromaDB successfully.
+2024-09-25 16:23:52,431 - rag - INFO - Processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 16:23:52,433 - rag - INFO - Reading PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 16:23:57,461 - rag - INFO - Successfully read PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 16:23:57,463 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:23:58,033 - rag - ERROR - Error generating embeddings: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 16:23:58,037 - rag - ERROR - Error processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf, Error: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 16:33:55,854 - rag - INFO - OpenAI API key loaded.
+2024-09-25 16:33:56,648 - rag - INFO - ChromaDB collection 'court_cases' created successfully.
+2024-09-25 16:33:56,799 - rag - INFO - Processing file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 16:33:56,811 - rag - INFO - Reading Word file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 16:33:57,427 - rag - INFO - Successfully read Word file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 16:33:57,444 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:33:58,027 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:33:58,060 - rag - INFO - Document '1MS22CY067 DCN record.docx' presence in ChromaDB: False
+2024-09-25 16:33:58,148 - rag - INFO - Data from ./uploads/1MS22CY067 DCN record.docx inserted into ChromaDB successfully.
+2024-09-25 16:33:58,530 - rag - INFO - Processing file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 16:33:58,555 - rag - INFO - Reading PDF file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 16:33:58,964 - rag - INFO - Successfully read PDF file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 16:33:58,985 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:33:59,348 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:33:59,356 - rag - INFO - Document '1MS22CY067 final DCN.pdf' presence in ChromaDB: False
+2024-09-25 16:33:59,365 - rag - INFO - Data from ./uploads/1MS22CY067 final DCN.pdf inserted into ChromaDB successfully.
+2024-09-25 16:33:59,369 - rag - INFO - Processing file: ./uploads/case1.docx
+2024-09-25 16:33:59,371 - rag - INFO - Reading Word file: ./uploads/case1.docx
+2024-09-25 16:33:59,417 - rag - INFO - Successfully read Word file: ./uploads/case1.docx
+2024-09-25 16:33:59,419 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:33:59,808 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:33:59,813 - rag - INFO - Document 'case1.docx' presence in ChromaDB: False
+2024-09-25 16:33:59,827 - rag - INFO - Data from ./uploads/case1.docx inserted into ChromaDB successfully.
+2024-09-25 16:33:59,840 - rag - INFO - Processing file: ./uploads/case2.pdf
+2024-09-25 16:33:59,845 - rag - INFO - Reading PDF file: ./uploads/case2.pdf
+2024-09-25 16:33:59,983 - rag - INFO - Successfully read PDF file: ./uploads/case2.pdf
+2024-09-25 16:33:59,987 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:34:21,067 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:34:21,079 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: False
+2024-09-25 16:34:21,089 - rag - INFO - Data from ./uploads/case2.pdf inserted into ChromaDB successfully.
+2024-09-25 16:34:21,099 - rag - INFO - Processing file: ./uploads/case3.docx
+2024-09-25 16:34:21,101 - rag - INFO - Reading Word file: ./uploads/case3.docx
+2024-09-25 16:34:21,143 - rag - INFO - Successfully read Word file: ./uploads/case3.docx
+2024-09-25 16:34:21,148 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:34:21,517 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:34:21,524 - rag - INFO - Document 'case3.docx' presence in ChromaDB: False
+2024-09-25 16:34:21,532 - rag - INFO - Data from ./uploads/case3.docx inserted into ChromaDB successfully.
+2024-09-25 16:34:21,544 - rag - INFO - Processing file: ./uploads/case4.docx
+2024-09-25 16:34:21,546 - rag - INFO - Reading Word file: ./uploads/case4.docx
+2024-09-25 16:34:21,583 - rag - INFO - Successfully read Word file: ./uploads/case4.docx
+2024-09-25 16:34:21,594 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:34:22,149 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:34:22,161 - rag - INFO - Document 'case4.docx' presence in ChromaDB: False
+2024-09-25 16:34:22,206 - rag - INFO - Data from ./uploads/case4.docx inserted into ChromaDB successfully.
+2024-09-25 16:34:22,269 - rag - INFO - Processing file: ./uploads/case5.pdf
+2024-09-25 16:34:22,281 - rag - INFO - Reading PDF file: ./uploads/case5.pdf
+2024-09-25 16:34:22,397 - rag - INFO - Successfully read PDF file: ./uploads/case5.pdf
+2024-09-25 16:34:22,398 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:34:23,008 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:34:23,025 - rag - INFO - Document 'case5.pdf' presence in ChromaDB: False
+2024-09-25 16:34:23,033 - rag - INFO - Data from ./uploads/case5.pdf inserted into ChromaDB successfully.
+2024-09-25 16:34:23,037 - rag - INFO - Processing file: ./uploads/case6.pdf
+2024-09-25 16:34:23,038 - rag - INFO - Reading PDF file: ./uploads/case6.pdf
+2024-09-25 16:34:23,098 - rag - INFO - Successfully read PDF file: ./uploads/case6.pdf
+2024-09-25 16:34:23,099 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:34:23,635 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:34:23,641 - rag - INFO - Document 'case6.pdf' presence in ChromaDB: False
+2024-09-25 16:34:23,651 - rag - INFO - Data from ./uploads/case6.pdf inserted into ChromaDB successfully.
+2024-09-25 16:34:23,659 - rag - INFO - Processing file: ./uploads/court_case_summary.docx
+2024-09-25 16:34:23,661 - rag - INFO - Reading Word file: ./uploads/court_case_summary.docx
+2024-09-25 16:34:23,700 - rag - INFO - Successfully read Word file: ./uploads/court_case_summary.docx
+2024-09-25 16:34:23,702 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:34:24,036 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:34:24,040 - rag - INFO - Document 'court_case_summary.docx' presence in ChromaDB: False
+2024-09-25 16:34:24,064 - rag - INFO - Data from ./uploads/court_case_summary.docx inserted into ChromaDB successfully.
+2024-09-25 16:34:24,082 - rag - INFO - Processing file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 16:34:24,086 - rag - INFO - Reading PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 16:34:24,823 - rag - INFO - Successfully read PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 16:34:24,824 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:34:25,203 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:34:25,223 - rag - INFO - Document 'Cy44-02 -Question-Bank.pdf' presence in ChromaDB: False
+2024-09-25 16:34:25,244 - rag - INFO - Data from ./uploads/Cy44-02 -Question-Bank.pdf inserted into ChromaDB successfully.
+2024-09-25 16:34:25,260 - rag - INFO - Processing file: ./uploads/DAA.txt
+2024-09-25 16:34:25,262 - rag - INFO - Reading text file: ./uploads/DAA.txt
+2024-09-25 16:34:25,268 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:34:25,715 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:34:25,719 - rag - INFO - Document 'DAA.txt' presence in ChromaDB: False
+2024-09-25 16:34:25,728 - rag - INFO - Data from ./uploads/DAA.txt inserted into ChromaDB successfully.
+2024-09-25 16:34:25,738 - rag - INFO - Processing file: ./uploads/Details required.docx
+2024-09-25 16:34:25,740 - rag - INFO - Reading Word file: ./uploads/Details required.docx
+2024-09-25 16:34:25,795 - rag - INFO - Successfully read Word file: ./uploads/Details required.docx
+2024-09-25 16:34:25,797 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:34:26,197 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:34:26,209 - rag - INFO - Document 'Details required.docx' presence in ChromaDB: False
+2024-09-25 16:34:26,254 - rag - INFO - Data from ./uploads/Details required.docx inserted into ChromaDB successfully.
+2024-09-25 16:34:26,282 - rag - INFO - Processing file: ./uploads/HOD letter - SAP.docx
+2024-09-25 16:34:26,287 - rag - INFO - Reading Word file: ./uploads/HOD letter - SAP.docx
+2024-09-25 16:34:26,333 - rag - INFO - Successfully read Word file: ./uploads/HOD letter - SAP.docx
+2024-09-25 16:34:26,335 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:34:26,651 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:34:26,660 - rag - INFO - Document 'HOD letter - SAP.docx' presence in ChromaDB: False
+2024-09-25 16:34:26,673 - rag - INFO - Data from ./uploads/HOD letter - SAP.docx inserted into ChromaDB successfully.
+2024-09-25 16:34:26,692 - rag - INFO - Processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 16:34:26,695 - rag - INFO - Reading PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 16:34:28,853 - rag - INFO - Successfully read PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 16:34:28,854 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:34:29,716 - rag - ERROR - Error generating embeddings: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 16:34:29,718 - rag - ERROR - Error processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf, Error: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 16:42:02,222 - rag - INFO - OpenAI API key loaded.
+2024-09-25 16:42:02,934 - rag - INFO - ChromaDB collection 'court_cases' created successfully.
+2024-09-25 16:42:03,024 - rag - INFO - Processing file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 16:42:03,026 - rag - INFO - Reading Word file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 16:42:03,636 - rag - INFO - Successfully read Word file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 16:42:03,655 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:42:04,657 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:42:04,885 - rag - INFO - Document '1MS22CY067 DCN record.docx' presence in ChromaDB: False
+2024-09-25 16:42:06,149 - rag - INFO - Data from ./uploads/1MS22CY067 DCN record.docx inserted into ChromaDB successfully.
+2024-09-25 16:42:06,181 - rag - INFO - Processing file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 16:42:06,196 - rag - INFO - Reading PDF file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 16:42:07,009 - rag - INFO - Successfully read PDF file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 16:42:07,010 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:42:07,377 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:42:07,381 - rag - INFO - Document '1MS22CY067 final DCN.pdf' presence in ChromaDB: False
+2024-09-25 16:42:07,397 - rag - INFO - Data from ./uploads/1MS22CY067 final DCN.pdf inserted into ChromaDB successfully.
+2024-09-25 16:42:07,407 - rag - INFO - Processing file: ./uploads/case1.docx
+2024-09-25 16:42:07,409 - rag - INFO - Reading Word file: ./uploads/case1.docx
+2024-09-25 16:42:07,475 - rag - INFO - Successfully read Word file: ./uploads/case1.docx
+2024-09-25 16:42:07,477 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:42:07,836 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:42:07,844 - rag - INFO - Document 'case1.docx' presence in ChromaDB: False
+2024-09-25 16:42:07,876 - rag - INFO - Data from ./uploads/case1.docx inserted into ChromaDB successfully.
+2024-09-25 16:42:07,880 - rag - INFO - Processing file: ./uploads/case2.pdf
+2024-09-25 16:42:07,885 - rag - INFO - Reading PDF file: ./uploads/case2.pdf
+2024-09-25 16:42:08,021 - rag - INFO - Successfully read PDF file: ./uploads/case2.pdf
+2024-09-25 16:42:08,023 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:42:08,755 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:42:09,283 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: False
+2024-09-25 16:42:09,360 - rag - INFO - Data from ./uploads/case2.pdf inserted into ChromaDB successfully.
+2024-09-25 16:42:09,397 - rag - INFO - Processing file: ./uploads/case3.docx
+2024-09-25 16:42:09,408 - rag - INFO - Reading Word file: ./uploads/case3.docx
+2024-09-25 16:42:09,557 - rag - INFO - Successfully read Word file: ./uploads/case3.docx
+2024-09-25 16:42:09,560 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:42:10,130 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:42:10,194 - rag - INFO - Document 'case3.docx' presence in ChromaDB: False
+2024-09-25 16:42:10,237 - rag - INFO - Data from ./uploads/case3.docx inserted into ChromaDB successfully.
+2024-09-25 16:42:10,269 - rag - INFO - Processing file: ./uploads/case4.docx
+2024-09-25 16:42:10,271 - rag - INFO - Reading Word file: ./uploads/case4.docx
+2024-09-25 16:42:10,554 - rag - INFO - Successfully read Word file: ./uploads/case4.docx
+2024-09-25 16:42:10,555 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:42:10,962 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:42:11,004 - rag - INFO - Document 'case4.docx' presence in ChromaDB: False
+2024-09-25 16:42:11,031 - rag - INFO - Data from ./uploads/case4.docx inserted into ChromaDB successfully.
+2024-09-25 16:42:11,047 - rag - INFO - Processing file: ./uploads/case5.pdf
+2024-09-25 16:42:11,050 - rag - INFO - Reading PDF file: ./uploads/case5.pdf
+2024-09-25 16:42:11,266 - rag - INFO - Successfully read PDF file: ./uploads/case5.pdf
+2024-09-25 16:42:11,269 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:42:11,759 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:42:11,846 - rag - INFO - Document 'case5.pdf' presence in ChromaDB: False
+2024-09-25 16:42:11,873 - rag - INFO - Data from ./uploads/case5.pdf inserted into ChromaDB successfully.
+2024-09-25 16:42:11,881 - rag - INFO - Processing file: ./uploads/case6.pdf
+2024-09-25 16:42:11,894 - rag - INFO - Reading PDF file: ./uploads/case6.pdf
+2024-09-25 16:42:12,163 - rag - INFO - Successfully read PDF file: ./uploads/case6.pdf
+2024-09-25 16:42:12,168 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:42:12,879 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:42:12,911 - rag - INFO - Document 'case6.pdf' presence in ChromaDB: False
+2024-09-25 16:42:12,964 - rag - INFO - Data from ./uploads/case6.pdf inserted into ChromaDB successfully.
+2024-09-25 16:42:13,041 - rag - INFO - Processing file: ./uploads/court_case_summary.docx
+2024-09-25 16:42:13,054 - rag - INFO - Reading Word file: ./uploads/court_case_summary.docx
+2024-09-25 16:42:13,288 - rag - INFO - Successfully read Word file: ./uploads/court_case_summary.docx
+2024-09-25 16:42:13,291 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:42:13,790 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:42:13,796 - rag - INFO - Document 'court_case_summary.docx' presence in ChromaDB: False
+2024-09-25 16:42:13,814 - rag - INFO - Data from ./uploads/court_case_summary.docx inserted into ChromaDB successfully.
+2024-09-25 16:42:13,819 - rag - INFO - Processing file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 16:42:13,825 - rag - INFO - Reading PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 16:42:14,834 - rag - INFO - Successfully read PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 16:42:14,836 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:42:15,189 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:42:15,203 - rag - INFO - Document 'Cy44-02 -Question-Bank.pdf' presence in ChromaDB: False
+2024-09-25 16:42:15,221 - rag - INFO - Data from ./uploads/Cy44-02 -Question-Bank.pdf inserted into ChromaDB successfully.
+2024-09-25 16:42:15,226 - rag - INFO - Processing file: ./uploads/DAA.txt
+2024-09-25 16:42:15,233 - rag - INFO - Reading text file: ./uploads/DAA.txt
+2024-09-25 16:42:15,242 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:42:15,865 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:42:15,880 - rag - INFO - Document 'DAA.txt' presence in ChromaDB: False
+2024-09-25 16:42:15,892 - rag - INFO - Data from ./uploads/DAA.txt inserted into ChromaDB successfully.
+2024-09-25 16:42:15,955 - rag - INFO - Processing file: ./uploads/Details required.docx
+2024-09-25 16:42:15,960 - rag - INFO - Reading Word file: ./uploads/Details required.docx
+2024-09-25 16:42:16,108 - rag - INFO - Successfully read Word file: ./uploads/Details required.docx
+2024-09-25 16:42:16,119 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:42:16,519 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:42:16,535 - rag - INFO - Document 'Details required.docx' presence in ChromaDB: False
+2024-09-25 16:42:16,569 - rag - INFO - Data from ./uploads/Details required.docx inserted into ChromaDB successfully.
+2024-09-25 16:42:16,584 - rag - INFO - Processing file: ./uploads/HOD letter - SAP.docx
+2024-09-25 16:42:16,597 - rag - INFO - Reading Word file: ./uploads/HOD letter - SAP.docx
+2024-09-25 16:42:16,788 - rag - INFO - Successfully read Word file: ./uploads/HOD letter - SAP.docx
+2024-09-25 16:42:16,789 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:42:17,170 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:42:17,175 - rag - INFO - Document 'HOD letter - SAP.docx' presence in ChromaDB: False
+2024-09-25 16:42:17,188 - rag - INFO - Data from ./uploads/HOD letter - SAP.docx inserted into ChromaDB successfully.
+2024-09-25 16:42:17,193 - rag - INFO - Processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 16:42:17,195 - rag - INFO - Reading PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 16:42:22,229 - rag - INFO - Successfully read PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 16:42:22,231 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:42:23,452 - rag - ERROR - Error generating embeddings: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 16:42:23,468 - rag - ERROR - Error processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf, Error: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 16:58:21,360 - rag - INFO - OpenAI API key loaded.
+2024-09-25 16:58:21,907 - rag - INFO - ChromaDB collection 'court_cases' created successfully.
+2024-09-25 16:58:22,021 - rag - INFO - Processing file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 16:58:22,049 - rag - INFO - Reading Word file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 16:58:23,024 - rag - INFO - Successfully read Word file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 16:58:23,051 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:58:23,784 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:58:23,794 - rag - INFO - Document '1MS22CY067 DCN record.docx' presence in ChromaDB: False
+2024-09-25 16:58:23,825 - rag - INFO - Data from ./uploads/1MS22CY067 DCN record.docx inserted into ChromaDB successfully.
+2024-09-25 16:58:23,830 - rag - INFO - Processing file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 16:58:23,833 - rag - INFO - Reading PDF file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 16:58:24,072 - rag - INFO - Successfully read PDF file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 16:58:24,081 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:58:24,481 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:58:24,485 - rag - INFO - Document '1MS22CY067 final DCN.pdf' presence in ChromaDB: False
+2024-09-25 16:58:24,493 - rag - INFO - Data from ./uploads/1MS22CY067 final DCN.pdf inserted into ChromaDB successfully.
+2024-09-25 16:58:24,499 - rag - INFO - Processing file: ./uploads/case1.docx
+2024-09-25 16:58:24,501 - rag - INFO - Reading Word file: ./uploads/case1.docx
+2024-09-25 16:58:24,535 - rag - INFO - Successfully read Word file: ./uploads/case1.docx
+2024-09-25 16:58:24,537 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:58:24,893 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:58:24,901 - rag - INFO - Document 'case1.docx' presence in ChromaDB: False
+2024-09-25 16:58:24,915 - rag - INFO - Data from ./uploads/case1.docx inserted into ChromaDB successfully.
+2024-09-25 16:58:24,920 - rag - INFO - Processing file: ./uploads/case2.pdf
+2024-09-25 16:58:24,922 - rag - INFO - Reading PDF file: ./uploads/case2.pdf
+2024-09-25 16:58:25,510 - rag - INFO - Successfully read PDF file: ./uploads/case2.pdf
+2024-09-25 16:58:25,522 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:58:25,917 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:58:25,934 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: False
+2024-09-25 16:58:25,975 - rag - INFO - Data from ./uploads/case2.pdf inserted into ChromaDB successfully.
+2024-09-25 16:58:26,023 - rag - INFO - Processing file: ./uploads/case3.docx
+2024-09-25 16:58:26,057 - rag - INFO - Reading Word file: ./uploads/case3.docx
+2024-09-25 16:58:26,233 - rag - INFO - Successfully read Word file: ./uploads/case3.docx
+2024-09-25 16:58:26,242 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:58:26,594 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:58:26,597 - rag - INFO - Document 'case3.docx' presence in ChromaDB: False
+2024-09-25 16:58:26,605 - rag - INFO - Data from ./uploads/case3.docx inserted into ChromaDB successfully.
+2024-09-25 16:58:26,609 - rag - INFO - Processing file: ./uploads/case4.docx
+2024-09-25 16:58:26,611 - rag - INFO - Reading Word file: ./uploads/case4.docx
+2024-09-25 16:58:26,641 - rag - INFO - Successfully read Word file: ./uploads/case4.docx
+2024-09-25 16:58:26,643 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:58:27,200 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:58:27,216 - rag - INFO - Document 'case4.docx' presence in ChromaDB: False
+2024-09-25 16:58:27,233 - rag - INFO - Data from ./uploads/case4.docx inserted into ChromaDB successfully.
+2024-09-25 16:58:27,260 - rag - INFO - Processing file: ./uploads/case5.pdf
+2024-09-25 16:58:27,267 - rag - INFO - Reading PDF file: ./uploads/case5.pdf
+2024-09-25 16:58:27,373 - rag - INFO - Successfully read PDF file: ./uploads/case5.pdf
+2024-09-25 16:58:27,374 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:58:27,715 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:58:27,721 - rag - INFO - Document 'case5.pdf' presence in ChromaDB: False
+2024-09-25 16:58:27,732 - rag - INFO - Data from ./uploads/case5.pdf inserted into ChromaDB successfully.
+2024-09-25 16:58:27,738 - rag - INFO - Processing file: ./uploads/case6.pdf
+2024-09-25 16:58:27,739 - rag - INFO - Reading PDF file: ./uploads/case6.pdf
+2024-09-25 16:58:27,820 - rag - INFO - Successfully read PDF file: ./uploads/case6.pdf
+2024-09-25 16:58:27,821 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:58:28,163 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:58:28,169 - rag - INFO - Document 'case6.pdf' presence in ChromaDB: False
+2024-09-25 16:58:28,175 - rag - INFO - Data from ./uploads/case6.pdf inserted into ChromaDB successfully.
+2024-09-25 16:58:28,191 - rag - INFO - Processing file: ./uploads/court_case_summary.docx
+2024-09-25 16:58:28,192 - rag - INFO - Reading Word file: ./uploads/court_case_summary.docx
+2024-09-25 16:58:28,274 - rag - INFO - Successfully read Word file: ./uploads/court_case_summary.docx
+2024-09-25 16:58:28,275 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:58:28,573 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:58:28,578 - rag - INFO - Document 'court_case_summary.docx' presence in ChromaDB: False
+2024-09-25 16:58:28,588 - rag - INFO - Data from ./uploads/court_case_summary.docx inserted into ChromaDB successfully.
+2024-09-25 16:58:28,595 - rag - INFO - Processing file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 16:58:28,598 - rag - INFO - Reading PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 16:58:28,823 - rag - INFO - Successfully read PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 16:58:28,824 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:58:29,201 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:58:29,206 - rag - INFO - Document 'Cy44-02 -Question-Bank.pdf' presence in ChromaDB: False
+2024-09-25 16:58:29,217 - rag - INFO - Data from ./uploads/Cy44-02 -Question-Bank.pdf inserted into ChromaDB successfully.
+2024-09-25 16:58:29,235 - rag - INFO - Processing file: ./uploads/DAA.txt
+2024-09-25 16:58:29,237 - rag - INFO - Reading text file: ./uploads/DAA.txt
+2024-09-25 16:58:29,254 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:58:29,717 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:58:29,720 - rag - INFO - Document 'DAA.txt' presence in ChromaDB: False
+2024-09-25 16:58:29,728 - rag - INFO - Data from ./uploads/DAA.txt inserted into ChromaDB successfully.
+2024-09-25 16:58:29,737 - rag - INFO - Processing file: ./uploads/Details required.docx
+2024-09-25 16:58:29,739 - rag - INFO - Reading Word file: ./uploads/Details required.docx
+2024-09-25 16:58:29,793 - rag - INFO - Successfully read Word file: ./uploads/Details required.docx
+2024-09-25 16:58:29,796 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:58:30,177 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:58:30,194 - rag - INFO - Document 'Details required.docx' presence in ChromaDB: False
+2024-09-25 16:58:30,245 - rag - INFO - Data from ./uploads/Details required.docx inserted into ChromaDB successfully.
+2024-09-25 16:58:30,258 - rag - INFO - Processing file: ./uploads/HOD letter - SAP.docx
+2024-09-25 16:58:30,268 - rag - INFO - Reading Word file: ./uploads/HOD letter - SAP.docx
+2024-09-25 16:58:30,362 - rag - INFO - Successfully read Word file: ./uploads/HOD letter - SAP.docx
+2024-09-25 16:58:30,369 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:58:30,730 - rag - INFO - Embeddings successfully generated.
+2024-09-25 16:58:30,744 - rag - INFO - Document 'HOD letter - SAP.docx' presence in ChromaDB: False
+2024-09-25 16:58:30,765 - rag - INFO - Data from ./uploads/HOD letter - SAP.docx inserted into ChromaDB successfully.
+2024-09-25 16:58:30,771 - rag - INFO - Processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 16:58:30,773 - rag - INFO - Reading PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 16:58:32,667 - rag - INFO - Successfully read PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 16:58:32,668 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 16:58:33,787 - rag - ERROR - Error generating embeddings: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 16:58:33,788 - rag - ERROR - Error processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf, Error: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 17:05:08,554 - rag - INFO - OpenAI API key loaded.
+2024-09-25 17:05:09,507 - rag - INFO - ChromaDB collection 'court_cases' created successfully.
+2024-09-25 17:05:09,742 - rag - INFO - Processing file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 17:05:09,751 - rag - INFO - Reading Word file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 17:05:10,250 - rag - INFO - Successfully read Word file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 17:05:10,258 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:05:10,889 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:05:11,016 - rag - INFO - Document '1MS22CY067 DCN record.docx' presence in ChromaDB: False
+2024-09-25 17:05:11,221 - rag - INFO - Data from ./uploads/1MS22CY067 DCN record.docx inserted into ChromaDB successfully.
+2024-09-25 17:05:12,593 - rag - INFO - Processing file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 17:05:12,595 - rag - INFO - Reading PDF file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 17:05:12,891 - rag - INFO - Successfully read PDF file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 17:05:12,893 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:05:13,540 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:05:13,545 - rag - INFO - Document '1MS22CY067 final DCN.pdf' presence in ChromaDB: False
+2024-09-25 17:05:13,552 - rag - INFO - Data from ./uploads/1MS22CY067 final DCN.pdf inserted into ChromaDB successfully.
+2024-09-25 17:05:13,565 - rag - INFO - Processing file: ./uploads/case1.docx
+2024-09-25 17:05:13,567 - rag - INFO - Reading Word file: ./uploads/case1.docx
+2024-09-25 17:05:13,598 - rag - INFO - Successfully read Word file: ./uploads/case1.docx
+2024-09-25 17:05:13,600 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:05:14,082 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:05:14,088 - rag - INFO - Document 'case1.docx' presence in ChromaDB: False
+2024-09-25 17:05:14,098 - rag - INFO - Data from ./uploads/case1.docx inserted into ChromaDB successfully.
+2024-09-25 17:05:14,116 - rag - INFO - Processing file: ./uploads/case2.pdf
+2024-09-25 17:05:14,122 - rag - INFO - Reading PDF file: ./uploads/case2.pdf
+2024-09-25 17:05:14,259 - rag - INFO - Successfully read PDF file: ./uploads/case2.pdf
+2024-09-25 17:05:14,260 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:05:14,659 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:05:14,664 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: False
+2024-09-25 17:05:14,672 - rag - INFO - Data from ./uploads/case2.pdf inserted into ChromaDB successfully.
+2024-09-25 17:05:14,679 - rag - INFO - Processing file: ./uploads/case3.docx
+2024-09-25 17:05:14,683 - rag - INFO - Reading Word file: ./uploads/case3.docx
+2024-09-25 17:05:14,725 - rag - INFO - Successfully read Word file: ./uploads/case3.docx
+2024-09-25 17:05:14,726 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:05:15,231 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:05:15,236 - rag - INFO - Document 'case3.docx' presence in ChromaDB: False
+2024-09-25 17:05:15,269 - rag - INFO - Data from ./uploads/case3.docx inserted into ChromaDB successfully.
+2024-09-25 17:05:15,279 - rag - INFO - Processing file: ./uploads/case4.docx
+2024-09-25 17:05:15,281 - rag - INFO - Reading Word file: ./uploads/case4.docx
+2024-09-25 17:05:15,313 - rag - INFO - Successfully read Word file: ./uploads/case4.docx
+2024-09-25 17:05:15,315 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:05:15,709 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:05:15,729 - rag - INFO - Document 'case4.docx' presence in ChromaDB: False
+2024-09-25 17:05:15,739 - rag - INFO - Data from ./uploads/case4.docx inserted into ChromaDB successfully.
+2024-09-25 17:05:15,756 - rag - INFO - Processing file: ./uploads/case5.pdf
+2024-09-25 17:05:15,768 - rag - INFO - Reading PDF file: ./uploads/case5.pdf
+2024-09-25 17:05:15,846 - rag - INFO - Successfully read PDF file: ./uploads/case5.pdf
+2024-09-25 17:05:15,848 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:05:16,455 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:05:16,460 - rag - INFO - Document 'case5.pdf' presence in ChromaDB: False
+2024-09-25 17:05:16,473 - rag - INFO - Data from ./uploads/case5.pdf inserted into ChromaDB successfully.
+2024-09-25 17:05:16,485 - rag - INFO - Processing file: ./uploads/case6.pdf
+2024-09-25 17:05:16,491 - rag - INFO - Reading PDF file: ./uploads/case6.pdf
+2024-09-25 17:05:16,749 - rag - INFO - Successfully read PDF file: ./uploads/case6.pdf
+2024-09-25 17:05:16,758 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:05:17,155 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:05:17,172 - rag - INFO - Document 'case6.pdf' presence in ChromaDB: False
+2024-09-25 17:05:17,187 - rag - INFO - Data from ./uploads/case6.pdf inserted into ChromaDB successfully.
+2024-09-25 17:05:17,212 - rag - INFO - Processing file: ./uploads/court_case_summary.docx
+2024-09-25 17:05:17,215 - rag - INFO - Reading Word file: ./uploads/court_case_summary.docx
+2024-09-25 17:05:17,286 - rag - INFO - Successfully read Word file: ./uploads/court_case_summary.docx
+2024-09-25 17:05:17,292 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:05:17,739 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:05:17,743 - rag - INFO - Document 'court_case_summary.docx' presence in ChromaDB: False
+2024-09-25 17:05:17,752 - rag - INFO - Data from ./uploads/court_case_summary.docx inserted into ChromaDB successfully.
+2024-09-25 17:05:17,760 - rag - INFO - Processing file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 17:05:17,762 - rag - INFO - Reading PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 17:05:18,239 - rag - INFO - Successfully read PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 17:05:18,240 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:05:18,641 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:05:18,645 - rag - INFO - Document 'Cy44-02 -Question-Bank.pdf' presence in ChromaDB: False
+2024-09-25 17:05:18,653 - rag - INFO - Data from ./uploads/Cy44-02 -Question-Bank.pdf inserted into ChromaDB successfully.
+2024-09-25 17:05:18,658 - rag - INFO - Processing file: ./uploads/DAA.txt
+2024-09-25 17:05:18,659 - rag - INFO - Reading text file: ./uploads/DAA.txt
+2024-09-25 17:05:18,664 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:05:19,226 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:05:19,232 - rag - INFO - Document 'DAA.txt' presence in ChromaDB: False
+2024-09-25 17:05:19,240 - rag - INFO - Data from ./uploads/DAA.txt inserted into ChromaDB successfully.
+2024-09-25 17:05:19,245 - rag - INFO - Processing file: ./uploads/Details required.docx
+2024-09-25 17:05:19,247 - rag - INFO - Reading Word file: ./uploads/Details required.docx
+2024-09-25 17:05:19,462 - rag - INFO - Successfully read Word file: ./uploads/Details required.docx
+2024-09-25 17:05:19,478 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:05:19,861 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:05:19,867 - rag - INFO - Document 'Details required.docx' presence in ChromaDB: False
+2024-09-25 17:05:19,875 - rag - INFO - Data from ./uploads/Details required.docx inserted into ChromaDB successfully.
+2024-09-25 17:05:19,887 - rag - INFO - Processing file: ./uploads/HOD letter - SAP.docx
+2024-09-25 17:05:19,888 - rag - INFO - Reading Word file: ./uploads/HOD letter - SAP.docx
+2024-09-25 17:05:20,109 - rag - INFO - Successfully read Word file: ./uploads/HOD letter - SAP.docx
+2024-09-25 17:05:20,110 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:05:20,601 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:05:20,608 - rag - INFO - Document 'HOD letter - SAP.docx' presence in ChromaDB: False
+2024-09-25 17:05:20,616 - rag - INFO - Data from ./uploads/HOD letter - SAP.docx inserted into ChromaDB successfully.
+2024-09-25 17:05:20,642 - rag - INFO - Processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 17:05:20,644 - rag - INFO - Reading PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 17:05:22,454 - rag - INFO - Successfully read PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 17:05:22,455 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:05:23,349 - rag - ERROR - Error generating embeddings: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 17:05:23,376 - rag - ERROR - Error processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf, Error: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 17:35:18,477 - rag - INFO - OpenAI API key loaded.
+2024-09-25 17:35:18,865 - rag - INFO - ChromaDB collection 'court_cases' created successfully.
+2024-09-25 17:35:18,935 - rag - INFO - Processing file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 17:35:18,939 - rag - INFO - Reading Word file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 17:35:19,812 - rag - INFO - Successfully read Word file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 17:35:19,829 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:35:20,346 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:35:20,365 - rag - INFO - Document '1MS22CY067 DCN record.docx' presence in ChromaDB: False
+2024-09-25 17:35:20,486 - rag - INFO - Data from ./uploads/1MS22CY067 DCN record.docx inserted into ChromaDB successfully.
+2024-09-25 17:35:20,490 - rag - INFO - Processing file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 17:35:20,493 - rag - INFO - Reading PDF file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 17:35:20,720 - rag - INFO - Successfully read PDF file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 17:35:20,721 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:35:21,158 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:35:21,162 - rag - INFO - Document '1MS22CY067 final DCN.pdf' presence in ChromaDB: False
+2024-09-25 17:35:21,181 - rag - INFO - Data from ./uploads/1MS22CY067 final DCN.pdf inserted into ChromaDB successfully.
+2024-09-25 17:35:21,185 - rag - INFO - Processing file: ./uploads/case1.docx
+2024-09-25 17:35:21,187 - rag - INFO - Reading Word file: ./uploads/case1.docx
+2024-09-25 17:35:21,755 - rag - INFO - Successfully read Word file: ./uploads/case1.docx
+2024-09-25 17:35:21,757 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:35:22,419 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:35:22,461 - rag - INFO - Document 'case1.docx' presence in ChromaDB: False
+2024-09-25 17:35:22,535 - rag - INFO - Data from ./uploads/case1.docx inserted into ChromaDB successfully.
+2024-09-25 17:35:22,556 - rag - INFO - Processing file: ./uploads/case2.pdf
+2024-09-25 17:35:22,565 - rag - INFO - Reading PDF file: ./uploads/case2.pdf
+2024-09-25 17:35:23,218 - rag - INFO - Successfully read PDF file: ./uploads/case2.pdf
+2024-09-25 17:35:23,220 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:35:23,614 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:35:23,619 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: False
+2024-09-25 17:35:23,631 - rag - INFO - Data from ./uploads/case2.pdf inserted into ChromaDB successfully.
+2024-09-25 17:35:23,648 - rag - INFO - Processing file: ./uploads/case3.docx
+2024-09-25 17:35:23,650 - rag - INFO - Reading Word file: ./uploads/case3.docx
+2024-09-25 17:35:23,697 - rag - INFO - Successfully read Word file: ./uploads/case3.docx
+2024-09-25 17:35:23,699 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:35:24,116 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:35:24,138 - rag - INFO - Document 'case3.docx' presence in ChromaDB: False
+2024-09-25 17:35:24,174 - rag - INFO - Data from ./uploads/case3.docx inserted into ChromaDB successfully.
+2024-09-25 17:35:24,195 - rag - INFO - Processing file: ./uploads/case4.docx
+2024-09-25 17:35:24,225 - rag - INFO - Reading Word file: ./uploads/case4.docx
+2024-09-25 17:35:24,659 - rag - INFO - Successfully read Word file: ./uploads/case4.docx
+2024-09-25 17:35:24,691 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:35:25,251 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:35:25,261 - rag - INFO - Document 'case4.docx' presence in ChromaDB: False
+2024-09-25 17:35:25,310 - rag - INFO - Data from ./uploads/case4.docx inserted into ChromaDB successfully.
+2024-09-25 17:35:25,324 - rag - INFO - Processing file: ./uploads/case5.pdf
+2024-09-25 17:35:25,326 - rag - INFO - Reading PDF file: ./uploads/case5.pdf
+2024-09-25 17:35:25,509 - rag - INFO - Successfully read PDF file: ./uploads/case5.pdf
+2024-09-25 17:35:25,511 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:35:26,086 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:35:26,090 - rag - INFO - Document 'case5.pdf' presence in ChromaDB: False
+2024-09-25 17:35:26,106 - rag - INFO - Data from ./uploads/case5.pdf inserted into ChromaDB successfully.
+2024-09-25 17:35:26,113 - rag - INFO - Processing file: ./uploads/case6.pdf
+2024-09-25 17:35:26,115 - rag - INFO - Reading PDF file: ./uploads/case6.pdf
+2024-09-25 17:35:26,192 - rag - INFO - Successfully read PDF file: ./uploads/case6.pdf
+2024-09-25 17:35:26,193 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:35:26,570 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:35:26,587 - rag - INFO - Document 'case6.pdf' presence in ChromaDB: False
+2024-09-25 17:35:26,606 - rag - INFO - Data from ./uploads/case6.pdf inserted into ChromaDB successfully.
+2024-09-25 17:35:26,612 - rag - INFO - Processing file: ./uploads/court_case_summary.docx
+2024-09-25 17:35:26,614 - rag - INFO - Reading Word file: ./uploads/court_case_summary.docx
+2024-09-25 17:35:26,647 - rag - INFO - Successfully read Word file: ./uploads/court_case_summary.docx
+2024-09-25 17:35:26,649 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:35:27,042 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:35:27,049 - rag - INFO - Document 'court_case_summary.docx' presence in ChromaDB: False
+2024-09-25 17:35:27,064 - rag - INFO - Data from ./uploads/court_case_summary.docx inserted into ChromaDB successfully.
+2024-09-25 17:35:27,070 - rag - INFO - Processing file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 17:35:27,072 - rag - INFO - Reading PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 17:35:27,700 - rag - INFO - Successfully read PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 17:35:27,703 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:35:28,116 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:35:28,120 - rag - INFO - Document 'Cy44-02 -Question-Bank.pdf' presence in ChromaDB: False
+2024-09-25 17:35:28,131 - rag - INFO - Data from ./uploads/Cy44-02 -Question-Bank.pdf inserted into ChromaDB successfully.
+2024-09-25 17:35:28,137 - rag - INFO - Processing file: ./uploads/DAA.txt
+2024-09-25 17:35:28,139 - rag - INFO - Reading text file: ./uploads/DAA.txt
+2024-09-25 17:35:28,147 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:35:28,655 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:35:28,658 - rag - INFO - Document 'DAA.txt' presence in ChromaDB: False
+2024-09-25 17:35:28,667 - rag - INFO - Data from ./uploads/DAA.txt inserted into ChromaDB successfully.
+2024-09-25 17:35:28,672 - rag - INFO - Processing file: ./uploads/Details required.docx
+2024-09-25 17:35:28,674 - rag - INFO - Reading Word file: ./uploads/Details required.docx
+2024-09-25 17:35:28,731 - rag - INFO - Successfully read Word file: ./uploads/Details required.docx
+2024-09-25 17:35:28,733 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:35:29,079 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:35:29,089 - rag - INFO - Document 'Details required.docx' presence in ChromaDB: False
+2024-09-25 17:35:29,101 - rag - INFO - Data from ./uploads/Details required.docx inserted into ChromaDB successfully.
+2024-09-25 17:35:29,105 - rag - INFO - Processing file: ./uploads/HOD letter - SAP.docx
+2024-09-25 17:35:29,107 - rag - INFO - Reading Word file: ./uploads/HOD letter - SAP.docx
+2024-09-25 17:35:29,168 - rag - INFO - Successfully read Word file: ./uploads/HOD letter - SAP.docx
+2024-09-25 17:35:29,170 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:35:29,668 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:35:29,672 - rag - INFO - Document 'HOD letter - SAP.docx' presence in ChromaDB: False
+2024-09-25 17:35:29,687 - rag - INFO - Data from ./uploads/HOD letter - SAP.docx inserted into ChromaDB successfully.
+2024-09-25 17:35:29,696 - rag - INFO - Processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 17:35:29,700 - rag - INFO - Reading PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 17:35:32,262 - rag - INFO - Successfully read PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 17:35:32,265 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:35:33,453 - rag - ERROR - Error generating embeddings: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 17:35:33,455 - rag - ERROR - Error processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf, Error: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 17:40:22,132 - rag - INFO - OpenAI API key loaded.
+2024-09-25 17:40:22,424 - rag - INFO - ChromaDB collection 'court_cases' created successfully.
+2024-09-25 17:40:22,482 - rag - INFO - Processing file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 17:40:22,484 - rag - INFO - Reading Word file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 17:40:23,067 - rag - INFO - Successfully read Word file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 17:40:23,090 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:40:23,826 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:40:23,911 - rag - INFO - Document '1MS22CY067 DCN record.docx' presence in ChromaDB: False
+2024-09-25 17:40:23,940 - rag - INFO - Data from ./uploads/1MS22CY067 DCN record.docx inserted into ChromaDB successfully.
+2024-09-25 17:40:23,945 - rag - INFO - Processing file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 17:40:23,947 - rag - INFO - Reading PDF file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 17:40:24,118 - rag - INFO - Successfully read PDF file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 17:40:24,119 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:40:24,613 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:40:24,616 - rag - INFO - Document '1MS22CY067 final DCN.pdf' presence in ChromaDB: False
+2024-09-25 17:40:24,621 - rag - INFO - Data from ./uploads/1MS22CY067 final DCN.pdf inserted into ChromaDB successfully.
+2024-09-25 17:40:24,626 - rag - INFO - Processing file: ./uploads/case1.docx
+2024-09-25 17:40:24,627 - rag - INFO - Reading Word file: ./uploads/case1.docx
+2024-09-25 17:40:24,658 - rag - INFO - Successfully read Word file: ./uploads/case1.docx
+2024-09-25 17:40:24,660 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:40:25,149 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:40:25,154 - rag - INFO - Document 'case1.docx' presence in ChromaDB: False
+2024-09-25 17:40:25,161 - rag - INFO - Data from ./uploads/case1.docx inserted into ChromaDB successfully.
+2024-09-25 17:40:25,165 - rag - INFO - Processing file: ./uploads/case2.pdf
+2024-09-25 17:40:25,168 - rag - INFO - Reading PDF file: ./uploads/case2.pdf
+2024-09-25 17:40:25,260 - rag - INFO - Successfully read PDF file: ./uploads/case2.pdf
+2024-09-25 17:40:25,262 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:40:25,671 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:40:25,674 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: False
+2024-09-25 17:40:25,680 - rag - INFO - Data from ./uploads/case2.pdf inserted into ChromaDB successfully.
+2024-09-25 17:40:25,686 - rag - INFO - Processing file: ./uploads/case3.docx
+2024-09-25 17:40:25,687 - rag - INFO - Reading Word file: ./uploads/case3.docx
+2024-09-25 17:40:25,751 - rag - INFO - Successfully read Word file: ./uploads/case3.docx
+2024-09-25 17:40:25,755 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:40:26,101 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:40:26,106 - rag - INFO - Document 'case3.docx' presence in ChromaDB: False
+2024-09-25 17:40:26,112 - rag - INFO - Data from ./uploads/case3.docx inserted into ChromaDB successfully.
+2024-09-25 17:40:26,115 - rag - INFO - Processing file: ./uploads/case4.docx
+2024-09-25 17:40:26,116 - rag - INFO - Reading Word file: ./uploads/case4.docx
+2024-09-25 17:40:26,143 - rag - INFO - Successfully read Word file: ./uploads/case4.docx
+2024-09-25 17:40:26,144 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:40:26,568 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:40:26,572 - rag - INFO - Document 'case4.docx' presence in ChromaDB: False
+2024-09-25 17:40:26,580 - rag - INFO - Data from ./uploads/case4.docx inserted into ChromaDB successfully.
+2024-09-25 17:40:26,586 - rag - INFO - Processing file: ./uploads/case5.pdf
+2024-09-25 17:40:26,587 - rag - INFO - Reading PDF file: ./uploads/case5.pdf
+2024-09-25 17:40:26,672 - rag - INFO - Successfully read PDF file: ./uploads/case5.pdf
+2024-09-25 17:40:26,673 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:40:27,012 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:40:27,019 - rag - INFO - Document 'case5.pdf' presence in ChromaDB: False
+2024-09-25 17:40:27,028 - rag - INFO - Data from ./uploads/case5.pdf inserted into ChromaDB successfully.
+2024-09-25 17:40:27,034 - rag - INFO - Processing file: ./uploads/case6.pdf
+2024-09-25 17:40:27,036 - rag - INFO - Reading PDF file: ./uploads/case6.pdf
+2024-09-25 17:40:27,111 - rag - INFO - Successfully read PDF file: ./uploads/case6.pdf
+2024-09-25 17:40:27,113 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:40:27,463 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:40:27,474 - rag - INFO - Document 'case6.pdf' presence in ChromaDB: False
+2024-09-25 17:40:27,483 - rag - INFO - Data from ./uploads/case6.pdf inserted into ChromaDB successfully.
+2024-09-25 17:40:27,489 - rag - INFO - Processing file: ./uploads/court_case_summary.docx
+2024-09-25 17:40:27,490 - rag - INFO - Reading Word file: ./uploads/court_case_summary.docx
+2024-09-25 17:40:27,542 - rag - INFO - Successfully read Word file: ./uploads/court_case_summary.docx
+2024-09-25 17:40:27,543 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:40:27,899 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:40:27,918 - rag - INFO - Document 'court_case_summary.docx' presence in ChromaDB: False
+2024-09-25 17:40:27,928 - rag - INFO - Data from ./uploads/court_case_summary.docx inserted into ChromaDB successfully.
+2024-09-25 17:40:27,934 - rag - INFO - Processing file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 17:40:27,935 - rag - INFO - Reading PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 17:40:28,666 - rag - INFO - Successfully read PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 17:40:28,670 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:40:29,064 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:40:29,345 - rag - INFO - Document 'Cy44-02 -Question-Bank.pdf' presence in ChromaDB: False
+2024-09-25 17:40:29,446 - rag - INFO - Data from ./uploads/Cy44-02 -Question-Bank.pdf inserted into ChromaDB successfully.
+2024-09-25 17:40:29,724 - rag - INFO - Processing file: ./uploads/DAA.txt
+2024-09-25 17:40:29,757 - rag - INFO - Reading text file: ./uploads/DAA.txt
+2024-09-25 17:40:29,828 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:40:30,326 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:40:30,330 - rag - INFO - Document 'DAA.txt' presence in ChromaDB: False
+2024-09-25 17:40:30,342 - rag - INFO - Data from ./uploads/DAA.txt inserted into ChromaDB successfully.
+2024-09-25 17:40:30,346 - rag - INFO - Processing file: ./uploads/Details required.docx
+2024-09-25 17:40:30,348 - rag - INFO - Reading Word file: ./uploads/Details required.docx
+2024-09-25 17:40:30,451 - rag - INFO - Successfully read Word file: ./uploads/Details required.docx
+2024-09-25 17:40:30,460 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:40:30,894 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:40:30,899 - rag - INFO - Document 'Details required.docx' presence in ChromaDB: False
+2024-09-25 17:40:30,915 - rag - INFO - Data from ./uploads/Details required.docx inserted into ChromaDB successfully.
+2024-09-25 17:40:30,920 - rag - INFO - Processing file: ./uploads/HOD letter - SAP.docx
+2024-09-25 17:40:30,922 - rag - INFO - Reading Word file: ./uploads/HOD letter - SAP.docx
+2024-09-25 17:40:31,017 - rag - INFO - Successfully read Word file: ./uploads/HOD letter - SAP.docx
+2024-09-25 17:40:31,021 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:40:31,437 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:40:31,444 - rag - INFO - Document 'HOD letter - SAP.docx' presence in ChromaDB: False
+2024-09-25 17:40:31,454 - rag - INFO - Data from ./uploads/HOD letter - SAP.docx inserted into ChromaDB successfully.
+2024-09-25 17:40:31,459 - rag - INFO - Processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 17:40:31,461 - rag - INFO - Reading PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 17:40:34,145 - rag - INFO - Successfully read PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 17:40:34,147 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:40:35,844 - rag - ERROR - Error generating embeddings: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 17:40:35,846 - rag - ERROR - Error processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf, Error: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 17:46:41,559 - rag - INFO - OpenAI API key loaded.
+2024-09-25 17:46:41,863 - rag - INFO - ChromaDB collection 'court_cases' created successfully.
+2024-09-25 17:46:41,931 - rag - INFO - Processing file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 17:46:41,933 - rag - INFO - Reading Word file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 17:46:42,470 - rag - INFO - Successfully read Word file: ./uploads/1MS22CY067 DCN record.docx
+2024-09-25 17:46:42,487 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:46:43,094 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:46:43,111 - rag - INFO - Document '1MS22CY067 DCN record.docx' presence in ChromaDB: False
+2024-09-25 17:46:43,131 - rag - INFO - Data from ./uploads/1MS22CY067 DCN record.docx inserted into ChromaDB successfully.
+2024-09-25 17:46:43,138 - rag - INFO - Processing file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 17:46:43,140 - rag - INFO - Reading PDF file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 17:46:44,885 - rag - INFO - Successfully read PDF file: ./uploads/1MS22CY067 final DCN.pdf
+2024-09-25 17:46:44,888 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:46:45,286 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:46:45,297 - rag - INFO - Document '1MS22CY067 final DCN.pdf' presence in ChromaDB: False
+2024-09-25 17:46:45,306 - rag - INFO - Data from ./uploads/1MS22CY067 final DCN.pdf inserted into ChromaDB successfully.
+2024-09-25 17:46:45,310 - rag - INFO - Processing file: ./uploads/case1.docx
+2024-09-25 17:46:45,311 - rag - INFO - Reading Word file: ./uploads/case1.docx
+2024-09-25 17:46:45,360 - rag - INFO - Successfully read Word file: ./uploads/case1.docx
+2024-09-25 17:46:45,361 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:46:45,727 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:46:45,763 - rag - INFO - Document 'case1.docx' presence in ChromaDB: False
+2024-09-25 17:46:45,812 - rag - INFO - Data from ./uploads/case1.docx inserted into ChromaDB successfully.
+2024-09-25 17:46:45,978 - rag - INFO - Processing file: ./uploads/case2.pdf
+2024-09-25 17:46:46,007 - rag - INFO - Reading PDF file: ./uploads/case2.pdf
+2024-09-25 17:46:46,204 - rag - INFO - Successfully read PDF file: ./uploads/case2.pdf
+2024-09-25 17:46:46,229 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:46:46,587 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:46:46,593 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: False
+2024-09-25 17:46:46,604 - rag - INFO - Data from ./uploads/case2.pdf inserted into ChromaDB successfully.
+2024-09-25 17:46:46,608 - rag - INFO - Processing file: ./uploads/case3.docx
+2024-09-25 17:46:46,610 - rag - INFO - Reading Word file: ./uploads/case3.docx
+2024-09-25 17:46:46,645 - rag - INFO - Successfully read Word file: ./uploads/case3.docx
+2024-09-25 17:46:46,652 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:46:46,965 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:46:46,970 - rag - INFO - Document 'case3.docx' presence in ChromaDB: False
+2024-09-25 17:46:46,978 - rag - INFO - Data from ./uploads/case3.docx inserted into ChromaDB successfully.
+2024-09-25 17:46:46,982 - rag - INFO - Processing file: ./uploads/case4.docx
+2024-09-25 17:46:46,984 - rag - INFO - Reading Word file: ./uploads/case4.docx
+2024-09-25 17:46:47,012 - rag - INFO - Successfully read Word file: ./uploads/case4.docx
+2024-09-25 17:46:47,014 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:46:47,404 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:46:47,408 - rag - INFO - Document 'case4.docx' presence in ChromaDB: False
+2024-09-25 17:46:47,424 - rag - INFO - Data from ./uploads/case4.docx inserted into ChromaDB successfully.
+2024-09-25 17:46:47,428 - rag - INFO - Processing file: ./uploads/case5.pdf
+2024-09-25 17:46:47,433 - rag - INFO - Reading PDF file: ./uploads/case5.pdf
+2024-09-25 17:46:47,508 - rag - INFO - Successfully read PDF file: ./uploads/case5.pdf
+2024-09-25 17:46:47,509 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:46:47,621 - rag - INFO - Querying cases with text: 'hey'
+2024-09-25 17:46:47,623 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:46:48,010 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:46:48,017 - rag - INFO - Document 'case5.pdf' presence in ChromaDB: False
+2024-09-25 17:46:48,029 - rag - INFO - Data from ./uploads/case5.pdf inserted into ChromaDB successfully.
+2024-09-25 17:46:48,067 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:46:48,096 - rag - INFO - Results from ChromaDB: {'ids': [['case5.pdf', 'case3.docx', 'case4.docx']], 'distances': [[0.5246464014053345, 0.5276991724967957, 0.5335850119590759]], 'metadatas': [[{'text': "Emma and Lucas Brown were involved in a divorce proceeding where the \nprimary contention was the custody of their two children. Emma sought full \ncustody, arguing that Lucas had been an uninvolved parent and had a history of \nsubstance abuse, while Lucas sought joint custody, asserting that Emma’s \nclaims were exaggerated and that he had a right to be actively involved in his \nchildren's lives. The court had to evaluate the best interests of the children, the \nparents' respective parenting abilities, and any evidence related to substance \nabuse or involvement in the children's lives. \n"}, {'text': "Sarah Johnson, a former employee of Alpha Corp, filed a lawsuit alleging gender discrimination after being passed over for promotion in favor of a less qualified male colleague. Johnson claimed that her supervisor made discriminatory remarks about her gender and that her qualifications were superior to those of the promoted employee. The case involved evaluating Alpha Corp's promotion practices, any evidence of discriminatory intent, and whether Johnson’s claims were substantiated by the company's promotion records and policies."}, {'text': 'In a criminal case, James Lewis was charged with assault after an altercation at a local bar resulted in severe injuries to another patron, David Smith. The prosecution argued that Lewis had intentionally struck Smith after a heated argument, while Lewis contended that the altercation was in self-defense. The court needed to assess the evidence, including eyewitness testimonies and medical reports, to determine whether Lewis’s actions constituted criminal assault or were justified under self-defense claims.'}]], 'embeddings': None, 'documents': None, 'uris': None, 'data': None, 'included': ['distances', 'metadatas']}
+2024-09-25 17:46:48,105 - rag - INFO - Query successful, found 3 matching case(s).
+2024-09-25 17:46:48,911 - rag - INFO - Processing file: ./uploads/case6.pdf
+2024-09-25 17:46:48,924 - rag - INFO - Reading PDF file: ./uploads/case6.pdf
+2024-09-25 17:46:49,073 - rag - INFO - Successfully read PDF file: ./uploads/case6.pdf
+2024-09-25 17:46:49,075 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:46:49,469 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:46:49,472 - rag - INFO - Document 'case6.pdf' presence in ChromaDB: False
+2024-09-25 17:46:49,480 - rag - INFO - Data from ./uploads/case6.pdf inserted into ChromaDB successfully.
+2024-09-25 17:46:49,489 - rag - INFO - Processing file: ./uploads/court_case_summary.docx
+2024-09-25 17:46:49,491 - rag - INFO - Reading Word file: ./uploads/court_case_summary.docx
+2024-09-25 17:46:49,526 - rag - INFO - Successfully read Word file: ./uploads/court_case_summary.docx
+2024-09-25 17:46:49,527 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:46:49,899 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:46:49,914 - rag - INFO - Document 'court_case_summary.docx' presence in ChromaDB: False
+2024-09-25 17:46:49,939 - rag - INFO - Data from ./uploads/court_case_summary.docx inserted into ChromaDB successfully.
+2024-09-25 17:46:49,951 - rag - INFO - Processing file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 17:46:49,958 - rag - INFO - Reading PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 17:46:50,508 - rag - INFO - Successfully read PDF file: ./uploads/Cy44-02 -Question-Bank.pdf
+2024-09-25 17:46:50,509 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:46:50,935 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:46:50,940 - rag - INFO - Document 'Cy44-02 -Question-Bank.pdf' presence in ChromaDB: False
+2024-09-25 17:46:50,980 - rag - INFO - Data from ./uploads/Cy44-02 -Question-Bank.pdf inserted into ChromaDB successfully.
+2024-09-25 17:46:51,019 - rag - INFO - Processing file: ./uploads/DAA.txt
+2024-09-25 17:46:51,041 - rag - INFO - Reading text file: ./uploads/DAA.txt
+2024-09-25 17:46:51,065 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:46:51,615 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:46:51,619 - rag - INFO - Document 'DAA.txt' presence in ChromaDB: False
+2024-09-25 17:46:51,626 - rag - INFO - Data from ./uploads/DAA.txt inserted into ChromaDB successfully.
+2024-09-25 17:46:51,635 - rag - INFO - Processing file: ./uploads/Details required.docx
+2024-09-25 17:46:51,636 - rag - INFO - Reading Word file: ./uploads/Details required.docx
+2024-09-25 17:46:51,713 - rag - INFO - Successfully read Word file: ./uploads/Details required.docx
+2024-09-25 17:46:51,718 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:46:52,121 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:46:52,126 - rag - INFO - Document 'Details required.docx' presence in ChromaDB: False
+2024-09-25 17:46:52,139 - rag - INFO - Data from ./uploads/Details required.docx inserted into ChromaDB successfully.
+2024-09-25 17:46:52,148 - rag - INFO - Processing file: ./uploads/HOD letter - SAP.docx
+2024-09-25 17:46:52,152 - rag - INFO - Reading Word file: ./uploads/HOD letter - SAP.docx
+2024-09-25 17:46:52,196 - rag - INFO - Successfully read Word file: ./uploads/HOD letter - SAP.docx
+2024-09-25 17:46:52,200 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:46:52,548 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:46:52,555 - rag - INFO - Document 'HOD letter - SAP.docx' presence in ChromaDB: False
+2024-09-25 17:46:52,566 - rag - INFO - Data from ./uploads/HOD letter - SAP.docx inserted into ChromaDB successfully.
+2024-09-25 17:46:52,572 - rag - INFO - Processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 17:46:52,573 - rag - INFO - Reading PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 17:46:54,362 - rag - INFO - Successfully read PDF file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf
+2024-09-25 17:46:54,365 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:46:55,385 - rag - ERROR - Error generating embeddings: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 17:46:55,387 - rag - ERROR - Error processing file: ./uploads/Learn Java in One Day and Learn It Well - PDF Room.pdf, Error: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 17:55:03,203 - rag - INFO - OpenAI API key loaded.
+2024-09-25 17:55:04,602 - rag - INFO - ChromaDB collection 'court_cases' created successfully.
+2024-09-25 17:56:47,074 - rag - INFO - Processing file: ./uploads/case1.docx
+2024-09-25 17:56:47,077 - rag - INFO - Reading Word file: ./uploads/case1.docx
+2024-09-25 17:56:47,255 - rag - INFO - Successfully read Word file: ./uploads/case1.docx
+2024-09-25 17:56:47,256 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:56:47,969 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:56:48,140 - rag - INFO - Document 'case1.docx' presence in ChromaDB: False
+2024-09-25 17:56:48,280 - rag - INFO - Data from ./uploads/case1.docx inserted into ChromaDB successfully.
+2024-09-25 17:56:48,327 - rag - INFO - Processing file: ./uploads/case2.pdf
+2024-09-25 17:56:48,329 - rag - INFO - Reading PDF file: ./uploads/case2.pdf
+2024-09-25 17:56:48,863 - rag - INFO - Successfully read PDF file: ./uploads/case2.pdf
+2024-09-25 17:56:48,866 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:56:49,684 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:56:49,737 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: False
+2024-09-25 17:56:49,831 - rag - INFO - Data from ./uploads/case2.pdf inserted into ChromaDB successfully.
+2024-09-25 17:56:50,026 - rag - INFO - Processing file: ./uploads/case3.docx
+2024-09-25 17:56:50,072 - rag - INFO - Reading Word file: ./uploads/case3.docx
+2024-09-25 17:56:50,274 - rag - INFO - Successfully read Word file: ./uploads/case3.docx
+2024-09-25 17:56:50,276 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:56:50,720 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:56:50,775 - rag - INFO - Document 'case3.docx' presence in ChromaDB: False
+2024-09-25 17:56:50,825 - rag - INFO - Data from ./uploads/case3.docx inserted into ChromaDB successfully.
+2024-09-25 17:56:51,025 - rag - INFO - Processing file: ./uploads/case4.docx
+2024-09-25 17:56:51,033 - rag - INFO - Reading Word file: ./uploads/case4.docx
+2024-09-25 17:56:51,352 - rag - INFO - Successfully read Word file: ./uploads/case4.docx
+2024-09-25 17:56:51,370 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:56:51,796 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:56:51,807 - rag - INFO - Document 'case4.docx' presence in ChromaDB: False
+2024-09-25 17:56:51,814 - rag - INFO - Data from ./uploads/case4.docx inserted into ChromaDB successfully.
+2024-09-25 17:56:51,931 - rag - INFO - Processing file: ./uploads/case5.pdf
+2024-09-25 17:56:51,983 - rag - INFO - Reading PDF file: ./uploads/case5.pdf
+2024-09-25 17:56:52,453 - rag - INFO - Successfully read PDF file: ./uploads/case5.pdf
+2024-09-25 17:56:52,455 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:56:52,825 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:56:52,834 - rag - INFO - Document 'case5.pdf' presence in ChromaDB: False
+2024-09-25 17:56:52,864 - rag - INFO - Data from ./uploads/case5.pdf inserted into ChromaDB successfully.
+2024-09-25 17:56:52,940 - rag - INFO - Processing file: ./uploads/case6.pdf
+2024-09-25 17:56:52,942 - rag - INFO - Reading PDF file: ./uploads/case6.pdf
+2024-09-25 17:56:53,845 - rag - INFO - Successfully read PDF file: ./uploads/case6.pdf
+2024-09-25 17:56:53,892 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:56:54,465 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:56:54,471 - rag - INFO - Document 'case6.pdf' presence in ChromaDB: False
+2024-09-25 17:56:54,493 - rag - INFO - Data from ./uploads/case6.pdf inserted into ChromaDB successfully.
+2024-09-25 17:56:54,560 - rag - INFO - Processing file: ./uploads/court_case_summary.docx
+2024-09-25 17:56:54,562 - rag - INFO - Reading Word file: ./uploads/court_case_summary.docx
+2024-09-25 17:56:54,655 - rag - INFO - Successfully read Word file: ./uploads/court_case_summary.docx
+2024-09-25 17:56:54,657 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 17:56:55,278 - rag - INFO - Embeddings successfully generated.
+2024-09-25 17:56:55,286 - rag - INFO - Document 'court_case_summary.docx' presence in ChromaDB: False
+2024-09-25 17:56:55,294 - rag - INFO - Data from ./uploads/court_case_summary.docx inserted into ChromaDB successfully.
+2024-09-25 18:15:56,285 - rag - INFO - Querying cases with text: 'prestige'
+2024-09-25 18:15:56,291 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 18:15:56,965 - rag - INFO - Embeddings successfully generated.
+2024-09-25 18:15:57,188 - rag - INFO - Results from ChromaDB: {'ids': [['case1.docx', 'case3.docx', 'court_case_summary.docx']], 'distances': [[0.44178181886672974, 0.5208649635314941, 0.5382735729217529]], 'metadatas': [[{'text': "A construction company, BuildRight Ltd., was contracted to renovate a commercial property owned by Prestige Enterprises. The contract specified that the work should be completed within six months, but BuildRight failed to meet the deadline, resulting in a delay of over three months. Prestige Enterprises sued BuildRight for breach of contract, claiming that the delay caused financial losses and operational disruptions. The court had to determine whether BuildRight's delays constituted a material breach and, if so, the extent of the damages owed to Prestige Enterprises."}, {'text': "Sarah Johnson, a former employee of Alpha Corp, filed a lawsuit alleging gender discrimination after being passed over for promotion in favor of a less qualified male colleague. Johnson claimed that her supervisor made discriminatory remarks about her gender and that her qualifications were superior to those of the promoted employee. The case involved evaluating Alpha Corp's promotion practices, any evidence of discriminatory intent, and whether Johnson’s claims were substantiated by the company's promotion records and policies."}, {'text': 'Summary of the Case:\nThis case revolves around a property dispute where the landlords, who purchased a property in Mussoorie, claimed that the tenant, Rashid Ahmed, had illegally sub-let the premises to people who were not his family members. The landlords sought to declare the property vacant under the U.P. Urban Buildings (Regulation of Letting, Rent, and Eviction) Act, 1972. After Rashid Ahmed passed away, his son, Mohd. Inam, took over the case. The Rent Control Officer initially declared the premises vacant, but this decision was challenged in multiple courts, leading to different rulings. The key issue was whether the premises were sub-let or if the occupants were legitimate family members of the original tenant.'}]], 'embeddings': None, 'documents': None, 'uris': None, 'data': None, 'included': ['distances', 'metadatas']}
+2024-09-25 18:15:57,190 - rag - INFO - Query successful, found 3 matching case(s).
+2024-09-25 18:16:53,544 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-25 18:16:53,547 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-25 18:16:53,557 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-25 18:16:53,560 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-25 18:16:53,563 - rag - INFO - Querying cases for files ['case1.docx', 'case2.pdf'] with text: 'technova'
+2024-09-25 18:16:53,564 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 18:16:53,966 - rag - INFO - Embeddings successfully generated.
+2024-09-25 18:16:53,992 - rag - INFO - Top 1 similar documents: ['case2.pdf'] with similarities: [0.8583471909572089]
+2024-09-25 18:16:59,362 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-25 18:16:59,365 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-25 18:16:59,368 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-25 18:16:59,371 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-25 18:16:59,373 - rag - INFO - Querying cases for files ['case1.docx', 'case2.pdf'] with text: 'emma and lucas'
+2024-09-25 18:16:59,375 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 18:16:59,729 - rag - INFO - Embeddings successfully generated.
+2024-09-25 18:16:59,736 - rag - INFO - No documents with similarity above the threshold.
+2024-09-25 18:17:51,475 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-25 18:17:51,478 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-25 18:17:51,481 - rag - INFO - Document 'case3.docx' presence in ChromaDB: True
+2024-09-25 18:17:51,484 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-25 18:17:51,486 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-25 18:17:51,491 - rag - INFO - Document 'case3.docx' presence in ChromaDB: True
+2024-09-25 18:17:51,492 - rag - INFO - Querying cases for files ['case1.docx', 'case2.pdf', 'case3.docx'] with text: 'alpha corp'
+2024-09-25 18:17:51,494 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 18:17:52,076 - rag - INFO - Embeddings successfully generated.
+2024-09-25 18:17:52,083 - rag - INFO - No documents with similarity above the threshold.
+2024-09-25 18:18:05,824 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-25 18:18:05,828 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-25 18:18:05,831 - rag - INFO - Document 'case3.docx' presence in ChromaDB: True
+2024-09-25 18:18:05,835 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-25 18:18:05,838 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-25 18:18:05,842 - rag - INFO - Document 'case3.docx' presence in ChromaDB: True
+2024-09-25 18:18:05,843 - rag - INFO - Querying cases for files ['case1.docx', 'case2.pdf', 'case3.docx'] with text: 'alpha corp'
+2024-09-25 18:18:05,844 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 18:18:06,267 - rag - INFO - Embeddings successfully generated.
+2024-09-25 18:18:06,274 - rag - INFO - No documents with similarity above the threshold.
+2024-09-25 18:18:14,664 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-25 18:18:14,667 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-25 18:18:14,671 - rag - INFO - Document 'case3.docx' presence in ChromaDB: True
+2024-09-25 18:18:14,676 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-25 18:18:14,680 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-25 18:18:14,683 - rag - INFO - Document 'case3.docx' presence in ChromaDB: True
+2024-09-25 18:18:14,686 - rag - INFO - Querying cases for files ['case1.docx', 'case2.pdf', 'case3.docx'] with text: 'prestige'
+2024-09-25 18:18:14,687 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 18:18:15,186 - rag - INFO - Embeddings successfully generated.
+2024-09-25 18:18:15,207 - rag - INFO - No documents with similarity above the threshold.
+2024-09-25 18:18:29,345 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-25 18:18:29,347 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-25 18:18:29,350 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-25 18:18:29,355 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-25 18:18:29,358 - rag - INFO - Document 'case3.docx' presence in ChromaDB: True
+2024-09-25 18:18:29,361 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-25 18:18:29,365 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-25 18:18:29,371 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-25 18:18:29,374 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-25 18:18:29,377 - rag - INFO - Document 'case3.docx' presence in ChromaDB: True
+2024-09-25 18:18:29,380 - rag - INFO - Querying cases for files ['case1.docx', 'case2.pdf', 'case1.docx', 'case2.pdf', 'case3.docx'] with text: 'prestige'
+2024-09-25 18:18:29,382 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 18:18:29,728 - rag - INFO - Embeddings successfully generated.
+2024-09-25 18:18:29,734 - rag - ERROR - Error querying cases by group: Expected IDs to be unique, found duplicates of: case2.pdf, case1.docx
+2024-09-25 18:18:55,705 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-25 18:18:55,708 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-25 18:18:55,711 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-25 18:18:55,714 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-25 18:18:55,717 - rag - INFO - Document 'case3.docx' presence in ChromaDB: True
+2024-09-25 18:18:55,719 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-25 18:18:55,722 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-25 18:18:55,725 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-25 18:18:55,729 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-25 18:18:55,731 - rag - INFO - Document 'case3.docx' presence in ChromaDB: True
+2024-09-25 18:18:55,733 - rag - INFO - Querying cases for files ['case1.docx', 'case2.pdf', 'case1.docx', 'case2.pdf', 'case3.docx'] with text: 'prestige contract'
+2024-09-25 18:18:55,735 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 18:18:56,096 - rag - INFO - Embeddings successfully generated.
+2024-09-25 18:18:56,103 - rag - ERROR - Error querying cases by group: Expected IDs to be unique, found duplicates of: case2.pdf, case1.docx
+2024-09-25 18:19:50,011 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-25 18:19:50,029 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-25 18:19:50,050 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-25 18:19:50,060 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-25 18:19:50,067 - rag - INFO - Document 'case3.docx' presence in ChromaDB: True
+2024-09-25 18:19:50,075 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-25 18:19:50,084 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-25 18:19:50,094 - rag - INFO - Document 'case1.docx' presence in ChromaDB: True
+2024-09-25 18:19:50,103 - rag - INFO - Document 'case2.pdf' presence in ChromaDB: True
+2024-09-25 18:19:50,112 - rag - INFO - Document 'case3.docx' presence in ChromaDB: True
+2024-09-25 18:19:50,115 - rag - INFO - Querying cases for files ['case1.docx', 'case2.pdf', 'case1.docx', 'case2.pdf', 'case3.docx'] with text: 'prestige'
+2024-09-25 18:19:50,118 - rag - INFO - Generating embeddings for 1 text(s)...
+2024-09-25 18:19:50,684 - rag - INFO - Embeddings successfully generated.
+2024-09-25 18:19:50,726 - rag - ERROR - Error querying cases by group: Expected IDs to be unique, found duplicates of: case2.pdf, case1.docx

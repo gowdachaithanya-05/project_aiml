@@ -161,6 +161,7 @@ body {
   text-align: left;
 }
 .chat-input {
+  position:relative;
   padding: 15px 20px;
   background-color: #fff;
   display: flex;
@@ -281,31 +282,66 @@ body {
   }
 }
 /* Modal styling */
-.modal {
+.groups {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
+  margin-left: 250px;
+  left: 0;
+  top: 0;
+  width: 90%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Darker semi-transparent background */
+  padding-left: 0px;
+  padding-right: 0px;
+  overflow-y: auto;
+}
+
+.cgroups {
+  /*width: 80%;*/
+  height: 100vh;
+  background-color: #ffffff;
+  margin: 0px;
+  padding: 40px;
+  width: 92%; /* Adjust width to be responsive */
+  max-width: 1000 px; /* Increase max-width for better readability */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  position: relative;
+  max-height: 500vh; /* Limit the height to 80% of the viewport height */
+  overflow-y: auto; /* Enable vertical scrolling for the modal content */
+  text-align: center;
+  border-radius: 0px;
+}
+
+.uploads, .edit {
+  display: none;
+  position: fixed;
+  z-index: 2000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* Darker semi-transparent background */
   padding-top: 60px;
+  overflow-y: auto;
 }
 
-.modal-content {
+.cuploads, .cedit {
   background-color: #ffffff;
   margin: auto;
   padding: 40px;
-  border-radius: 15px;
-  width: 35%;
-  max-width: 450px;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2); /* Stronger shadow for more depth */
+  width: 90%; /* Adjust width to be responsive */
+  max-width: 600px; /* Increase max-width for better readability */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
   position: relative;
+  max-height: 80vh; /* Limit the height to 80% of the viewport height */
+  overflow-y: auto; /* Enable vertical scrolling for the modal content */
   text-align: center;
+  border-radius: 15px;
 }
 
 .close {
+  position: sticky;
   color: #aaa;
   position: absolute;
   top: 15px;
@@ -313,6 +349,8 @@ body {
   font-size: 30px;
   font-weight: bold;
   cursor: pointer;
+  float: right;
+  z-index: 2;
   transition: color 0.3s ease;
 }
 
@@ -372,6 +410,474 @@ body {
   }
 }
 
-.modal-content {
+.cuploads {
   animation: modalFadeIn 0.5s ease-out;
+}
+
+#fileGroupForm
+{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#existingFiles {
+  display: flex;
+  flex-direction: column; /* Align items in a column */
+  align-items: flex-start; /* Align items to the left */
+  height: 1000px;
+}
+
+.groupformbutton, .updategbutton{
+  width: 20%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border: none;
+  background-color: #3b82f6;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.groupformbutton:hover, .updategbutton:hover{
+    background-color: #2563eb;
+ }
+  
+  .groupformbutton:focus, .updategbutton:focus{
+    outline: none;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.filter-icon {
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 10px; /* Space between the icon and input box */
+  vertical-align: middle; /* Aligns the icon with the input */
+}
+
+.group-list-container {
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 150px;
+  overflow-y: auto;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.group-list-container > div {
+  min-width: 100px;
+  margin: 5px 0;
+}
+
+.group-list-container input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.group-list-container label {
+  cursor: pointer;
+}
+
+#applyFilter {
+  margin-top: 15px;
+  padding: 8px 15px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#applyFilter:hover {
+  background-color: #357abd;
+}
+
+/* Group Tiles Container */
+.group-tiles-container {
+  max-height: none;
+  padding-right: 0px;
+}
+
+.group-tiles {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Individual Group Tile */
+.group-tile {
+  background-color: #f0f4f8;
+  border-radius: 8px;
+  padding: 15px;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 50px;
+}
+
+.group-tile:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.group-tile-content {
+  flex-grow: 1;
+}
+
+/* Group Tile Title */
+.group-tile h3 {
+  margin: 10px 10px 10px 10px;
+  color: #2c3e50;
+  font-size: 18px;
+  text-align: left;  
+}
+
+/* Options Dots */
+.group-tile-options {
+  position: relative;
+}
+
+.options-dots {
+  font-size: 20px;
+  cursor: pointer;
+  color: #7f8c8d;
+}
+
+/* Options Menu */
+.options-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 10;
+}
+
+.options-menu.show {
+  display: block;
+}
+
+.options-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.options-menu li {
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.options-menu li:hover {
+  background-color: #f0f4f8;
+}
+
+/* Customizing scrollbar for webkit browsers */
+.group-tiles-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.group-tiles-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.group-tiles-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.group-tiles-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+}
+
+.create{
+  border: 2px dashed #4a90e2;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #f9fafc;
+}
+
+.delete-option {
+  color: red;
+}
+
+#editGroupModal .modal-content {
+  width: 80%;
+  max-width: 600px;
+}
+
+#editGroupFiles {
+  margin-bottom: 20px;
+}
+
+#editGroupFiles label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.filter-container {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+}
+
+.filter-option input[type="radio"] {
+  margin-right: 5px;
+}
+
+.group-list-container {
+  min-width: 500px;
+  max-height: 120px;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+#applyFilter {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#applyFilter:hover {
+  background-color: #0056b3;
+}
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+  font-family: Arial;
+  width: 50%; /* Ensure the custom-select takes full width of its container */
+}
+
+.custom-select select {
+  display: none;
+}
+
+.select-selected {
+  width: 100%; /* Full width */
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #000 transparent transparent transparent;
+}
+
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #000 transparent;
+  top: 7px;
+}
+
+.select-items {
+  position: absolute;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  z-index: 99;
+  top: 100%; /* Align just below the selected item */
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 100px; /* Ensure the dropdown has the same width as the container */
+  box-sizing: border-box;
+}
+
+.select-items div {
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent #ddd transparent;
+  cursor: pointer;
+}
+
+.select-items div:hover {
+  background-color: #e0e0e0; /* Add hover effect */
+}
+
+.select-hide {
+  display: none;
+}
+#groupListContainer {
+  width: 100%;
+  /* Remove any border or background from the container */
+  border: none;
+  background: none;
+}
+
+#toggleFilter {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#queryDisplay {
+  margin-bottom: 10px;
+}
+
+.group-tile-options {
+  display: flex;
+  gap: 20px; /* Adds space between icons */
+  padding-right: 10px;
+}
+
+.group-tile-options .icon {
+  cursor: pointer;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.group-tile-options img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.group-tile-options .icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.group-tile-options .icon:hover::before {
+  width: 38px;
+  height: 38px;
+}
+
+.group-tile-options .icon:active::before {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.rename-input {
+  border: none;              
+  background: none;           
+  font-size: inherit;         
+  font-family: inherit;       
+  color: inherit;             
+  width: 100%;                
+  padding: 0;                 
+  margin: 0;                  
+  outline: none;              
+}
+
+.spinner-dialog {
+  position: fixed;
+  top: 10%; /* Adjust this value for vertical positioning from the top */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center horizontally and vertically */
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  text-align: center;
+  z-index: 2000; /* Ensure it appears above other elements */
+  display: flex; /* Use flexbox to center the spinner */
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center the content vertically */
+  align-items: center; /* Center the content horizontally */
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 8px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 8px solid #3498db;
+  animation: spin 1s linear infinite;
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+#applyFilter {
+  margin-top: 15px;
+  padding: 8px 15px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#applyFilter:hover {
+  background-color: #357abd;
+}
+
+.chat-bubble .timestamp {
+  font-size: 0.8em;
+  color: #666;
+  margin-top: 5px;
+}
+
+.chat-item.archived {
+  background-color: #6c757d; /* Gray background for archived chats */
+  cursor: default; /* Change cursor to default to indicate non-interactive */
+  opacity: 0.7; /* Slight transparency */
+}
+
+.chat-item.archived:hover {
+  background-color: #6c757d; /* Maintain gray background on hover */
+}
+
+/* Highlight renamed chats */
+.chat-item.renamed {
+  font-style: italic; /* Italicize renamed chats */
 }
