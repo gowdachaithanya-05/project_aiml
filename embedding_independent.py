@@ -1,3 +1,5 @@
+#embedding_independent.py
+
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import openai
@@ -5,10 +7,11 @@ import chromadb
 import fitz  # For PDF processing
 from docx import Document  # For Word document processing
 import os
-import logging
+from logging_config import get_logger
 
 # Initialize logging
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+# logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logger = get_logger('embedding_independent')
 
 # Set OpenAI API key
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -35,7 +38,7 @@ def get_openai_embeddings(texts):
         embeddings = [data['embedding'] for data in response['data']]
         return embeddings
     except Exception as e:
-        logging.error("Error generating embeddings: %s", str(e))
+        logger.error("Error generating embeddings: %s", str(e))
         raise
 
 # Function to read text from a .txt file
@@ -44,7 +47,7 @@ def read_text_file(file_path):
         with open(file_path, 'r', encoding='utf-8') as file:
             return file.read()
     except Exception as e:
-        logging.error("Error reading text file: %s", str(e))
+        logger.error("Error reading text file: %s", str(e))
         raise
 
 # Function to read text from a PDF file
@@ -57,7 +60,7 @@ def read_pdf_file(file_path):
         document.close()
         return text
     except Exception as e:
-        logging.error("Error reading PDF file: %s", str(e))
+        logger.error("Error reading PDF file: %s", str(e))
         raise
 
 # Function to read text from a Word document
@@ -67,7 +70,7 @@ def read_word_file(file_path):
         text = "\n".join([paragraph.text for paragraph in doc.paragraphs])
         return text
     except Exception as e:
-        logging.error("Error reading Word file: %s", str(e))
+        logger.error("Error reading Word file: %s", str(e))
         raise
 
 # Function to process a file and add it to ChromaDB
@@ -82,7 +85,7 @@ def process_file(file_path):
         elif file_extension == 'docx':
             text = read_word_file(file_path)
         else:
-            logging.warning("Unsupported file type for file: %s", file_path)
+            logger.warning("Unsupported file type for file: %s", file_path)
             return
         
         # Generate embeddings
@@ -95,9 +98,9 @@ def process_file(file_path):
             embeddings=[embedding], # Embedding vector
             metadatas=[{"text": text}]  # Metadata for each document
         )
-        logging.info("Data from %s inserted into ChromaDB successfully.", file_path)
+        logger.info("Data from %s inserted into ChromaDB successfully.", file_path)
     except Exception as e:
-        logging.error("Error processing file: %s", str(e))
+        logger.error("Error processing file: %s", str(e))
         raise
 
 # Function to process all files in the hardcoded folder
@@ -108,7 +111,7 @@ def process_hardcoded_folder():
             if os.path.isfile(file_path):
                 process_file(file_path)
     except Exception as e:
-        logging.error("Error processing hardcoded folder: %s", str(e))
+        logger.error("Error processing hardcoded folder: %s", str(e))
         raise
 
 # Function to query cases from ChromaDB
@@ -131,7 +134,7 @@ def query_cases(query_text, n_results=1):
 
         return similar_cases_ids, similar_cases_texts
     except Exception as e:
-        logging.error("Error querying cases: %s", str(e))
+        logger.error("Error querying cases: %s", str(e))
         raise
 
 # Endpoint to process files in the hardcoded folder
@@ -141,7 +144,7 @@ async def process_folder_endpoint():
         process_hardcoded_folder()
         return {"message": "Files processed successfully."}
     except Exception as e:
-        logging.error("Error processing folder endpoint: %s", str(e))
+        logger.error("Error processing folder endpoint: %s", str(e))
         raise HTTPException(status_code=500, detail=str(e))
 
 # Endpoint to query cases
@@ -154,7 +157,7 @@ async def query_endpoint(request: QueryRequest):
         ids, texts = query_cases(request.query)
         return {"ids": ids, "answer": texts}
     except Exception as e:
-        logging.error("Error querying endpoint: %s", str(e))
+        logger.error("Error querying endpoint: %s", str(e))
         raise HTTPException(status_code=500, detail=str(e))
 
 # To run the server: uvicorn 5c:app --reload

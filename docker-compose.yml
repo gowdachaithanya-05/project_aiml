@@ -1,62 +1,3 @@
-
-
-# services:
-#   app:
-#     build: .
-#     command: uvicorn app:app --host 0.0.0.0 --port 8000  # Start the FastAPI app
-#     ports:
-#       - "8000:8000"  # Expose port 8000
-#     volumes:
-#       - .:/app  # Mount the current directory into the container
-#     environment:
-#       - OPENAI_API_KEY=${OPENAI_API_KEY}  # Use environment variable for OpenAI API key
-#     depends_on:
-#       - elasticsearch  # Ensure Elasticsearch is up before the app starts
-#       - db  # Ensure PostgreSQL is up before the app starts
-
-#   elasticsearch:
-#     image: docker.elastic.co/elasticsearch/elasticsearch:7.10.1
-#     environment:
-#       - discovery.type=single-node  # Single-node configuration for Elasticsearch
-#     ports:
-#       - "9200:9200"  # Expose port 9200 for Elasticsearch
-#     volumes:
-#       - esdata:/usr/share/elasticsearch/data  # Persist Elasticsearch data
-
-#   logstash:
-#     image: docker.elastic.co/logstash/logstash:7.10.1
-#     volumes:
-#       - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf  # Use our Logstash config
-#       - ./logs:/usr/share/logstash/logs  # Mount the logs directory into the container
-#     depends_on:
-#       - elasticsearch  # Ensure Elasticsearch is up before Logstash starts
-#     ports:
-#       - "5000:5000"  # Expose port 5000 for Logstash
-
-#   kibana:
-#     image: docker.elastic.co/kibana/kibana:7.10.1
-#     ports:
-#       - "5601:5601"  # Expose port 5601 for Kibana web UI
-#     depends_on:
-#       - elasticsearch  # Ensure Elasticsearch is up before Kibana starts
-#     environment:
-#       - ELASTICSEARCH_HOSTS=http://elasticsearch:9200  # Point to Elasticsearch container
-
-#   db:
-#     image: postgres:latest
-#     environment:
-#       POSTGRES_USER: postgres   # Replace with your username
-#       POSTGRES_PASSWORD: 7722 # Replace with your password
-#       POSTGRES_DB: yourdatabase       # Replace with your database name
-#     ports:
-#       - "5432:5432"                   # Expose port for PostgreSQL
-
-# volumes:
-#   esdata:
-#     driver: local                    # Persistent volume for Elasticsearch data
-
-
-
 services:
   app:
     build: .
@@ -64,57 +5,77 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - .:/app
+      - ./uploads:/app/uploads
     environment:
-      - OPENAI_API_KEY=${OPENAI_API_KEY}
-      - DATABASE_URL=postgresql://postgres:7722@db:5432/doc_db
+      OPENAI_API_KEY: "${OPENAI_API_KEY}"
+      DATABASE_URL: "postgresql://postgres:7722@db:5432/doc_db"
     depends_on:
       db:
         condition: service_healthy
       elasticsearch:
         condition: service_started
+
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.10.1
     environment:
-      - discovery.type=single-node  # Single-node configuration for Elasticsearch
+      discovery.type: "single-node"
     ports:
-      - "9200:9200"  # Expose port 9200 for Elasticsearch
+      - "9200:9200"
     volumes:
-      - esdata:/usr/share/elasticsearch/data  # Persist Elasticsearch data
+      - esdata:/usr/share/elasticsearch/data
 
   logstash:
     image: docker.elastic.co/logstash/logstash:7.10.1
     volumes:
-      - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf  # Use our Logstash config
-      - ./logs:/usr/share/logstash/logs  # Mount the logs directory into the container
+      - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+      - ./logs:/usr/share/logstash/logs
     depends_on:
-      - elasticsearch  # Ensure Elasticsearch is up before Logstash starts
+      - elasticsearch
     ports:
-      - "5000:5000"  # Expose port 5000 for Logstash
+      - "5000:5000"
 
   kibana:
     image: docker.elastic.co/kibana/kibana:7.10.1
     ports:
-      - "5601:5601"  # Expose port 5601 for Kibana web UI
+      - "5601:5601"
     depends_on:
-      - elasticsearch  # Ensure Elasticsearch is up before Kibana starts
+      - elasticsearch
     environment:
-      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200  # Point to Elasticsearch container
+      ELASTICSEARCH_HOSTS: "http://elasticsearch:9200"
 
   db:
     image: postgres:latest
     environment:
-      POSTGRES_USER: postgres         # This will create a user named 'postgres'
-      POSTGRES_PASSWORD: 7722         # Your desired password
-      POSTGRES_DB: doc_db      # Your desired database name
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 7722
+      POSTGRES_DB: doc_db
     ports:
       - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 10s
       timeout: 5s
       retries: 5
 
+  apm-server:
+    image: docker.elastic.co/apm/apm-server:7.10.1
+    environment:
+      output.elasticsearch.hosts: "http://elasticsearch:9200"
+    ports:
+    - "8200:8200"
+    depends_on:
+    - elasticsearch
+
+
 volumes:
   esdata:
-    driver: local                    # Persistent volume for Elasticsearch data
+    driver: local
+  postgres_data:
+    driver: local
+
+
+networks:
+  elastic:
+    driver: bridge

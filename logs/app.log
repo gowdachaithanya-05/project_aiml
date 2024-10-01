@@ -1,0 +1,260 @@
+2024-09-24 18:15:45,397 - app - INFO - Server startup: processing folder.
+2024-09-24 18:15:45,404 - app - INFO - Starting to process folder: ./uploads
+2024-09-24 18:15:45,802 - app - INFO - Database connected
+2024-09-24 18:15:53,943 - app - ERROR - Error processing folder: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-24 18:16:33,474 - app - INFO - Served index.html
+2024-09-24 18:16:33,570 - app - INFO - WebSocket connection accepted
+2024-09-24 18:17:40,927 - app - INFO - Fetched file names for group IDs [1]: ['case1.docx', 'case2.pdf']
+2024-09-24 18:17:41,880 - app - ERROR - No documents found with the given criteria after querying ChromaDB.
+2024-09-24 18:17:52,365 - app - INFO - Fetched file names for group IDs [1]: ['case1.docx', 'case2.pdf']
+2024-09-24 18:17:55,089 - app - INFO - Query results: IDs=['case1.docx'], Similarities=[0.8329681488767442]
+2024-09-24 18:17:55,091 - app - INFO - Sending answer: Relevant Case IDs: ['case1.docx']
+Texts: ["A construction company, BuildRight Ltd., was contracted to renovate a commercial property owned by Prestige Enterprises. The contract specified that the work should be completed within six months, but BuildRight failed to meet the deadline, resulting in a delay of over three months. Prestige Enterprises sued BuildRight for breach of contract, claiming that the delay caused financial losses and operational disruptions. The court had to determine whether BuildRight's delays constituted a material breach and, if so, the extent of the damages owed to Prestige Enterprises."]
+Similarities: [0.8329681488767442]
+2024-09-24 18:23:05,701 - app - ERROR - Failed to archive session 86dceb30-a515-4d7b-adec-0ee759187f99.
+2024-09-24 18:23:15,482 - app - INFO - Served index.html
+2024-09-24 18:23:15,505 - app - WARNING - WebSocket client disconnected
+2024-09-24 18:23:15,544 - app - INFO - WebSocket connection accepted
+2024-09-24 18:23:36,306 - app - INFO - ChromaDB found results: ["Emma and Lucas Brown were involved in a divorce proceeding where the \nprimary contention was the custody of their two children. Emma sought full \ncustody, arguing that Lucas had been an uninvolved parent and had a history of \nsubstance abuse, while Lucas sought joint custody, asserting that Emma’s \nclaims were exaggerated and that he had a right to be actively involved in his \nchildren's lives. The court had to evaluate the best interests of the children, the \nparents' respective parenting abilities, and any evidence related to substance \nabuse or involvement in the children's lives. \n", "Sarah Johnson, a former employee of Alpha Corp, filed a lawsuit alleging gender discrimination after being passed over for promotion in favor of a less qualified male colleague. Johnson claimed that her supervisor made discriminatory remarks about her gender and that her qualifications were superior to those of the promoted employee. The case involved evaluating Alpha Corp's promotion practices, any evidence of discriminatory intent, and whether Johnson’s claims were substantiated by the company's promotion records and policies.", 'Summary of the Case:\nThis case revolves around a property dispute where the landlords, who purchased a property in Mussoorie, claimed that the tenant, Rashid Ahmed, had illegally sub-let the premises to people who were not his family members. The landlords sought to declare the property vacant under the U.P. Urban Buildings (Regulation of Letting, Rent, and Eviction) Act, 1972. After Rashid Ahmed passed away, his son, Mohd. Inam, took over the case. The Rent Control Officer initially declared the premises vacant, but this decision was challenged in multiple courts, leading to different rulings. The key issue was whether the premises were sub-let or if the occupants were legitimate family members of the original tenant.']
+2024-09-24 18:23:37,309 - app - INFO - Sending answer: Relevant Case IDs: ['case5.pdf', 'case3.docx', 'court_case_summary.docx']
+Text: Emma and Lucas Brown were involved in a divorce proceeding where the 
+primary contention was the custody of their two children. Emma sought full 
+custody, arguing that Lucas had been an uninvolved parent and had a history of 
+substance abuse, while Lucas sought joint custody, asserting that Emma’s 
+claims were exaggerated and that he had a right to be actively involved in his 
+children's lives. The court had to evaluate the best interests of the children, the 
+parents' respective parenting abilities, and any evidence related to substance 
+abuse or involvement in the children's lives. 
+
+
+OpenAI Response: Similarities: [0.675498366355896]
+2024-09-24 18:25:21,929 - app - ERROR - Failed to unarchive session 86dceb30-a515-4d7b-adec-0ee759187f99.
+2024-09-24 18:25:26,142 - app - INFO - Served index.html
+2024-09-24 18:25:26,171 - app - WARNING - WebSocket client disconnected
+2024-09-24 18:25:26,217 - app - INFO - WebSocket connection accepted
+2024-09-24 18:28:00,479 - app - WARNING - WebSocket client disconnected
+2024-09-24 18:28:00,584 - app - INFO - Database disconnected
+2024-09-25 13:47:41,633 - app - INFO - Server startup: processing folder.
+2024-09-25 13:47:41,654 - app - INFO - Starting to process folder: ./uploads
+2024-09-25 13:47:44,213 - app - INFO - Database connected
+2024-09-25 13:47:54,850 - app - INFO - Served index.html
+2024-09-25 13:47:56,293 - app - INFO - WebSocket connection accepted
+2024-09-25 13:48:02,512 - app - INFO - ChromaDB found results: ["A construction company, BuildRight Ltd., was contracted to renovate a commercial property owned by Prestige Enterprises. The contract specified that the work should be completed within six months, but BuildRight failed to meet the deadline, resulting in a delay of over three months. Prestige Enterprises sued BuildRight for breach of contract, claiming that the delay caused financial losses and operational disruptions. The court had to determine whether BuildRight's delays constituted a material breach and, if so, the extent of the damages owed to Prestige Enterprises."]
+2024-09-25 13:48:03,236 - app - INFO - Sending answer: Relevant Case IDs: ['case1.docx']
+Text: A construction company, BuildRight Ltd., was contracted to renovate a commercial property owned by Prestige Enterprises. The contract specified that the work should be completed within six months, but BuildRight failed to meet the deadline, resulting in a delay of over three months. Prestige Enterprises sued BuildRight for breach of contract, claiming that the delay caused financial losses and operational disruptions. The court had to determine whether BuildRight's delays constituted a material breach and, if so, the extent of the damages owed to Prestige Enterprises.
+
+OpenAI Response: Hello! How can I assist you with the information from the case?
+2024-09-25 13:48:27,470 - app - INFO - File uploaded successfully: 1MS22CY067 DCN record.docx
+2024-09-25 13:48:27,505 - app - INFO - File metadata stored in the database for: 1MS22CY067 DCN record.docx
+2024-09-25 13:48:28,215 - app - INFO - File 1MS22CY067 DCN record.docx processed and added to ChromaDB
+2024-09-25 13:48:26,895 - app - INFO - File uploaded successfully: 1MS22CY067 final DCN.pdf
+2024-09-25 13:48:26,977 - app - INFO - File metadata stored in the database for: 1MS22CY067 final DCN.pdf
+2024-09-25 13:48:27,720 - app - INFO - File 1MS22CY067 final DCN.pdf processed and added to ChromaDB
+2024-09-25 13:48:39,860 - app - ERROR - Error processing folder: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 13:53:05,960 - app - INFO - Served index.html
+2024-09-25 13:53:06,167 - app - WARNING - WebSocket client disconnected
+2024-09-25 13:53:06,801 - app - INFO - WebSocket connection accepted
+2024-09-25 13:54:21,642 - app - INFO - Served index.html
+2024-09-25 13:54:21,694 - app - WARNING - WebSocket client disconnected
+2024-09-25 13:54:21,754 - app - INFO - WebSocket connection accepted
+2024-09-25 13:59:04,637 - app - WARNING - WebSocket client disconnected
+2024-09-25 13:59:17,917 - app - INFO - Served index.html
+2024-09-25 13:59:18,514 - app - INFO - WebSocket connection accepted
+2024-09-25 14:03:48,689 - app - WARNING - WebSocket client disconnected
+2024-09-25 14:03:56,624 - app - INFO - Served index.html
+2024-09-25 14:03:57,193 - app - INFO - WebSocket connection accepted
+2024-09-25 14:04:15,927 - app - WARNING - WebSocket client disconnected
+2024-09-25 14:04:20,488 - app - INFO - Database disconnected
+2024-09-25 14:06:19,911 - app - INFO - Server startup: processing folder.
+2024-09-25 14:06:19,965 - app - INFO - Starting to process folder: ./uploads
+2024-09-25 14:06:22,467 - app - INFO - Database connected
+2024-09-25 14:06:36,241 - app - ERROR - Error processing folder: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 14:28:03,287 - app - INFO - Served index.html
+2024-09-25 14:28:04,752 - app - INFO - WebSocket connection accepted
+2024-09-25 14:38:36,337 - app - WARNING - WebSocket client disconnected
+2024-09-25 14:38:42,668 - app - INFO - Database disconnected
+2024-09-25 14:39:04,128 - app - INFO - Server startup: processing folder.
+2024-09-25 14:39:04,148 - app - INFO - Starting to process folder: ./uploads
+2024-09-25 14:39:06,375 - app - INFO - Database connected
+2024-09-25 14:39:18,064 - app - ERROR - Error processing folder: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 14:39:37,727 - app - INFO - Served index.html
+2024-09-25 14:39:38,161 - app - INFO - WebSocket connection accepted
+2024-09-25 15:21:25,836 - app - WARNING - WebSocket client disconnected
+2024-09-25 15:21:28,551 - app - INFO - Database disconnected
+2024-09-25 16:05:20,348 - app - INFO - Server startup: processing folder.
+2024-09-25 16:05:20,384 - app - INFO - Starting to process folder: ./uploads
+2024-09-25 16:05:22,974 - app - INFO - Database connected
+2024-09-25 16:05:36,145 - app - ERROR - Error processing folder: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 16:09:04,205 - app - INFO - Served index.html
+2024-09-25 16:09:07,156 - app - INFO - WebSocket connection accepted
+2024-09-25 16:23:13,969 - app - WARNING - WebSocket client disconnected
+2024-09-25 16:23:21,989 - app - INFO - Database disconnected
+2024-09-25 16:23:40,486 - app - INFO - Server startup: processing folder.
+2024-09-25 16:23:40,497 - app - INFO - Starting to process folder: ./uploads
+2024-09-25 16:23:41,754 - app - INFO - Database connected
+2024-09-25 16:23:47,420 - app - INFO - Served index.html
+2024-09-25 16:23:48,576 - app - INFO - WebSocket connection accepted
+2024-09-25 16:23:58,044 - app - ERROR - Error processing folder: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 16:31:11,438 - app - WARNING - WebSocket client disconnected
+2024-09-25 16:31:15,779 - app - INFO - Database disconnected
+2024-09-25 16:33:56,765 - app - INFO - Server startup: processing folder.
+2024-09-25 16:33:56,779 - app - INFO - Starting to process folder: ./uploads
+2024-09-25 16:33:59,457 - app - INFO - Database connected
+2024-09-25 16:34:29,720 - app - ERROR - Error processing folder: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 16:35:34,533 - app - INFO - Served index.html
+2024-09-25 16:35:35,212 - app - INFO - WebSocket connection accepted
+2024-09-25 16:41:45,763 - app - WARNING - WebSocket client disconnected
+2024-09-25 16:41:45,876 - app - INFO - Database disconnected
+2024-09-25 16:42:03,000 - app - INFO - Server startup: processing folder.
+2024-09-25 16:42:03,017 - app - INFO - Starting to process folder: ./uploads
+2024-09-25 16:42:06,147 - app - INFO - Database connected
+2024-09-25 16:42:19,909 - app - INFO - Served index.html
+2024-09-25 16:42:21,004 - app - INFO - WebSocket connection accepted
+2024-09-25 16:42:23,479 - app - ERROR - Error processing folder: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 16:58:07,111 - app - WARNING - WebSocket client disconnected
+2024-09-25 16:58:07,249 - app - INFO - Database disconnected
+2024-09-25 16:58:21,981 - app - INFO - Server startup: processing folder.
+2024-09-25 16:58:22,006 - app - INFO - Starting to process folder: ./uploads
+2024-09-25 16:58:23,352 - app - INFO - Database connected
+2024-09-25 16:58:25,526 - app - INFO - Served index.html
+2024-09-25 16:58:25,842 - app - INFO - WebSocket connection accepted
+2024-09-25 16:58:33,790 - app - ERROR - Error processing folder: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 16:59:05,063 - app - INFO - Served index.html
+2024-09-25 16:59:05,084 - app - WARNING - WebSocket client disconnected
+2024-09-25 16:59:05,145 - app - INFO - WebSocket connection accepted
+2024-09-25 17:02:27,403 - app - WARNING - WebSocket client disconnected
+2024-09-25 17:02:27,597 - app - INFO - Database disconnected
+2024-09-25 17:05:09,627 - app - INFO - Server startup: processing folder.
+2024-09-25 17:05:09,688 - app - INFO - Starting to process folder: ./uploads
+2024-09-25 17:05:12,683 - app - INFO - Database connected
+2024-09-25 17:05:23,389 - app - ERROR - Error processing folder: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 17:05:32,103 - app - INFO - Served index.html
+2024-09-25 17:05:32,938 - app - INFO - WebSocket connection accepted
+2024-09-25 17:35:00,547 - app - WARNING - WebSocket client disconnected
+2024-09-25 17:35:00,710 - app - INFO - Database disconnected
+2024-09-25 17:35:18,918 - app - INFO - Server startup: processing folder.
+2024-09-25 17:35:18,928 - app - INFO - Starting to process folder: ./uploads
+2024-09-25 17:35:20,016 - app - INFO - Database connected
+2024-09-25 17:35:24,148 - app - INFO - Served index.html
+2024-09-25 17:35:24,855 - app - INFO - WebSocket connection accepted
+2024-09-25 17:35:33,457 - app - ERROR - Error processing folder: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 17:40:02,362 - app - WARNING - WebSocket client disconnected
+2024-09-25 17:40:10,838 - app - INFO - Database disconnected
+2024-09-25 17:40:22,467 - app - INFO - Server startup: processing folder.
+2024-09-25 17:40:22,474 - app - INFO - Starting to process folder: ./uploads
+2024-09-25 17:40:23,906 - app - INFO - Database connected
+2024-09-25 17:40:30,394 - app - INFO - Served index.html
+2024-09-25 17:40:30,694 - app - INFO - WebSocket connection accepted
+2024-09-25 17:40:35,848 - app - ERROR - Error processing folder: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 17:40:50,556 - app - WARNING - WebSocket client disconnected
+2024-09-25 17:46:29,760 - app - INFO - Database disconnected
+2024-09-25 17:46:41,915 - app - INFO - Server startup: processing folder.
+2024-09-25 17:46:41,924 - app - INFO - Starting to process folder: ./uploads
+2024-09-25 17:46:43,082 - app - INFO - Database connected
+2024-09-25 17:46:45,557 - app - INFO - Served index.html
+2024-09-25 17:46:45,997 - app - INFO - WebSocket connection accepted
+2024-09-25 17:46:48,109 - app - INFO - ChromaDB found results: ["Emma and Lucas Brown were involved in a divorce proceeding where the \nprimary contention was the custody of their two children. Emma sought full \ncustody, arguing that Lucas had been an uninvolved parent and had a history of \nsubstance abuse, while Lucas sought joint custody, asserting that Emma’s \nclaims were exaggerated and that he had a right to be actively involved in his \nchildren's lives. The court had to evaluate the best interests of the children, the \nparents' respective parenting abilities, and any evidence related to substance \nabuse or involvement in the children's lives. \n", "Sarah Johnson, a former employee of Alpha Corp, filed a lawsuit alleging gender discrimination after being passed over for promotion in favor of a less qualified male colleague. Johnson claimed that her supervisor made discriminatory remarks about her gender and that her qualifications were superior to those of the promoted employee. The case involved evaluating Alpha Corp's promotion practices, any evidence of discriminatory intent, and whether Johnson’s claims were substantiated by the company's promotion records and policies.", 'In a criminal case, James Lewis was charged with assault after an altercation at a local bar resulted in severe injuries to another patron, David Smith. The prosecution argued that Lewis had intentionally struck Smith after a heated argument, while Lewis contended that the altercation was in self-defense. The court needed to assess the evidence, including eyewitness testimonies and medical reports, to determine whether Lewis’s actions constituted criminal assault or were justified under self-defense claims.']
+2024-09-25 17:46:48,865 - app - INFO - Sending answer: Relevant Case IDs: ['case5.pdf', 'case3.docx', 'case4.docx']
+Text: Emma and Lucas Brown were involved in a divorce proceeding where the 
+primary contention was the custody of their two children. Emma sought full 
+custody, arguing that Lucas had been an uninvolved parent and had a history of 
+substance abuse, while Lucas sought joint custody, asserting that Emma’s 
+claims were exaggerated and that he had a right to be actively involved in his 
+children's lives. The court had to evaluate the best interests of the children, the 
+parents' respective parenting abilities, and any evidence related to substance 
+abuse or involvement in the children's lives. 
+
+
+OpenAI Response: Is there anything specific you would like to know about the case?
+2024-09-25 17:46:55,389 - app - ERROR - Error processing folder: This model's maximum context length is 8192 tokens, however you requested 59887 tokens (59887 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.
+2024-09-25 17:51:50,653 - app - WARNING - WebSocket client disconnected
+2024-09-25 17:51:50,784 - app - INFO - Database disconnected
+2024-09-25 17:55:04,666 - app - INFO - Created uploads folder: ./uploads
+2024-09-25 17:55:04,761 - app - INFO - Server startup: processing folder.
+2024-09-25 17:55:04,795 - app - INFO - Starting to process folder: ./uploads
+2024-09-25 17:55:04,842 - app - INFO - Finished processing all files in folder.
+2024-09-25 17:55:08,956 - app - INFO - Database connected
+2024-09-25 17:56:09,923 - app - INFO - Served index.html
+2024-09-25 17:56:11,234 - app - INFO - WebSocket connection accepted
+2024-09-25 17:56:46,980 - app - INFO - File uploaded successfully: case1.docx
+2024-09-25 17:56:47,066 - app - INFO - File metadata stored in the database for: case1.docx
+2024-09-25 17:56:48,283 - app - INFO - File case1.docx processed and added to ChromaDB
+2024-09-25 17:56:48,296 - app - INFO - File uploaded successfully: case2.pdf
+2024-09-25 17:56:48,325 - app - INFO - File metadata stored in the database for: case2.pdf
+2024-09-25 17:56:49,856 - app - INFO - File case2.pdf processed and added to ChromaDB
+2024-09-25 17:56:49,863 - app - INFO - File uploaded successfully: case3.docx
+2024-09-25 17:56:49,994 - app - INFO - File metadata stored in the database for: case3.docx
+2024-09-25 17:56:50,835 - app - INFO - File case3.docx processed and added to ChromaDB
+2024-09-25 17:56:50,975 - app - INFO - File uploaded successfully: case4.docx
+2024-09-25 17:56:51,016 - app - INFO - File metadata stored in the database for: case4.docx
+2024-09-25 17:56:51,817 - app - INFO - File case4.docx processed and added to ChromaDB
+2024-09-25 17:56:51,839 - app - INFO - File uploaded successfully: case5.pdf
+2024-09-25 17:56:51,925 - app - INFO - File metadata stored in the database for: case5.pdf
+2024-09-25 17:56:52,869 - app - INFO - File case5.pdf processed and added to ChromaDB
+2024-09-25 17:56:52,913 - app - INFO - File uploaded successfully: case6.pdf
+2024-09-25 17:56:52,938 - app - INFO - File metadata stored in the database for: case6.pdf
+2024-09-25 17:56:54,497 - app - INFO - File case6.pdf processed and added to ChromaDB
+2024-09-25 17:56:54,509 - app - INFO - File uploaded successfully: court_case_summary.docx
+2024-09-25 17:56:54,558 - app - INFO - File metadata stored in the database for: court_case_summary.docx
+2024-09-25 17:56:55,296 - app - INFO - File court_case_summary.docx processed and added to ChromaDB
+2024-09-25 18:04:16,805 - app - INFO - Served index.html
+2024-09-25 18:04:17,296 - app - WARNING - WebSocket client disconnected
+2024-09-25 18:04:18,054 - app - INFO - WebSocket connection accepted
+2024-09-25 18:05:34,911 - app - INFO - Served index.html
+2024-09-25 18:05:34,931 - app - WARNING - WebSocket client disconnected
+2024-09-25 18:05:34,967 - app - INFO - WebSocket connection accepted
+2024-09-25 18:07:14,988 - app - INFO - Served index.html
+2024-09-25 18:07:15,009 - app - WARNING - WebSocket client disconnected
+2024-09-25 18:07:15,055 - app - INFO - WebSocket connection accepted
+2024-09-25 18:11:12,353 - app - INFO - Served index.html
+2024-09-25 18:11:12,379 - app - WARNING - WebSocket client disconnected
+2024-09-25 18:11:12,429 - app - INFO - WebSocket connection accepted
+2024-09-25 18:13:02,427 - app - INFO - Served index.html
+2024-09-25 18:13:02,445 - app - WARNING - WebSocket client disconnected
+2024-09-25 18:13:02,478 - app - INFO - WebSocket connection accepted
+2024-09-25 18:13:30,711 - app - INFO - Served index.html
+2024-09-25 18:13:30,724 - app - WARNING - WebSocket client disconnected
+2024-09-25 18:13:30,761 - app - INFO - WebSocket connection accepted
+2024-09-25 18:15:13,678 - app - INFO - Served index.html
+2024-09-25 18:15:13,699 - app - WARNING - WebSocket client disconnected
+2024-09-25 18:15:13,750 - app - INFO - WebSocket connection accepted
+2024-09-25 18:15:23,531 - app - INFO - Served index.html
+2024-09-25 18:15:23,555 - app - WARNING - WebSocket client disconnected
+2024-09-25 18:15:23,594 - app - INFO - WebSocket connection accepted
+2024-09-25 18:15:38,131 - app - INFO - Served index.html
+2024-09-25 18:15:38,148 - app - WARNING - WebSocket client disconnected
+2024-09-25 18:15:38,199 - app - INFO - WebSocket connection accepted
+2024-09-25 18:15:57,192 - app - INFO - ChromaDB found results: ["A construction company, BuildRight Ltd., was contracted to renovate a commercial property owned by Prestige Enterprises. The contract specified that the work should be completed within six months, but BuildRight failed to meet the deadline, resulting in a delay of over three months. Prestige Enterprises sued BuildRight for breach of contract, claiming that the delay caused financial losses and operational disruptions. The court had to determine whether BuildRight's delays constituted a material breach and, if so, the extent of the damages owed to Prestige Enterprises.", "Sarah Johnson, a former employee of Alpha Corp, filed a lawsuit alleging gender discrimination after being passed over for promotion in favor of a less qualified male colleague. Johnson claimed that her supervisor made discriminatory remarks about her gender and that her qualifications were superior to those of the promoted employee. The case involved evaluating Alpha Corp's promotion practices, any evidence of discriminatory intent, and whether Johnson’s claims were substantiated by the company's promotion records and policies.", 'Summary of the Case:\nThis case revolves around a property dispute where the landlords, who purchased a property in Mussoorie, claimed that the tenant, Rashid Ahmed, had illegally sub-let the premises to people who were not his family members. The landlords sought to declare the property vacant under the U.P. Urban Buildings (Regulation of Letting, Rent, and Eviction) Act, 1972. After Rashid Ahmed passed away, his son, Mohd. Inam, took over the case. The Rent Control Officer initially declared the premises vacant, but this decision was challenged in multiple courts, leading to different rulings. The key issue was whether the premises were sub-let or if the occupants were legitimate family members of the original tenant.']
+2024-09-25 18:15:58,090 - app - INFO - Sending answer: Relevant Case IDs: ['case1.docx', 'case3.docx', 'court_case_summary.docx']
+Text: A construction company, BuildRight Ltd., was contracted to renovate a commercial property owned by Prestige Enterprises. The contract specified that the work should be completed within six months, but BuildRight failed to meet the deadline, resulting in a delay of over three months. Prestige Enterprises sued BuildRight for breach of contract, claiming that the delay caused financial losses and operational disruptions. The court had to determine whether BuildRight's delays constituted a material breach and, if so, the extent of the damages owed to Prestige Enterprises.
+
+OpenAI Response: Is there a specific question you have regarding the Prestige case or anything else you would like to know more about this case?
+2024-09-25 18:16:22,153 - app - INFO - Served index.html
+2024-09-25 18:16:22,172 - app - WARNING - WebSocket client disconnected
+2024-09-25 18:16:22,216 - app - INFO - WebSocket connection accepted
+2024-09-25 18:16:53,536 - app - INFO - Fetched file names for group IDs [4]: ['case1.docx', 'case2.pdf']
+2024-09-25 18:16:53,995 - app - INFO - Query results: IDs=['case2.pdf'], Similarities=[0.8583471909572089]
+2024-09-25 18:16:53,996 - app - INFO - Sending answer: Relevant Case IDs: ['case2.pdf']
+Texts: ["TechNova Inc., a technology firm, was accused by Innovatech Ltd. of infringing \non its patented software algorithm. Innovatech claimed that TechNova's new \nsoftware product used the patented technology without authorization. The \ndispute centered on whether TechNova’s product incorporated the patented \nalgorithm or if it was independently developed. The court examined the patent \nclaims, the development process of TechNova's software, and the potential \nimpact on Innovatech's market position. \n"]
+Similarities: [0.8583471909572089]
+2024-09-25 18:16:59,359 - app - INFO - Fetched file names for group IDs [4]: ['case1.docx', 'case2.pdf']
+2024-09-25 18:16:59,738 - app - ERROR - No documents found with the given criteria after querying ChromaDB.
+2024-09-25 18:17:51,472 - app - INFO - Fetched file names for group IDs [5]: ['case1.docx', 'case2.pdf', 'case3.docx']
+2024-09-25 18:17:52,085 - app - ERROR - No documents found with the given criteria after querying ChromaDB.
+2024-09-25 18:17:55,749 - app - INFO - Served index.html
+2024-09-25 18:17:55,764 - app - WARNING - WebSocket client disconnected
+2024-09-25 18:17:55,801 - app - INFO - WebSocket connection accepted
+2024-09-25 18:18:05,820 - app - INFO - Fetched file names for group IDs [5]: ['case1.docx', 'case2.pdf', 'case3.docx']
+2024-09-25 18:18:06,278 - app - ERROR - No documents found with the given criteria after querying ChromaDB.
+2024-09-25 18:18:14,660 - app - INFO - Fetched file names for group IDs [5]: ['case1.docx', 'case2.pdf', 'case3.docx']
+2024-09-25 18:18:15,213 - app - ERROR - No documents found with the given criteria after querying ChromaDB.
+2024-09-25 18:18:29,341 - app - INFO - Fetched file names for group IDs [4, 5]: ['case1.docx', 'case2.pdf', 'case1.docx', 'case2.pdf', 'case3.docx']
+2024-09-25 18:18:29,736 - app - ERROR - WebSocket error: Expected IDs to be unique, found duplicates of: case2.pdf, case1.docx
+2024-09-25 18:18:40,777 - app - INFO - Served index.html
+2024-09-25 18:18:40,875 - app - INFO - WebSocket connection accepted
+2024-09-25 18:18:55,702 - app - INFO - Fetched file names for group IDs [4, 5]: ['case1.docx', 'case2.pdf', 'case1.docx', 'case2.pdf', 'case3.docx']
+2024-09-25 18:18:56,106 - app - ERROR - WebSocket error: Expected IDs to be unique, found duplicates of: case2.pdf, case1.docx
+2024-09-25 18:19:18,333 - app - INFO - Served index.html
+2024-09-25 18:19:18,468 - app - INFO - WebSocket connection accepted
+2024-09-25 18:19:50,007 - app - INFO - Fetched file names for group IDs [4, 5]: ['case1.docx', 'case2.pdf', 'case1.docx', 'case2.pdf', 'case3.docx']
+2024-09-25 18:19:50,740 - app - ERROR - WebSocket error: Expected IDs to be unique, found duplicates of: case2.pdf, case1.docx

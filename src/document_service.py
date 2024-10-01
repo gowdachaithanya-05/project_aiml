@@ -1,7 +1,9 @@
 # src/document_service.py
 
 import os
-import logging
+from logging_config import get_logger
+
+logger = get_logger('document_service')
 
 class DocumentService:
     """Handles operations related to document processing and management."""
@@ -15,18 +17,18 @@ class DocumentService:
         """Ensure the upload folder exists."""
         if not os.path.exists(self.upload_folder):
             os.makedirs(self.upload_folder)
-            logging.info(f"Created upload folder: {self.upload_folder}")
+            logger.info(f"Created upload folder: {self.upload_folder}")
 
     def process_document(self, file_name: str) -> dict:
         """Process a document (placeholder for actual processing logic)."""
         file_path = os.path.join(self.upload_folder, file_name)
         
         if not os.path.exists(file_path):
-            logging.error(f"Document not found: {file_name}")
+            logger.error(f"Document not found: {file_name}")
             return {"success": False, "error": "Document not found"}
         
         # Placeholder for actual processing logic, e.g., reading, parsing, etc.
-        logging.info(f"Processing document: {file_name}")
+        logger.info(f"Processing document: {file_name}")
         
         # For now, we'll just return a success message
         return {"success": True, "message": f"Processed document: {file_name}"}

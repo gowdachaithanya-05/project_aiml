@@ -1,46 +1,66 @@
-# src/logging_config.py
+# # src/logging_config.py
+
+# import logging
+# from logging.handlers import RotatingFileHandler
+# import os
+
+# def get_logger(service_name):
+#     logger = logging.getLogger(service_name)
+#     logger.setLevel(logging.INFO)
+#     logger.propagate = False  # Prevent log propagation to the root logger
+
+#     # Ensure the logs directory exists
+#     if not os.path.exists('logs'):
+#         os.makedirs('logs')  # Create the logs directory if it doesn't exist
+
+#     # Log rotation setup
+#     handler = RotatingFileHandler(
+#         f'logs/{service_name}.log',  # Log file path
+#         maxBytes=5 * 1024 * 1024,    # 5 MB per file
+#         backupCount=5                # Keep up to 5 backup files
+#     )
+#     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+#     handler.setFormatter(formatter)
+
+#     # Add the handler if not already added
+#     if not logger.handlers:
+#         logger.addHandler(handler)
+
+#     return logger
+
+
+# logging_config.py
 
 import logging
 from logging.handlers import RotatingFileHandler
 import os
 
-class LoggerConfig:
-    """Sets up and configures logging for the application."""
+def get_logger(service_name):
+    logger = logging.getLogger(service_name)
+    logger.setLevel(logging.INFO)
+    logger.propagate = False  # Prevent log propagation to the root logger
+
+    # Ensure the logs directory exists
+    if not os.path.exists('logs'):
+        os.makedirs('logs')  # Create the logs directory if it doesn't exist
+
+    # Log rotation setup
+    handler = RotatingFileHandler(
+        f'logs/{service_name}.log',  # Log file path
+        maxBytes=5 * 1024 * 1024,    # 5 MB per file
+        backupCount=5                # Keep up to 5 backup files
+    )
     
-    def __init__(self, log_file: str = "logs/document_service.log", max_bytes: int = 5 * 1024 * 1024, backup_count: int = 5):
-        """Initialize the logger with log rotation."""
-        self.log_file = log_file
-        self.max_bytes = max_bytes
-        self.backup_count = backup_count
-        self.logger = None
-        self._setup_logging_directory()
+    # Updated formatter to match Grok pattern
+    formatter = logging.Formatter(
+        '%(asctime)s.%(msecs)03d - %(name)s - %(levelname)s - %(message)s',
+        datefmt='%Y-%m-%dT%H:%M:%S'
+    )
+    handler.setFormatter(formatter)
 
-    def _setup_logging_directory(self):
-        """Ensure the logs directory exists."""
-        log_dir = os.path.dirname(self.log_file)
-        if not os.path.exists(log_dir):
-            os.makedirs(log_dir)
-            logging.info(f"Created log directory: {log_dir}")
+    # Add the handler if not already added
+    if not logger.handlers:
+        logger.addHandler(handler)
 
-    def get_logger(self, name: str):
-        """Configure and return a logger with rotation and formatting."""
-        if not self.logger:
-            logger = logging.getLogger(name)
-            logger.setLevel(logging.INFO)
+    return logger
 
-            # Setup log rotation
-            handler = RotatingFileHandler(self.log_file, maxBytes=self.max_bytes, backupCount=self.backup_count)
-            formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-            handler.setFormatter(formatter)
-
-            # Add the handler to the logger
-            logger.addHandler(handler)
-            self.logger = logger
-
-        return self.logger
-
-# If used directly, setup a default logger
-if __name__ == "__main__":
-    logger_config = LoggerConfig()
-    app_logger = logger_config.get_logger("app_logger")
-    app_logger.info("Logging has been initialized.")

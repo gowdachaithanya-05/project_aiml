@@ -1,22 +1,32 @@
-from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect, File, UploadFile, Query, Form
+# app.py
+
+from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect, File, UploadFile, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse, JSONResponse
 from pathlib import Path
-from database import Database, database  # Make sure this exists
-from models import meta_table, sessions, questions, file_groups, group_files # Make sure this exists
+import logging
+from database import Database, database
+from models import meta_table, sessions, questions, file_groups, group_files, chat_history
 import openai
 import os
-import logging
+from logging_config import get_logger
 from datetime import datetime
-from typing import List
-from logging.handlers import RotatingFileHandler
+from typing import List, Optional, Tuple
 from dotenv import load_dotenv
 import asyncio
-from rag import process_hardcoded_folder, query_cases  # Import functions from rag.py
-from rag import process_file  # Import file processing function
-import re
+from rag import query_cases, query_cases_by_group, process_file, is_document_present
+from sqlalchemy import insert, select
 import uuid
+import json
+from pydantic import BaseModel
+import traceback
+from logging.handlers import RotatingFileHandler
+from concurrent.futures import ThreadPoolExecutor
+from elasticapm.contrib.starlette import ElasticAPM, make_apm_client
+from elasticapm import capture_span
+from elasticapm.handlers.logging import LoggingFilter
+
 
 # Utility function for consistent JSON responses
 def create_json_response(success: bool, message: str, details: dict = None):
@@ -26,22 +36,7 @@ def create_json_response(success: bool, message: str, details: dict = None):
 load_dotenv()
 
 # Initialize logging
-# logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
-
-log_filename = "./logs/document_service.log"
-
-# Ensure the log file exists, create it if it doesn't
-if not os.path.exists(log_filename):
-    # Create the file
-    with open(log_filename, 'w') as f:
-        pass  # Just create an empty file
-    
-log_handler = RotatingFileHandler(log_filename, maxBytes=5 * 1024 * 1024, backupCount=3)  # 5MB log size with 3 backups
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    handlers=[log_handler]
-)
+logger = get_logger('app')
 
 class OpenAIChatManager:
     """Handles communication with the OpenAI API."""
@@ -58,9 +53,8 @@ class OpenAIChatManager:
             )
             return response.choices[0].message['content'].strip()
         except Exception as e:
-            logging.error("Error getting OpenAI response: %s", str(e))
-            return "Error getting response"
-
+            logger.error("Error getting OpenAI response: %s", str(e))
+            return "I'm sorry, I couldn't process your request at the moment."
 
 class FileManager:
     """Manages file uploads to the server."""
@@ -72,7 +66,7 @@ class FileManager:
         """Creates the upload folder if it doesn't exist."""
         if not os.path.exists(self.upload_folder):
             os.makedirs(self.upload_folder)
-            logging.info("Created uploads folder: %s", self.upload_folder)
+            logger.info("Created uploads folder: %s", self.upload_folder)
 
     async def get_existing_files(self) -> List[str]:
         """Returns a list of existing files in the upload folder."""
@@ -87,7 +81,7 @@ class FileManager:
                 # Save the file to the filesystem
                 with open(file_location, "wb") as f:
                     f.write(await file.read())
-                logging.info("File uploaded successfully: %s", file.filename)
+                logger.info("File uploaded successfully: %s", file.filename)
 
                 # Get file metadata
                 file_size = os.path.getsize(file_location)
@@ -101,22 +95,22 @@ class FileManager:
                     user=None  # Assuming no user info for now
                 )
                 await database.execute(query)
-                logging.info("File metadata stored in the database for: %s", file.filename)
+                logger.info("File metadata stored in the database for: %s", file.filename)
 
                 # Process the file for ChromaDB
                 try:
                     process_file(file_location)
-                    logging.info(f"File {file.filename} processed and added to ChromaDB")
+                    logger.info(f"File {file.filename} processed and added to ChromaDB")
                 except Exception as e:
-                    logging.error(f"Error processing file {file.filename} for ChromaDB: {str(e)}")
+                    logger.error(f"Error processing file {file.filename} for ChromaDB: {str(e)}")
 
             return {"success": True, "details": [file.filename for file in files]}
 
         except Exception as e:
-            logging.error("Error uploading files, saving metadata, or processing for ChromaDB: %s", str(e))
+            logger.error("Error uploading files, saving metadata, or processing for ChromaDB: %s", str(e))
             return {"success": False, "error": f"Failed to upload: {str(e)}"}
         
-        
+
 class WebSocketManager:
     """Handles WebSocket connections for chat interactions."""
     def __init__(self, chat_manager: OpenAIChatManager):
@@ -125,63 +119,227 @@ class WebSocketManager:
     async def handle_websocket(self, websocket: WebSocket):
         """Manages the WebSocket lifecycle and communication."""
         await websocket.accept()
-        session_id = str(uuid.uuid4())  # Generate a new session ID
-        await self.store_session(session_id)  # Store the session ID in the database
-        logging.info("WebSocket connection accepted")
+        logger.info("WebSocket connection accepted")
         try:
             while True:
                 data = await websocket.receive_text()
-                logging.debug(f"Received message: {data}")
+                logger.debug(f"Received message: {data}")
+
+                # Parse the JSON message to extract session_id, message, and group_ids
+                try:
+                    message_data = json.loads(data)
+                    session_id = message_data.get('session_id')
+                    message = message_data.get('message')
+                    group_ids = message_data.get('group_ids')  # Get group IDs if provided
+                except json.JSONDecodeError:
+                    logger.error("Invalid JSON received")
+                    continue
+
+                if not session_id:
+                    # Generate a new session ID if not provided
+                    session_id = str(uuid.uuid4())
+                    await self.store_session(session_id)
+                else:
+                    # Check if the session exists; if not, create it
+                    existing_session = await self.get_session(session_id)
+                    if not existing_session:
+                        await self.store_session(session_id)
+
                 question_id = str(uuid.uuid4())  # Generate a unique question ID
-                await self.store_question(session_id, question_id, data)  # Store the question
+                await self.store_question(session_id, question_id, message)  # Store the question
 
-                # Query ChromaDB for relevant cases
-                ids, texts = query_cases(data)
+                # Store user message in chat_history
+                await self.store_chat_message(session_id, 'user', message)
 
-                if texts and len(texts) > 0:  # Relevant cases are found
-                    logging.info(f"ChromaDB found results: {texts}")
-                    
-                    # Check if the results seem relevant enough (e.g., by thresholding length)
-                    if len(texts[0]) > 50:  # Assuming a case result should have more than 50 characters
-                        combined_query = f"User query: {data}\nRelevant cases: {texts[0]}"
-                        openai_response = self.chat_manager.get_response(combined_query)
-                        answer = f"Relevant Case IDs: {ids}\nText: {texts[0]}\n\nOpenAI Response: {openai_response}"
-                    else:
-                        logging.info("ChromaDB returned results but not relevant, querying OpenAI directly.")
-                        openai_response = self.chat_manager.get_response(f"{data}\nNo relevant cases found.")
-                        answer = f"AI Response: {openai_response}"
+                # Retrieve last N messages for context (e.g., last 5 messages)
+                chat_history_records = await self.get_recent_chat_history(session_id, limit=5)
+                context = "\n".join([
+                    f"{record['sender'].capitalize()}: {record['message']}" for record in chat_history_records
+                ])
 
-                else:  # No relevant cases found
-                    logging.info("No relevant cases found in ChromaDB, querying OpenAI.")
-                    # Send the original query and mention that no relevant cases were found
-                    openai_response = self.chat_manager.get_response(f"{data}\nNo relevant cases found.")
-                    answer = f"AI Response: {openai_response}"
+                # Prepare the prompt with context
+                prompt = f"{context}\nUser: {message}\nAI:"
 
-                logging.info(f"Sending answer: {answer}")
+                # Initialize variables for ChromaDB results
+                ids = []
+                texts = []
+                similarities = []
+
+                # Handle group-based queries
+                if group_ids:
+                    # Fetch the file names associated with the group IDs from the database
+                    query = group_files.select().where(group_files.c.group_id.in_(group_ids))
+                    group_file_records = await database.fetch_all(query)
+                    file_names = [record['file_name'] for record in group_file_records]
+
+                    # Log the file names fetched
+                    logger.info(f"Fetched file names for group IDs {group_ids}: {file_names}")
+
+                    if not file_names:
+                        logger.error("No files found for the selected groups.")
+                        # Instead of sending a static message, generate a response via OpenAI
+                        openai_prompt = f"{context}\nYou mentioned specific groups, but no documents were found associated with those groups.\n\nPlease provide an appropriate response based on the available information."
+                        openai_response = self.chat_manager.get_response(openai_prompt)
+                        answer = openai_response
+                        logger.info(f"Sending answer: {answer}")
+                        await websocket.send_text(answer)
+                        # Store bot response in chat_history
+                        await self.store_chat_message(session_id, 'bot', answer)
+                        continue
+
+                    # Now check if these documents are in ChromaDB, and process if not
+                    missing_files = []
+                    for file_name in file_names:
+                        if not is_document_present(file_name):
+                            missing_files.append(file_name)
+                            logger.info(f"Document '{file_name}' is missing from ChromaDB and will be processed.")
+
+                    if missing_files:
+                        logger.info(f"Processing missing files: {missing_files}")
+                        for file_name in missing_files:
+                            file_path = os.path.join("./uploads", file_name)
+                            if os.path.exists(file_path):
+                                try:
+                                    # Run process_file in an executor to avoid blocking
+                                    loop = asyncio.get_event_loop()
+                                    await loop.run_in_executor(None, process_file, file_path)
+                                    logger.info(f"Processed and added '{file_name}' to ChromaDB.")
+                                except Exception as e:
+                                    logger.error(f"Failed to process '{file_name}': {str(e)}")
+                            else:
+                                logger.error(f"File '{file_name}' does not exist in uploads folder.")
+
+                    # Now all documents should be in ChromaDB
+                    # Proceed to query ChromaDB with these documents
+                    existing_files = []
+                    for file_name in file_names:
+                        if is_document_present(file_name):
+                            existing_files.append(file_name)
+                        else:
+                            logger.warning(f"Document '{file_name}' is still missing from ChromaDB after processing.")
+
+                    if not existing_files:
+                        logger.error("No documents found in ChromaDB after processing.")
+                        # Generate response via OpenAI
+                        openai_prompt = f"{context}\nYou attempted to query specific groups, but no relevant documents were found in ChromaDB after processing.\n\nPlease provide an appropriate response based on the available information."
+                        openai_response = self.chat_manager.get_response(openai_prompt)
+                        answer = openai_response
+                        logger.info(f"Sending answer: {answer}")
+                        await websocket.send_text(answer)
+                        # Store bot response in chat_history
+                        await self.store_chat_message(session_id, 'bot', answer)
+                        continue
+
+                    # Query ChromaDB with the existing files
+                    ids, texts, similarities = query_cases_by_group(existing_files, message, threshold=0.8)
+
+                    if not ids:
+                        logger.error("No documents found with the given criteria after querying ChromaDB.")
+                        # Generate response via OpenAI
+                        openai_prompt = f"{context}\nYou queried specific groups, but ChromaDB returned no relevant documents.\n\nPlease provide an appropriate response based on the available information."
+                        openai_response = self.chat_manager.get_response(openai_prompt)
+                        answer = openai_response
+                        logger.info(f"Sending answer: {answer}")
+                        await websocket.send_text(answer)
+                        # Store bot response in chat_history
+                        await self.store_chat_message(session_id, 'bot', answer)
+                        continue
+
+                    # Log the query results
+                    logger.info(f"Query results: IDs={ids}, Similarities={similarities}")
+
+                else:
+                    # Query ChromaDB for relevant cases
+                    ids, texts, similarities = query_cases(message)
+
+                # At this point, regardless of query type, we have ids, texts, similarities
+                # Now generate a unified response using OpenAI
+                if texts and len(texts) > 0:
+                    # Combine all relevant information into a prompt for OpenAI
+                    chroma_info = "\n".join([
+                        f"Case ID: {id_}\nText: {text}\nSimilarity: {similarity}"
+                        for id_, text, similarity in zip(ids, texts, similarities)
+                    ])
+                    combined_prompt = f"{context}\nRelevant Cases:\n{chroma_info}\n\nPlease provide a refined response based on the above information."
+
+                    openai_response = self.chat_manager.get_response(combined_prompt)
+                    answer = openai_response
+                else:
+                    # No relevant cases found, prompt OpenAI accordingly
+                    openai_prompt = f"{context}\nNo relevant cases found for your query.\n\nPlease provide a response based on the available information."
+                    openai_response = self.chat_manager.get_response(openai_prompt)
+                    answer = openai_response
+
+                logger.info(f"Sending answer: {answer}")
                 await websocket.send_text(answer)
+
+                # Store bot response in chat_history
+                await self.store_chat_message(session_id, 'bot', answer)
+
+
         except WebSocketDisconnect:
-            logging.warning("WebSocket client disconnected")
+            logger.warning("WebSocket client disconnected")
         except Exception as e:
-            logging.error(f"WebSocket error: {str(e)}")
+            logger.error(f"WebSocket error: {str(e)}")
+
+    async def get_session(self, session_id: str):
+        """Checks if a session exists in the database."""
+        query = select(sessions).where(sessions.c.session_id == session_id)
+        result = await database.fetch_one(query)
+        return result
+
     async def store_session(self, session_id: str):
-        query = "INSERT INTO sessions (session_id) VALUES (:session_id)"
-        await database.execute(query, values={"session_id": session_id})
+        """Stores a new chat session in the database."""
+        query = insert(sessions).values(
+            session_id=session_id,
+            is_archived=False  # Ensure that is_archived is set to False for new sessions
+        )
+        await database.execute(query)
 
     async def store_question(self, session_id: str, question_id: str, question_text: str):
+        """Stores a question in the database."""
         query = "INSERT INTO questions (session_id, question_id, question_text) VALUES (:session_id, :question_id, :question_text)"
         await database.execute(query, values={"session_id": session_id, "question_id": question_id, "question_text": question_text})
 
     async def get_chat_history(self, session_id: str):
-        query = "SELECT question_id, question_text FROM questions WHERE session_id = :session_id"
-        results = await database.fetch_all(query, values={"session_id": session_id})
+        """Fetches the entire chat history for a given session ID."""
+        query = select(chat_history).where(chat_history.c.session_id == session_id).order_by(chat_history.c.timestamp)
+        results = await database.fetch_all(query)
         return results
 
+    async def store_chat_message(self, session_id: str, sender: str, message: str):
+        """Stores a chat message in the chat_history table."""
+        query = chat_history.insert().values(
+            session_id=session_id,
+            sender=sender,
+            message=message,
+            timestamp=datetime.now()
+        )
+        await database.execute(query)
+
+    async def get_recent_chat_history(self, session_id: str, limit: int = 5):
+        """Retrieves the most recent chat messages for a session."""
+        query = select(chat_history).where(chat_history.c.session_id == session_id).order_by(chat_history.c.timestamp.desc()).limit(limit)
+        results = await database.fetch_all(query)
+        # Reverse to maintain chronological order
+        return results[::-1]
 
 class Application:
     """Encapsulates the entire FastAPI application logic."""
     def __init__(self):
         # Instantiate FastAPI app
         self.app = FastAPI()
+
+        # Elastic APM integration
+        apm_config = {
+            'SERVICE_NAME': 'projects_trace',
+            'SERVER_URL': 'http://apm-server:8200',  # Ensure this matches your APM server URL (use apm-server in Docker)
+            'ENVIRONMENT': 'production',
+            'DEBUG': True,  # Set this to True to help with any issues while debugging
+            'TRANSACTION_SAMPLE_RATE': 1.0  # Capture all transactions
+        }
+        self.apm_client = make_apm_client(apm_config)
+        self.app.add_middleware(ElasticAPM, client=self.apm_client)
 
         # Initialize components
         self.file_manager = FileManager(upload_folder="./uploads")
@@ -190,20 +348,23 @@ class Application:
 
         self.folder_path = r"./uploads"
 
+        # Initialize a ThreadPoolExecutor for running synchronous tasks
+        self.executor = ThreadPoolExecutor(max_workers=5)
+
         # Set up middleware and routes
         self._setup_middleware()
         self._setup_routes()
         
         @self.app.on_event("startup")
         async def startup_event():
-            logging.info("Server startup: processing folder.")
+            logger.info("Server startup: processing folder.")
             asyncio.create_task(self.process_folder_async())
 
     def _setup_middleware(self):
         """Sets up CORS middleware."""
         self.app.add_middleware(
             CORSMiddleware,
-            allow_origins=["*"],
+            allow_origins=["*"],  # Adjust as needed for security
             allow_credentials=True,
             allow_methods=["*"],
             allow_headers=["*"],
@@ -213,7 +374,97 @@ class Application:
         """Defines API routes for the application."""
         # Serve static files
         self.app.mount("/static", StaticFiles(directory="static"), name="static")
+        
+        @self.app.get("/get-group-files/{group_id}")
+        async def get_group_files(group_id: int):
+            try:
+                # Get the group name
+                group_query = file_groups.select().where(file_groups.c.id == group_id)
+                group = await database.fetch_one(group_query)
+                if not group:
+                    raise HTTPException(status_code=404, detail="Group not found")
+                
+                # Get the files in the group
+                files_query = group_files.select().where(group_files.c.group_id == group_id)
+                group_files_result = await database.fetch_all(files_query)
+                group_file_names = [row['file_name'] for row in group_files_result]
+                
+                # Get all files in the database
+                all_files_query = meta_table.select()
+                all_files_result = await database.fetch_all(all_files_query)
+                all_file_names = [row['file_name'] for row in all_files_result]
+                
+                return {
+                    "group_name": group['group_name'],
+                    "group_files": group_file_names,
+                    "all_files": all_file_names
+                }
+            except Exception as e:
+                logging.error(f"Error getting group files: {str(e)}")
+                raise HTTPException(status_code=500, detail="An error occurred while fetching group files")
 
+        @self.app.post("/update-group")
+        async def update_group(
+            group_id: int = Form(...),
+            group_name: str = Form(...),
+            files: List[str] = Form(...)
+        ):
+            try:
+                # Update group name
+                update_group_query = file_groups.update().where(file_groups.c.id == group_id).values(group_name=group_name)
+                await database.execute(update_group_query)
+                
+                # Delete existing file associations
+                delete_files_query = group_files.delete().where(group_files.c.group_id == group_id)
+                await database.execute(delete_files_query)
+                
+                # Add new file associations
+                for file in files:
+                    insert_file_query = group_files.insert().values(group_id=group_id, file_name=file)
+                    await database.execute(insert_file_query)
+                
+                return JSONResponse(content={"success": True, "message": "Group updated successfully"})
+            except Exception as e:
+                logging.error(f"Error updating group: {str(e)}")
+                return JSONResponse(content={"success": False, "error": "An error occurred while updating the group"})
+        
+        @self.app.post("/rename-group")
+        async def rename_group(group_data: dict):
+            group_id = group_data.get('group_id')
+            new_name = group_data.get('new_name')
+            
+            if not group_id or not new_name:
+                raise HTTPException(status_code=400, detail="Group ID and new name are required.")
+            
+            try:
+                query = file_groups.update().where(file_groups.c.id == group_id).values(group_name=new_name)
+                await database.execute(query)
+                return {"success": True, "message": "Group renamed successfully."}
+            except Exception as e:
+                logging.error(f"Error renaming group: {str(e)}")
+                raise HTTPException(status_code=500, detail="An error occurred while renaming the group.")
+
+        @self.app.post("/delete-group")
+        async def delete_group(group_data: dict):
+            group_id = group_data.get('group_id')
+            
+            if not group_id:
+                raise HTTPException(status_code=400, detail="Group ID is required.")
+            
+            try:
+                # First, delete associated files from group_files table
+                delete_files_query = group_files.delete().where(group_files.c.group_id == group_id)
+                await database.execute(delete_files_query)
+                
+                # Then, delete the group from file_groups table
+                delete_group_query = file_groups.delete().where(file_groups.c.id == group_id)
+                await database.execute(delete_group_query)
+                
+                return {"success": True, "message": "Group deleted successfully."}
+            except Exception as e:
+                logging.error(f"Error deleting group: {str(e)}")
+                raise HTTPException(status_code=500, detail="An error occurred while deleting the group.")
+        
         @self.app.get("/get-existing-files")
         async def get_existing_files():
             return await self.file_manager.get_existing_files()
@@ -234,6 +485,9 @@ class Application:
                 raise HTTPException(status_code=400, detail="Group name and at least one file must be provided.")
 
             try:
+                existing_files = await self.file_manager.get_existing_files()
+                if not all(file in existing_files for file in files):
+                    raise HTTPException(status_code=400, detail="One or more selected files do not exist in the database.")
                 # Insert the new group into the database
                 query = file_groups.insert().values(group_name=group_name)
                 result = await database.execute(query)
@@ -271,10 +525,10 @@ class Application:
             index_path = Path(__file__).parent / "templates/index.html"
             try:
                 with open(index_path, "r") as file:
-                    logging.info("Served index.html")
+                    logger.info("Served index.html")
                     return HTMLResponse(content=file.read())
             except Exception as e:
-                logging.error("Error serving index.html: %s", str(e))
+                logger.error("Error serving index.html: %s", str(e))
                 return HTMLResponse(content="Error loading index.html", status_code=500)
 
         # Add an endpoint to process the folder on demand
@@ -288,34 +542,92 @@ class Application:
         async def websocket_endpoint(websocket: WebSocket):
             await self.websocket_manager.handle_websocket(websocket)
 
+        # Define /get-chat-history endpoint once
         @self.app.get("/get-chat-history")
         async def get_chat_history(session_id: str):
-        #Fetches the entire chat history for a given session ID.
             history = await self.websocket_manager.get_chat_history(session_id)
-            return [{"question_id": row.question_id, "question_text": row.question_text} for row in history]
+            return [{"sender": row.sender, "message": row.message, "timestamp": row.timestamp} for row in history]
+        
+        @self.app.post("/archive-session/")
+        async def archive_session(session_id: str = Form(...)):
+            """Archives a chat session."""
+            query = sessions.update().where(sessions.c.session_id == session_id).values(is_archived=True)
+            result = await database.execute(query)
+            if result:
+                logger.info(f"Session {session_id} archived successfully.")
+                return create_json_response(True, "Session archived successfully.")
+            else:
+                logger.error(f"Failed to archive session {session_id}.")
+                return create_json_response(False, "Failed to archive session.")
+
+        @self.app.post("/unarchive-session/")
+        async def unarchive_session(session_id: str = Form(...)):
+            """Unarchives a chat session."""
+            query = sessions.update().where(sessions.c.session_id == session_id).values(is_archived=False)
+            result = await database.execute(query)
+            if result:
+                logger.info(f"Session {session_id} unarchived successfully.")
+                return create_json_response(True, "Session unarchived successfully.")
+            else:
+                logger.error(f"Failed to unarchive session {session_id}.")
+                return create_json_response(False, "Failed to unarchive session.")
+
+        @self.app.get("/get-active-sessions/")
+        async def get_active_sessions():
+            """Fetches all active (non-archived) chat sessions."""
+            query = sessions.select().where(sessions.c.is_archived == False).order_by(sessions.c.created_at.desc())
+            results = await database.fetch_all(query)
+            return [{"session_id": row['session_id'], "created_at": row['created_at']} for row in results]
+
+        @self.app.get("/get-archived-sessions/")
+        async def get_archived_sessions():
+            """Fetches all archived chat sessions."""
+            query = sessions.select().where(sessions.c.is_archived == True).order_by(sessions.c.created_at.desc())
+            results = await database.fetch_all(query)
+            return [{"session_id": row['session_id'], "created_at": row['created_at']} for row in results]
+        
+        @self.app.post("/rename-session/")
+        async def rename_session(session_id: str = Form(...), new_name: str = Form(...)):
+            """Renames a chat session."""
+            try:
+                query = sessions.update().where(sessions.c.session_id == session_id).values(session_name=new_name)
+                result = await database.execute(query)
+                if result:
+                    logger.info(f"Session {session_id} renamed to {new_name} successfully.")
+                    return create_json_response(True, "Session renamed successfully.")
+                else:
+                    logger.error(f"Failed to rename session {session_id}.")
+                    return create_json_response(False, "Failed to rename session.")
+            except Exception as e:
+                logger.error(f"Error renaming session {session_id}: {str(e)}")
+                return create_json_response(False, "Failed to rename session.", {"error": str(e)})
+
+        # The /query endpoint is no longer needed for this process
+        # All processing happens when a prompt is sent via WebSocket
 
     async def process_folder_async(self):
         """Process folder asynchronously without blocking the server."""
         try:
-            logging.info(f"Starting to process folder: {self.folder_path}")
+            logger.info(f"Starting to process folder: {self.folder_path}")
             for filename in os.listdir(self.folder_path):
                 file_path = os.path.join(self.folder_path, filename)
                 if os.path.isfile(file_path):
-                    process_file(file_path)  # Process each file
-            logging.info("Finished processing all files in folder.")
+                    # Run the synchronous process_file in a separate thread
+                    loop = asyncio.get_event_loop()
+                    await loop.run_in_executor(self.executor, process_file, file_path)
+            logger.info("Finished processing all files in folder.")
         except Exception as e:
-            logging.error(f"Error processing folder: {str(e)}")
-    
+            logger.error(f"Error processing folder: {str(e)}")
+
     async def startup(self):
         """Connect to the database on app startup."""
         await database.connect()
-        logging.info("Database connected")
+        logger.info("Database connected")
 
     async def shutdown(self):
         """Disconnect from the database on app shutdown."""
         await database.disconnect()
-        logging.info("Database disconnected")
-
+        logger.info("Database disconnected")
 
 # Instantiate the application
 application = Application()
@@ -323,9 +635,9 @@ app = application.app  # Expose the FastAPI app for the server
 
 # Add startup and shutdown events
 @app.on_event("startup")
-async def startup():
+async def startup_event():
     await application.startup()
 
 @app.on_event("shutdown")
-async def shutdown():
+async def shutdown_event():
     await application.shutdown()
